@@ -1,4 +1,6 @@
-<p align="center"><img src="docs/assets/readme/fassa-frame-cover.svg" alt="Fassa Frame — sua ideia vira direção de vídeo" width="100%"></p>
+<p align="center"><img src="docs/assets/readme/fassa-frame-motion.gif" alt="Fassa Frame: animação ilustrativa de uma ideia ganhando ritmo, forma e revisão" width="100%"></p>
+
+<p align="center"><a href="docs/assets/readme/fassa-frame-poster.png">Ver capa sem animação</a></p>
 
 <p align="center"><strong>Conte o que você quer comunicar. Construa o vídeo conversando.</strong><br>Para marketing, comunicação, treinamento e quem tem uma boa história para contar.</p>
 
