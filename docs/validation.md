@@ -100,3 +100,19 @@ python3 scripts/package.py
 `npm run test:browser` requires Playwright's Chromium (`npx playwright install chromium`); the preview and scene browser checks require agent-browser and its browser on PATH. Render checks require FFmpeg/ffprobe and may download the pinned package/browser on first use. Engine tests use the locked uv environment. Test installers with a temporary home; preserve footage, secrets, and personal installations. Inspect generated samples before removing task-owned `.work/` output.
 
 Dependency, source, schema, asset, or interface changes invalidate the corresponding evidence and require focused verification. A structural audit or successful selected-scene test does not render every scene. Local checks do not prove Windows/Linux behavior, long-video performance, remote CI, client restart discovery, external generation, or real recording quality. Remote CI and publication must be verified separately after the push.
+
+## Fassa Frame website preparation — 2026-10-20
+
+Scope: shared crop-corner wordmark and paper/ink/amber/sky identity, visitor-controlled hero, all five guide pages, three locales, saved themes, assisted installation, repository/release links, social card and README badges. The old phone mockup and its unsupported performance/privacy claims were removed. The original MIT and third-party notices remain unchanged.
+
+Observed locally on macOS:
+
+- `npm run check`: lint and types passed; 56 Python tests, 15 Node tests, 128 Vitest tests in 20 files and 49 registered icons passed. This includes isolated installer preservation/recovery checks and the new editorial selector regression.
+- Production build passed with the default Turbopack compiler. The Open Graph font is explicitly included in the deployment trace. A trial Webpack build exposed an inherited `URL` filesystem issue; the explicit font path fixes it and the static exporter builds successfully with Webpack.
+- Browser coverage: all 172 applicable scenarios covered by the full run and targeted repeats, with 28 conditional skips. The initial audit found contrast under a translucent stage selector; solid option surfaces fixed it without weakening the audit. The final homepage audit passed all 12 combinations of locale, theme and desktop/mobile; all 10 homepage flow tests passed. Other pages passed the repeated complete quality audit after the shared identity changes.
+- Actual Chromium screenshots inspected for desktop home and mobile home, setup, request builder, catalog and examples. HTTPS local preview returned 200. Public hosting is not inferred from this check.
+- `npm audit --omit=dev`: zero known vulnerabilities on this date. Full audit retains five high development-chain entries described in `public-launch.md`; no forced downgrade.
+- Gitleaks scanned 7.67 MB of prepared tracked/unignored text with no secrets found. Large binary media are outside that text scan; distribution exclusions and third-party terms remain in force.
+- The static exporter generated the three-language site with the existing `/fassa-frame` base and prelaunch noindex. The export checks localized HTML and base-path assets; deployment still needs authorization and a check at the final URL.
+
+The repository remains private. Existing release v0.1.0 and its checksum were not replaced. No client media, private project, external media generation or production deployment was part of this website revision. The original working copy under `tools/fassa-frame` was preserved.

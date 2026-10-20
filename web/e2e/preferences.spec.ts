@@ -19,7 +19,7 @@ test('a corrupted saved brief loads the defaults without errors', async ({ page 
   });
   await page.goto('/en/create');
   await expect(page.getByLabel('Generated editing request')).toContainText('[enter the video folder]');
-  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   expect(errors).toEqual([]);
 });
 
@@ -35,8 +35,8 @@ test('blocked storage still renders and builds requests', async ({ page }) => {
   await page.goto('/es/crear');
   await page.getByLabel('Carpeta de los videos en tu computadora').fill('/Videos/Málaga/東京');
   await expect(page.getByLabel('Pedido de edición generado')).toContainText('/Videos/Málaga/東京');
-  await page.getByRole('button', { name: /Cambiar al tema claro/ }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.getByRole('button', { name: /Cambiar al tema oscuro/ }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   expect(errors).toEqual([]);
 });
 

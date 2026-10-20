@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: '404 — Fassa Frame', robots: { inde
 // Requests outside the locale routing (for example an unknown locale prefix) end here.
 export default function GlobalNotFound() {
   return (
-    <html lang="en" data-theme="dark" className={fontVariables}>
+    <html lang="en" data-theme="light" className={fontVariables}>
       <body>
         <main style={{ display: 'grid', placeItems: 'center', minHeight: '100vh', padding: 'var(--gutter)', textAlign: 'center' }}>
           <div>

@@ -10,7 +10,9 @@ export const SITE_URL = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? (vercelUrl ?
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export const withBasePath = (path: string) => `${BASE_PATH}${path}`;
 
-export const REPOSITORY_URL = 'https://github.com/soumatheusgomes/editonny';
+export const REPOSITORY_URL = 'https://github.com/marcoantoniofassa/fassa-frame';
+export const UPSTREAM_URL = 'https://github.com/soumatheusgomes/editonny';
+export const RELEASES_URL = `${REPOSITORY_URL}/releases/latest`;
 export const AUTHOR = { name: 'Matheus Gomes', instagram: 'https://instagram.com/matheusgomes', email: 'eu@matheusgom.es' };
 
 /**
@@ -18,7 +20,7 @@ export const AUTHOR = { name: 'Matheus Gomes', instagram: 'https://instagram.com
  * `site.test.ts` fails when they drift from DESIGN.md.
  */
 export const BRAND = {
-  ink950: '#050506', ink900: '#0b0b0d', ink800: '#17171b', ink600: '#2c2c33',
+  paper100: '#f4f3ed', sky400: '#4dc3ff', ink950: '#050506', ink900: '#0b0b0d', ink800: '#17171b', ink600: '#2c2c33',
   fog50: '#fafafa', fog400: '#a1a1aa', orange500: '#e8a838', orange900: '#2b0b00', volt400: '#d4ff3a',
 } as const;
 
@@ -43,7 +45,7 @@ export async function pageMetadata(locale: AppLocale, page: PageKey): Promise<Me
     title,
     description,
     applicationName: t('siteName'),
-    authors: [{ name: AUTHOR.name, url: AUTHOR.instagram }],
+    authors: [{ name: 'Marco Fassa', url: REPOSITORY_URL }, { name: AUTHOR.name, url: UPSTREAM_URL }],
     alternates: {
       canonical: url,
       languages: { ...Object.fromEntries(routing.locales.map(code => [code, localizedPath(code, page)])), 'x-default': BASE_PATH ? localizedPath('pt-BR', page) : PAGE_PATHS[page] },

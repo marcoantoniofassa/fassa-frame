@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Local video editing through conversation: cuts, captions, sound, and motion with the AI you already use.',
     start_url: withBasePath('/'),
     display: 'standalone',
-    background_color: BRAND.ink900,
-    theme_color: BRAND.ink900,
+    background_color: BRAND.paper100,
+    theme_color: BRAND.paper100,
     icons: [{ src: withBasePath('/icon.svg'), sizes: 'any', type: 'image/svg+xml' }],
   };
 }

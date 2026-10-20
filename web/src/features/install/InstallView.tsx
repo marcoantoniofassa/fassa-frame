@@ -2,6 +2,7 @@
 import { Accordion, Button, Card, CommandLine, Reveal, StepItem } from '@editonny/design-system';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
+import { RELEASES_URL } from '@/lib/site';
 import { Link } from '@/i18n/navigation';
 import { useToast } from '../feedback/ToastProvider';
 import { useCopy } from '../feedback/use-copy';
@@ -22,17 +23,6 @@ export function InstallView() {
   );
   return (
     <div className={styles.install}>
-      <div className={styles.steps}>
-        <Reveal><StepItem number="01" title={t('step1Title')} headingLevel={2}>{t('step1Text')}</StepItem></Reveal>
-        <Reveal delay={80}><StepItem number="02" title={t('step2Title')} headingLevel={2}>{t('step2Text')}{command(INSTALL)}</StepItem></Reveal>
-        <Reveal delay={160}><StepItem number="03" title={t('step3Title')} headingLevel={2}>{t('step3Text')}{command(DOCTOR)}</StepItem></Reveal>
-        <Reveal delay={240}>
-          <StepItem number="04" title={t('step4Title')} headingLevel={2} last>
-            {t('step4Text')}
-            <div className={styles.cta}><Button href="/create" as={Link} iconRight="arrow-up-right">{t('cta')}</Button></div>
-          </StepItem>
-        </Reveal>
-      </div>
       <div className={styles.aside}>
         <Reveal>
           <Card variant="orange" padding="var(--space-8)" radius="2xl" className="ed-grain">
@@ -44,6 +34,18 @@ export function InstallView() {
         </Reveal>
         <Reveal delay={100}>
           <Accordion items={[1, 2, 3, 4, 5, 6, 7].map(n => ({ title: t(`faq${n}Title` as 'faq1Title'), body: t(`faq${n}Body` as 'faq1Body') }))} />
+        </Reveal>
+      </div>
+      <div className={styles.steps}>
+        <div className={styles.cta}><Button href={RELEASES_URL} variant="outline" iconRight="arrow-up-right">{t('download')}</Button></div>
+        <Reveal><StepItem number="01" title={t('step1Title')} headingLevel={2}>{t('step1Text')}</StepItem></Reveal>
+        <Reveal delay={80}><StepItem number="02" title={t('step2Title')} headingLevel={2}>{t('step2Text')}{command(INSTALL)}</StepItem></Reveal>
+        <Reveal delay={160}><StepItem number="03" title={t('step3Title')} headingLevel={2}>{t('step3Text')}{command(DOCTOR)}</StepItem></Reveal>
+        <Reveal delay={240}>
+          <StepItem number="04" title={t('step4Title')} headingLevel={2} last>
+            {t('step4Text')}
+            <div className={styles.cta}><Button href="/create" as={Link} iconRight="arrow-up-right">{t('cta')}</Button></div>
+          </StepItem>
         </Reveal>
       </div>
     </div>

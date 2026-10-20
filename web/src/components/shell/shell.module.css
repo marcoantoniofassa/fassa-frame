@@ -33,7 +33,7 @@
 .footerColumns a:hover { color: var(--text-accent); }
 .footerCredits { max-width: var(--container-content); margin: var(--space-8) auto 0; padding: 0 var(--gutter); font-size: var(--size-caption); color: var(--text-3); }
 .footerGiant {
-  margin: var(--space-10) 0 -0.08em; text-align: center; font-family: var(--font-display); font-weight: var(--weight-heavy); font-size: var(--size-fluid-footer); line-height: 0.78; letter-spacing: -0.075em; user-select: none;
+  margin: var(--space-10) 0 0; white-space: nowrap; text-align: center; font-family: var(--font-display); font-weight: var(--weight-heavy); font-size: var(--size-fluid-footer); line-height: 0.78; letter-spacing: -0.075em; user-select: none;
   background: linear-gradient(180deg, var(--surface-tile) 0%, var(--bg-page) 85%); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .footerGiant span { -webkit-text-fill-color: var(--accent); }

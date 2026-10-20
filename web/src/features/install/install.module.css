@@ -1,12 +1,12 @@
 /* Installation page. Tokens only. */
-.install { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--space-16); align-items: start; }
+.install { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-16); align-items: start; }
 .steps { border-top: 1px solid var(--line-1); }
 .command { margin-top: var(--space-3-5); }
 .cta { margin-top: var(--space-4); }
 .aside { display: grid; gap: var(--space-6); }
 .kicker { margin: 0 0 var(--space-3-5); font-family: var(--font-mono); font-weight: var(--weight-bold); font-size: var(--size-eyebrow); letter-spacing: 0.16em; color: var(--text-on-accent-2); }
-.title { margin: 0 0 var(--space-4); font-family: var(--font-kinetic); font-weight: var(--weight-regular); font-size: var(--size-5xl); line-height: 0.95; text-transform: uppercase; color: var(--ink-950); }
-.request { margin: 0 0 var(--space-5); padding: var(--space-4); font-family: var(--font-mono); font-weight: var(--weight-semibold); font-size: var(--size-caption); line-height: 1.8; color: var(--fog-50); background: var(--ink-950); border-radius: var(--radius-lg); }
+.title { margin: 0 0 var(--space-4); font-family: var(--font-display); font-weight: var(--weight-heavy); font-size: var(--size-5xl); line-height: 0.95;  color: var(--ink-950); }
+.request { margin: 0 0 var(--space-5); padding: var(--space-4); font-family: var(--font-sans); font-weight: var(--weight-medium); font-size: var(--size-body); line-height: 1.6; color: var(--fog-50); background: var(--ink-950); border-radius: var(--radius-lg); }
 @media (max-width: 960px) {
   .install { grid-template-columns: minmax(0, 1fr); }
 }

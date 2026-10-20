@@ -2,7 +2,7 @@ import { Wordmark } from '@editonny/design-system';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import type { AppLocale, AppPathname } from '@/i18n/routing';
-import { AUTHOR, REPOSITORY_URL } from '@/lib/site';
+import { AUTHOR, REPOSITORY_URL, RELEASES_URL, UPSTREAM_URL } from '@/lib/site';
 import styles from './shell.module.css';
 
 const COLUMNS: Array<['guide' | 'start', Array<[AppPathname, 'create' | 'catalog' | 'examples' | 'install' | 'home']>]> = [
@@ -28,9 +28,9 @@ export async function Footer({ locale }: { locale: AppLocale }) {
           ))}
           <nav aria-label={t('Footer.links')}>
             <h2 className={styles.footerTitle}>Fassa Frame</h2>
-            <a href={REPOSITORY_URL} rel="noopener noreferrer" target="_blank">Editonny upstream <span className="ds-visually-hidden">{t('Common.newTab')}</span></a>
-            <a href={AUTHOR.instagram} rel="author noopener noreferrer" target="_blank">Instagram <span className="ds-visually-hidden">{t('Common.newTab')}</span></a>
-            <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>
+            <a href={REPOSITORY_URL} rel="noopener noreferrer" target="_blank">GitHub <span className="ds-visually-hidden">{t('Common.newTab')}</span></a>
+            <a href={RELEASES_URL}>{t('Footer.download')}</a>
+            <a href={UPSTREAM_URL}>Editonny · Matheus Gomes</a>
           </nav>
         </div>
       </div>

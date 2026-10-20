@@ -6,6 +6,13 @@
 
 <p align="center"><a href="docs/getting-started.md">Começar aqui</a> · <a href="docs/examples.md">Pedidos prontos</a> · <a href="docs/updates.md">Como atualizar</a> · <a href="NOTICE.md">De onde veio</a></p>
 
+<p align="center">
+  <a href="https://github.com/marcoantoniofassa/fassa-frame/actions/workflows/verify.yml"><img src="https://github.com/marcoantoniofassa/fassa-frame/actions/workflows/verify.yml/badge.svg" alt="Verificação automática da Fassa Frame"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/Código-MIT-e8a838?labelColor=17171b" alt="Código sob licença MIT"></a>
+  <a href="docs/installation.md"><img src="https://img.shields.io/badge/Codex-skill-4dc3ff?labelColor=17171b" alt="Skill para Codex"></a>
+  <a href="docs/installation.md"><img src="https://img.shields.io/badge/Claude_Code-skill-e8a838?labelColor=17171b" alt="Skill para Claude Code"></a>
+</p>
+
 ---
 
 ## Você traz a ideia. A Fassa Frame ajuda na edição.
@@ -82,6 +89,8 @@ Código sob [licença MIT](LICENSE.md). Leia também [autoria e atribuição](NO
 <summary><strong>Para quem vai instalar, manter ou contribuir</strong></summary>
 
 - [Instalação e recuperação](docs/installation.md)
+- [Preparação para divulgação](docs/public-launch.md)
+- [Hospedagem do guia](docs/hosting.md)
 - [Arquitetura](docs/architecture.md)
 - [Origem e atualização da base](docs/upstream.md)
 - [Como contribuir](CONTRIBUTING.md)

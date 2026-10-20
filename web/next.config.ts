@@ -23,6 +23,9 @@ const nextConfig: NextConfig = {
   transpilePackages: ['@editonny/design-system'],
   turbopack: { root },
   outputFileTracingRoot: root,
+  outputFileTracingIncludes: {
+    '/*/opengraph-image': ['../skills/editonny/engine/assets/fonts/anton/Anton-Regular.ttf'],
+  },
   ...(staticExport ? {
     output: 'export',
     basePath: '/fassa-frame',

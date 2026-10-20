@@ -1,5 +1,12 @@
 # Novidades
 
+## Em preparação
+
+- Site com a identidade do README: papel claro, preto, âmbar, azul e enquadramentos; tema escuro preservado.
+- Entrada e instalação explicadas para quem trabalha com marketing e comunicação, nos três idiomas do guia.
+- Links de download, créditos e badges corrigidos para distinguir Fassa Frame de sua base Editonny.
+- Revisão desktop/mobile, contraste, navegação, instalação e preparação para hospedagem; divulgação pública continua sob decisão do mantenedor.
+
 ## 0.1.0 — 20/10/2026
 
 Primeira distribuição independente da Fassa Frame, baseada no Editonny de Matheus Gomes.

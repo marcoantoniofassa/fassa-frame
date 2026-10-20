@@ -9,7 +9,7 @@
     },
     "create": {
       "title": "Criar pedido — Fassa Frame",
-      "description": "Preencha um briefing curto e leve um pedido de edição pronto para o Claude Code ou o Codex. Nenhum arquivo sai do seu computador."
+      "description": "Monte um pedido de edição para o Codex ou Claude Code. O guia não recebe vídeos; o assistente executa a edição no seu computador."
     },
     "catalog": {
       "title": "Catálogo de cenas de motion — Fassa Frame",
@@ -44,7 +44,8 @@
     "start": "Começar",
     "credits": "Fassa Frame, de Marco Fassa. Baseado no Editonny, de {name}.",
     "links": "Links do autor e do projeto",
-    "license": "Código aberto sob a licença MIT."
+    "license": "Código aberto sob a licença MIT.",
+    "download": "Baixar e atualizar"
   },
   "Language": {
     "label": "Idioma",
@@ -66,47 +67,28 @@
   },
   "Home": {
     "hero": {
-      "badge": "NOVO",
-      "news": "Edição e motion em um só fluxo, no seu computador",
-      "line1": "Você tem",
-      "line2": "a história.",
-      "line3": "A gente traz",
-      "words": "ritmo.|cortes.|motion.|legendas.|som.",
-      "lead": "Do bruto ao último detalhe. Cortes, legendas, som e motion com a IA que você já usa, e um vídeo pronto para postar.",
+      "badge": "FASSA FRAME",
+      "news": "Para quem tem uma história para contar",
+      "line1": "Sua ideia.",
+      "line2": "Seu olhar.",
+      "line3": "Em vídeo.",
+      "lead": "Transforme gravações em vídeos de produto, conteúdo e treinamento. Você explica a intenção; seu assistente de IA ajuda a editar. Você assiste, ajusta e aprova.",
       "primary": "Criar meu primeiro pedido",
-      "secondary": "Instalar a skill",
-      "local": "100% LOCAL"
-    },
-    "phone": {
-      "alt": "Ilustração de um vídeo vertical sendo editado, não um vídeo renderizado",
-      "hookTop": "Ninguém te contou",
-      "hookBottom": "isso sobre café",
-      "caption": "Primeiro, noventa e quatro graus. Depois, o bloom.",
-      "cuts": "14 cortes",
-      "wordsLost": "0 palavras perdidas",
-      "rendering": "Renderizando",
-      "renderMeta": "1080p · 9:16",
-      "render": "Render",
-      "voice": "VOZ · RUÍDO REMOVIDO",
-      "motion": "Motion",
-      "beforeAfter": "Antes e depois"
-    },
-    "tapes": {
-      "one": "Cortes limpos|Legendas palavra a palavra|Motion|Trilha sob medida|Ruído zero|{scenes} cenas",
-      "two": "9:16|16:9|1:1|4:5|Claude Code|Codex|100% local"
+      "secondary": "Como começar",
+      "local": "VOCÊ DIRIGE"
     },
     "stats": {
       "label": "Fassa Frame em números",
-      "scenes": "cenas de motion no catálogo",
+      "scenes": "cenas visuais para explicar sua ideia",
       "requests": "pedidos prontos para adaptar",
       "formats": "formatos: vertical, quadrado, feed, horizontal",
-      "local": "local. Nada sobe para a nuvem por aqui."
+      "local": "assistentes compatíveis: Codex e Claude Code"
     },
     "bento": {
       "eyebrow": "Tudo em um fluxo",
-      "titleA": "Tudo que um editor faz.",
-      "titleB": "Em uma",
-      "highlight": "conversa.",
+      "titleA": "Recursos para contar melhor.",
+      "titleB": "Com a sua",
+      "highlight": "direção.",
       "lead": "Edição e motion trabalham juntos no seu computador. Você revisa uma amostra antes de finalizar o vídeo inteiro.",
       "cutKicker": "EDITOR / CORTE",
       "cutTitle": "Corte com intenção.",
@@ -116,7 +98,7 @@
       "done": "CORTE · 00:45 ✓",
       "captionsKicker": "LEGENDAS",
       "captionsTitle": "Cada palavra, no tempo.",
-      "captionsText": "Legendas palavra a palavra, pensadas para quem assiste sem som.",
+      "captionsText": "Peça legendas legíveis e confira texto e sincronização antes de publicar.",
       "captionsSample": "Pare de perder quem assiste sem som",
       "sceneGroup": "Universais",
       "sceneName": "Dinheiro subindo",
@@ -125,11 +107,11 @@
       "formatsTitle": "Um vídeo, todo lugar.",
       "formatsText": "Reels, Stories, feed e YouTube a partir do mesmo material.",
       "soundKicker": "SOM",
-      "soundTitle": "Voz limpa. Trilha certa.",
-      "soundText": "Ruído de fundo fora e uma trilha com o clima do vídeo.",
+      "soundTitle": "Som a favor da história.",
+      "soundText": "Ajuste voz, ruído e música conforme o material. Use trilhas que você tem direito de utilizar.",
       "reviewKicker": "REVISÃO",
       "reviewTitle": "Você aprova antes do final.",
-      "reviewText": "A prévia abre no navegador: marque o trecho, diga o que mudar e aprove. A IA renderiza de novo.",
+      "reviewText": "Assista à primeira versão e diga o que mudar. A edição preserva as escolhas aprovadas e você confere o resultado.",
       "beatHook": "Gancho",
       "beatSteps": "Passos",
       "beatCta": "Chamada",
@@ -147,7 +129,7 @@
       "step1Title": "Conte o que quer dizer",
       "step1Text": "Escolha o objetivo, indique a pasta dos vídeos e defina o tom. Não precisa saber usar uma linha do tempo.",
       "step2Title": "Acerte o primeiro corte",
-      "step2Text": "A IA confere o ambiente, trabalha o corte e prepara uma amostra de 8–15 segundos. Você avalia o ritmo e o visual.",
+      "step2Text": "O assistente confere o material e prepara uma amostra representativa. Você avalia a mensagem, o ritmo, o texto e a voz.",
       "step3Title": "Dê o acabamento",
       "step3Text": "Legendas, som e motion ajudam a contar a história. Depois da sua revisão, a IA finaliza e verifica o arquivo."
     },
@@ -161,8 +143,22 @@
       "line1": "Seu próximo vídeo",
       "line2": "começa com",
       "accent": "um pedido.",
-      "text": "Monte o briefing em dois minutos e leve para o Claude Code ou o Codex.",
+      "text": "Escolha um exemplo ou monte um pedido e leve para o Codex ou o Claude Code.",
       "cta": "Vamos criar"
+    },
+    "art": {
+      "label": "IDEIA EM MOVIMENTO",
+      "stage1": "Tem uma história aí.",
+      "stage2": "Dê ritmo. Dê forma.",
+      "stage3": "Sua história. Seu jeito.",
+      "note1": "Conte o que você quer comunicar.",
+      "note2": "Cortes, legendas e movimento.",
+      "note3": "Assista, ajuste e aprove.",
+      "action1": "Conte",
+      "action2": "Construa",
+      "action3": "Refine",
+      "controls": "Explore as etapas",
+      "caption": "Ilustração do processo. Toque nas etapas para explorar."
     }
   },
   "Create": {
@@ -170,7 +166,7 @@
     "titleA": "Da sua ideia",
     "titleB": "ao",
     "highlight": "primeiro corte.",
-    "lead": "Preencha o briefing e leve o pedido para a sua IA. Nenhum arquivo é enviado por aqui.",
+    "lead": "Este guia monta um texto para o seu assistente de IA. A edição acontece depois, no computador; nenhum vídeo é enviado por este formulário.",
     "story": "A história",
     "goalLabel": "O que você quer criar?",
     "goalPlaceholder": "Por exemplo: um tutorial de 45 segundos ensinando a preparar café, com etapas claras.",
@@ -186,7 +182,7 @@
     "outputEyebrow": "Seu pedido, pronto para levar",
     "outputLabel": "Pedido de edição gerado",
     "copy": "Copiar pedido",
-    "hint": "Abra seu agente na pasta do projeto e cole o pedido.",
+    "hint": "Abra o Codex ou o Claude Code no computador, com a Fassa Frame instalada, e cole o pedido.",
     "reset": "Recomeçar",
     "saved": "Seu briefing fica salvo só neste navegador.",
     "sceneLabel": "Cena: {name}",
@@ -235,7 +231,7 @@
     "eyebrow": "Biblioteca visual / Motion",
     "titleA": "Uma ideia.",
     "highlight": "Muitas formas.",
-    "lead": "Cenas para explicar, destacar e dar ritmo. Passe o mouse ou foque um cartão para ver cada uma se mexer.",
+    "lead": "Escolha um recurso visual para explicar, destacar ou dar ritmo. Abra um cartão para ver os detalhes e adicioná-lo ao pedido.",
     "search": "Buscar cenas",
     "searchPlaceholder": "Tente: comparação, título, passos…",
     "count": "{count, plural, one {# cena} other {# cenas}}",
@@ -282,11 +278,11 @@
   },
   "Install": {
     "eyebrow": "Prepare seu estúdio / Instalação",
-    "titleA": "Uma skill.",
-    "highlight": "Seu jeito de criar.",
-    "lead": "Edição e cenas visuais juntas. Uma skill portátil para Codex e Claude Code, executada no seu computador.",
-    "step1Title": "Abra a pasta do projeto",
-    "step1Text": "Abra o checkout ou pacote Fassa Frame na pasta que contém install.py. Ainda não há download público do fork. Prepare Python 3.9+, uv, FFmpeg/ffprobe, Node.js 22.13+ ou 24+ e seu agente de IA.",
+    "titleA": "Seu primeiro vídeo",
+    "highlight": "começa aqui.",
+    "lead": "A Fassa Frame funciona dentro do Codex ou Claude Code no computador. Peça ajuda ao seu assistente para instalar uma vez; depois, converse para editar.",
+    "step1Title": "Baixe o projeto",
+    "step1Text": "Abra a versão mais recente no GitHub e baixe o arquivo fassa-frame-plugin. Extraia o ZIP e abra a pasta que contém install.py. Enquanto o repositório estiver privado, o download exige acesso. Requisitos: Python 3.9+, uv, FFmpeg/ffprobe e Node.js 22.13+ ou 24+.",
     "step2Title": "Registre a skill",
     "step2Text": "O instalador compartilha um único pacote entre os dois agentes. Para usar só um, troque both por codex ou claude. Depois, reinicie o agente para ele encontrar a skill.",
     "step3Title": "Confira antes de editar",
@@ -297,18 +293,18 @@
     "copy": "Copiar",
     "copied": "Copiado",
     "commandCopied": "Comando copiado.",
-    "askKicker": "PREFERE PEDIR À IA?",
-    "askTitle": "A instalação também começa com um pedido.",
-    "askRequest": "Instale o Fassa Frame deste repositório para Codex e Claude Code usando o instalador do projeto. Confira as dependências com o diagnóstico, preserve minhas configurações e explique o que falta antes de baixar ferramentas ou usar serviços pagos.",
+    "askKicker": "COMECE POR ESTE PEDIDO",
+    "askTitle": "Deixe seu assistente preparar tudo.",
+    "askRequest": "Quero instalar a Fassa Frame de https://github.com/marcoantoniofassa/fassa-frame para o assistente que estou usando. Leia README.md e docs/installation.md, confira os requisitos e use o instalador do projeto. Preserve minhas configurações e projetos, confirme o acesso ao repositório e avise antes de usar serviços pagos. Ao terminar, confira se a skill está disponível e me ajude a fazer o primeiro pedido.",
     "askCopy": "Copiar pedido de instalação",
     "askCopied": "Pedido de instalação copiado.",
     "copyFallback": "Não foi possível copiar aqui. O texto está selecionado: use Ctrl+C ou ⌘C.",
-    "faq1Title": "Skill global ou plugin?",
-    "faq1Body": "O instalador registra uma cópia em ~/.local/share/fassa-frame, com links em ~/.agents/skills/fassa-frame para o Codex e em ~/.claude/skills/fassa-frame para o Claude Code. Escolha um único método de instalação.",
-    "faq2Title": "Usar só um agente",
-    "faq2Body": "Rode python3 install.py --target codex ou python3 install.py --target claude e comece uma nova conversa. O registro é local: não sincroniza ferramentas nem arquivos com sessões na nuvem ou com o celular.",
+    "faq1Title": "O que é uma skill?",
+    "faq1Body": "É um conjunto de instruções e ferramentas que seu assistente usa para uma tarefa. A Fassa Frame ensina um fluxo de edição de vídeo ao Codex ou Claude Code. Você precisa de um desses assistentes no computador; este site serve como guia.",
+    "faq2Title": "Preciso dos dois assistentes?",
+    "faq2Body": "Não. Use o que já conhece: Codex ou Claude Code. A instalação pode ser feita só para ele. Depois de instalar, abra uma nova conversa. O pacote funciona no computador em que foi instalado.",
     "faq3Title": "Atualizar com segurança",
-    "faq3Body": "Rode o instalador de novo. A versão anterior vai para ~/.local/share/fassa-frame-backups/ e os arquivos .env da instalação são preservados. Mantenha vídeos e projetos fora da pasta da skill e confira a atualização antes de apagar qualquer backup.",
+    "faq3Body": "Baixe a nova versão na página de versões e rode o instalador novamente. Ele guarda um backup da instalação anterior e preserva os arquivos .env. Deixe seus vídeos e projetos fora da pasta da skill. Confira a nova versão antes de apagar backups.",
     "faq4Title": "Remover os registros dos agentes",
     "faq4Body": "Rode python3 install.py --target both --uninstall. Adicione --dry-run para ver os destinos antes. Só os links dos agentes são removidos; o pacote compartilhado, as configurações, os backups, os vídeos e os projetos continuam.",
     "faq5Title": "Carregar como plugin do Claude Code",
@@ -316,6 +312,7 @@
     "faq6Title": "O que roda localmente? O que tem custo?",
     "faq6Body": "Este guia monta pedidos e mostra exemplos e cenas. Ele não envia nem edita vídeos no navegador. Seu agente pode exigir assinatura. Geradores externos opcionais podem cobrar; o pedido padrão pede sua autorização antes de usá-los ou de enviar mídia.",
     "faq7Title": "Como revisar a primeira amostra?",
-    "faq7Body": "Escute se há palavras cortadas, confira se as legendas estão corretas e veja se o enquadramento mantém a pessoa. Peça ajustes antes de finalizar tudo."
+    "faq7Body": "Escute se há palavras cortadas, confira se as legendas estão corretas e veja se o enquadramento mantém a pessoa. Peça ajustes antes de finalizar tudo.",
+    "download": "Abrir a versão mais recente"
   }
 }

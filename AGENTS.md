@@ -32,7 +32,7 @@ Fassa Frame is a fork of Editonny by Matheus Gomes. Keep LICENSE.md and third-pa
 
 ## Design system
 
-`DESIGN.md` is the versioned visual contract and the source of truth for tokens; `design-system/tokens/` implements it and `npm test` fails when they drift. Read it before UI work. New components and UI come from `@editonny/design-system` (`design-system/components/index.ts`), created as described in `design-system/README.md`. Never hard-code colors, font families or sizes, spacing, or radii; use `var(--…)` tokens. The `design/tokens` lint rule, the raw-literal rules, and `npm run typecheck` enforce this. The web app imports `@editonny/design-system/styles.css`, defaults to the dark studio theme, and offers light paper through a saved preference. `design-system/reference/` holds frozen export pages for comparison only.
+`DESIGN.md` is the versioned visual contract and the source of truth for tokens; `design-system/tokens/` implements it and `npm test` fails when they drift. Read it before UI work. New components and UI come from `@editonny/design-system` (`design-system/components/index.ts`), created as described in `design-system/README.md`. Never hard-code colors, font families or sizes, spacing, or radii; use `var(--…)` tokens. The `design/tokens` lint rule, the raw-literal rules, and `npm run typecheck` enforce this. The web app imports `@editonny/design-system/styles.css`, defaults to light paper, and offers dark studio through a saved preference. `design-system/reference/` holds frozen export pages for comparison only.
 
 ## Verify
 

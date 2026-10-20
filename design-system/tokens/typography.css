@@ -46,7 +46,7 @@
   --size-fluid-section: clamp(44px, 5vw, 72px);
   --size-fluid-stat: clamp(64px, 7vw, 108px);
   --size-fluid-callout: clamp(72px, 9vw, 150px);
-  --size-fluid-footer: clamp(120px, 21vw, 330px);
+  --size-fluid-footer: clamp(48px, 15vw, 240px);
   --size-fluid-headline: clamp(36px, 4.8vw, 72px);
 
   --leading-mega: 0.86;

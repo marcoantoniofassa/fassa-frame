@@ -112,3 +112,9 @@
 .ds-wordmark[data-animated="true"] .ds-wordmark__icon { transform: rotate(-8deg) scale(1.06); }
 .ds-wordmark[data-animated="true"] .ds-wordmark__icon { animation: ed-float-r 3s var(--ease-in-out) infinite; }
 .ds-wordmark:is(:hover, [data-force~="hover"]) .ds-wordmark__dot { transform: translateY(calc(var(--wm-size, 30px) * -0.18)); }
+
+/* Crop corners connect the wordmark to the editorial frame artwork. */
+.ds-wordmark__icon { position: relative; color: var(--wm-text); background: transparent; border-radius: 0; box-shadow: none; }
+.ds-wordmark__icon::before, .ds-wordmark__icon::after { content: ''; position: absolute; width: 70%; height: 70%; border: 3px solid currentColor; }
+.ds-wordmark__icon::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.ds-wordmark__icon::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }

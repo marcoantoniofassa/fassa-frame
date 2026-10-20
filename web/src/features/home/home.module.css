@@ -1,62 +1,23 @@
 /* Home page, ported from the design-system guide template. Tokens only. */
 .hero { position: relative; overflow: hidden; padding: var(--space-10) var(--gutter) var(--space-20); }
-.heroGrid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--space-10); align-items: center; max-width: var(--container-content); margin: 0 auto; }
+.heroGrid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-10); align-items: center; max-width: var(--container-content); margin: 0 auto; }
 .heroNews {
   display: inline-flex; align-items: center; gap: var(--space-2-5); margin-bottom: var(--space-7); padding: var(--space-1-5) var(--space-3-5) var(--space-1-5) var(--space-1-5);
   font-weight: var(--weight-semibold); font-size: var(--size-small); color: var(--text-label); background: var(--surface-glass); border: 1px solid var(--line-2); border-radius: var(--radius-pill);
   -webkit-backdrop-filter: blur(var(--blur-backdrop)); backdrop-filter: blur(var(--blur-backdrop)); animation: ed-fade-up 0.7s var(--ease-out) both;
 }
-.heroTitle { margin: 0 0 var(--space-7); font-family: var(--font-display); font-weight: var(--weight-heavy); font-size: var(--size-fluid-hero); line-height: 0.9; letter-spacing: -0.06em; }
+.heroTitle { margin: 0 0 var(--space-7); font-family: var(--font-display); font-weight: var(--weight-heavy); font-size: var(--size-fluid-page); line-height: 1; letter-spacing: -0.055em; }
 .heroTitle > span { display: block; animation: ed-word-in 0.9s var(--ease-out) both; }
 .heroTitle > span:nth-child(2) { animation-delay: 0.1s; }
 .heroTitle > span:nth-child(3) { animation-delay: 0.2s; }
 .heroTitle > span:nth-child(4) { margin-top: 0.06em; animation-delay: 0.3s; }
-.heroMuted { color: var(--text-2); }
+.heroMuted { color: var(--text-1); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.12em; text-decoration-thickness: 0.08em; }
 .heroLead { max-width: 460px; margin: 0 0 var(--space-8); font-weight: var(--weight-medium); font-size: var(--size-lg); line-height: 1.55; color: var(--text-2); animation: ed-fade-up 0.8s var(--ease-out) 0.5s both; }
 .heroActions { display: flex; flex-wrap: wrap; gap: var(--space-3); animation: ed-fade-up 0.8s var(--ease-out) 0.6s both; }
 .hero :global(.ds-button[data-variant="glass"]) { --button-bg: var(--surface-overlay); --button-bg-hover: var(--surface-glass-strong); --button-fg: var(--text-1); --button-line: var(--line-2); }
 .heroMeta { display: flex; flex-wrap: wrap; gap: var(--space-4); margin: var(--space-7) 0 0; padding: 0; list-style: none; font-family: var(--font-mono); font-weight: var(--weight-semibold); font-size: var(--size-caption); letter-spacing: 0.08em; color: var(--text-3); animation: ed-fade-in 1s 0.9s both; }
 .heroMeta b { color: var(--text-label); }
 .heroLocal { color: var(--accent-2-text); }
-
-.phone { position: relative; width: 340px; max-width: 100%; margin: 0 auto; animation: ed-fade-up 1s var(--ease-out) 0.2s both; }
-.phoneGlow { position: absolute; inset: -12% -30%; background: radial-gradient(closest-side, var(--accent-halo), transparent); filter: blur(30px); }
-.phoneBody { position: relative; aspect-ratio: 9 / 19; padding: var(--space-2-5); background: var(--ink-950); border: 1px solid var(--line-strong); border-radius: var(--radius-device); box-shadow: var(--shadow-lg); transform: rotate(3deg); }
-.phoneScreen { position: relative; height: 100%; overflow: hidden; border-radius: var(--radius-device-screen); background: var(--media-ink); }
-.phoneImage { object-fit: cover; animation: ed-kenburns 12s var(--ease-in-out) infinite alternate; }
-.phoneScrim { position: absolute; inset: 0; background: linear-gradient(180deg, var(--media-scrim-top), transparent 30%, transparent 55%, var(--media-scrim-bottom)); }
-.phoneNotch { position: absolute; top: 12px; left: 50%; width: 96px; height: 26px; transform: translateX(-50%); border-radius: var(--radius-pill); background: var(--media-ink); }
-.phoneHook { position: absolute; top: 56px; left: 18px; right: 18px; }
-.phoneHookBox { position: relative; display: inline-block; padding: var(--space-half) var(--space-2); font-family: var(--font-kinetic); font-size: var(--size-h3); line-height: 1; color: var(--ink-950); text-transform: uppercase; transform: rotate(-3deg); }
-.phoneHookBox span:last-child { position: relative; }
-.phoneHookSweep { position: absolute; inset: 0; background: var(--orange-500); transform-origin: left; animation: ed-sweep 0.9s var(--ease-snap) 0.6s both; }
-.phoneHookLine { margin-top: var(--space-1-5); font-family: var(--font-kinetic); font-size: var(--size-h3); line-height: 1; color: var(--on-media); text-transform: uppercase; animation: ed-word-in 0.7s var(--ease-out) 1.1s both; }
-.phoneCaption { position: absolute; left: 14px; right: 14px; bottom: 96px; }
-.phoneControls { position: absolute; left: 16px; right: 16px; bottom: 22px; display: flex; align-items: center; gap: var(--space-2-5); }
-.phonePause { display: grid; place-items: center; width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--orange-500); color: var(--ink-950); }
-.phoneWave { flex: 1; }
-
-.float { position: absolute; z-index: 3; animation: ed-float 4s var(--ease-in-out) var(--delay) infinite; }
-.float[data-tilt="true"] { animation-name: ed-float-r; }
-.float[data-position="top-left"] { top: 70px; left: -150px; }
-.float[data-position="mid-right"] { top: 250px; right: -140px; }
-.float[data-position="bottom-left"] { bottom: 120px; left: -170px; width: 210px; }
-.float[data-position="bottom-right"] { bottom: 30px; right: -110px; }
-.floatCard {
-  padding: var(--space-3); color: var(--text-1); background: var(--surface-float); border: 1px solid var(--line-2); border-radius: var(--radius-lg); box-shadow: var(--shadow-float);
-  -webkit-backdrop-filter: blur(var(--blur-glass)); backdrop-filter: blur(var(--blur-glass)); animation: ed-scale-in 0.8s var(--ease-spring) calc(0.5s + var(--delay)) both;
-}
-.floatRow { display: flex; align-items: center; gap: var(--space-2-5); }
-.floatTile { display: grid; place-items: center; width: 38px; height: 38px; border-radius: var(--radius-sm); background: var(--accent); color: var(--text-on-accent); }
-.floatTitle { font-weight: var(--weight-heavy); font-size: var(--size-body); }
-.floatMeta { font-family: var(--font-mono); font-weight: var(--weight-semibold); font-size: var(--size-eyebrow); color: var(--text-2); }
-.floatMeta[data-tone="live"] { color: var(--accent-2-text); }
-.floatLabel { margin-bottom: var(--space-2); font-family: var(--font-mono); font-weight: var(--weight-bold); font-size: var(--size-2xs); letter-spacing: 0.14em; color: var(--text-2); }
-
-.tapes { position: relative; height: 210px; overflow: hidden; margin-bottom: var(--space-10); }
-.tapeOne, .tapeTwo { position: absolute; left: -40px; right: -40px; }
-.tapeOne { top: 30px; }
-.tapeTwo { top: 118px; }
 
 .section { max-width: var(--container-content); margin: 0 auto; padding: 0 var(--gutter) var(--space-28); }
 .sectionHead { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-10); margin-bottom: var(--space-10); }
@@ -104,16 +65,15 @@
 .startCard { width: 100%; height: 100%; min-height: 280px; }
 
 .callout { position: relative; overflow: hidden; padding: var(--space-16); color: var(--ink-950); background: var(--orange-500); border-radius: var(--radius-3xl); }
-.calloutTitle { position: relative; z-index: 2; margin: 0; font-family: var(--font-kinetic); font-weight: var(--weight-regular); font-size: var(--size-fluid-callout); line-height: 0.94; letter-spacing: -0.005em; text-transform: uppercase; }
+.calloutTitle { position: relative; z-index: 2; margin: 0; font-family: var(--font-display); font-weight: var(--weight-heavy); font-size: var(--size-fluid-section); line-height: 0.94; letter-spacing: -0.005em; text-transform: uppercase; }
 .calloutTitle > span { display: block; }
-.calloutAccent { color: var(--fog-50); }
+.calloutAccent { color: var(--ink-950); }
 .calloutRow { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-6); margin-top: var(--space-10); }
 .calloutRow p { max-width: 420px; margin: 0; font-weight: var(--weight-semibold); font-size: var(--size-body-lg); line-height: 1.5; }
-.calloutRing { position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; border-radius: 50%; border: 2px solid var(--line-on-accent); animation: ed-ring 3s var(--ease-out) infinite; }
+.calloutRing { position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; border-radius: 50%; border: 2px solid var(--line-on-accent); animation: ed-ring 3s var(--ease-out) 1; }
 
 @media (max-width: 960px) {
   .heroGrid, .how, .tileWide > :global(.ds-card__content) { grid-template-columns: minmax(0, 1fr); }
-  .float { display: none; }
   .stats, .grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bento > * { grid-column: span 12 !important; }
   .sectionHead { flex-direction: column; align-items: flex-start; }
@@ -121,11 +81,40 @@
 }
 @media (max-width: 560px) {
   .hero, .section { padding-left: var(--space-4); padding-right: var(--space-4); }
-  .stats, .grid3 { grid-template-columns: minmax(0, 1fr); }
+  .grid3 { grid-template-columns: minmax(0, 1fr); }
   .callout { padding: var(--space-8) var(--space-6); }
   /* Every other ruler label, so the 5-second ticks stay readable on phones. */
   .tileWide :global(.ds-timeline__ruler span:nth-child(even)) { visibility: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .phoneImage, .float, .floatCard, .calloutRing { animation: none; }
+  .calloutRing { animation: none; }
 }
+
+/* Editorial frame: the same paper, ink, amber and sky artwork as the README. */
+.art { min-width: 0; padding: var(--space-3); }
+.artFrame { position: relative; isolation: isolate; overflow: hidden; aspect-ratio: 1; background: var(--ink-800); color: var(--fog-50); border: var(--space-2) solid var(--surface-card); outline: 2px solid var(--text-1); }
+.artCircle { position: absolute; z-index: -1; width: 90%; aspect-ratio: 1; border-radius: 50%; background: var(--sky-400); top: -25%; right: -20%; transition: transform var(--dur-slow) var(--ease-out); }
+.artDisc { position: absolute; z-index: -1; width: 80%; aspect-ratio: 1; border-radius: 50%; background: var(--orange-500); bottom: -45%; left: -20%; transition: transform var(--dur-slow) var(--ease-out); }
+.artLines { position: absolute; z-index: -1; right: 0; bottom: 0; width: 45%; height: 40%; border-left: 2px solid var(--fog-50); border-right: 2px solid var(--fog-50); transform: skew(25deg); }
+.artFrame[data-stage="1"] .artCircle { transform: translate(-20%, 30%); }
+.artFrame[data-stage="1"] .artDisc { transform: translate(60%, -15%); }
+.artFrame[data-stage="2"] .artCircle { transform: translate(0, 70%); }
+.artFrame[data-stage="2"] .artDisc { transform: translate(0, -80%); }
+.artCopy { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-5); padding: var(--space-8); animation: ed-fade-in var(--dur-base) both; }
+.artNumber { padding: var(--space-2); background: var(--ink-800); font-size: var(--size-caption); font-weight: var(--weight-bold); letter-spacing: 0.08em; }
+.artCopy p { max-width: 100%; margin: var(--space-4) 0 0; padding: var(--space-2); background: var(--ink-800); font-family: var(--font-display); font-size: var(--size-5xl); font-weight: var(--weight-heavy); line-height: 1.05; letter-spacing: -0.04em; }
+.artNote { padding: var(--space-2); max-width: 100%; background: var(--ink-800); font-size: var(--size-body); line-height: 1.5; }
+.artSteps { background: var(--surface-card); display: flex; gap: var(--space-2); margin-top: var(--space-5); }
+.artSteps > button { flex: 1; background: var(--surface-card); color: var(--text-1); }
+.artCaption { margin: var(--space-3) 0 0; font-size: var(--size-caption); color: var(--text-2); line-height: 1.5; }
+@media (max-width: 560px) {
+  .artCopy { padding: var(--space-4); gap: var(--space-3); }
+  .artCopy p { font-size: var(--size-4xl); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .artCircle, .artDisc { transition: none; }
+  .artCopy { animation: none; }
+}
+/* Solid per-option surfaces keep text contrast stable at every animation frame. */
+.artSteps :global(.ds-segmented__indicator) { display: none; }
+.artSteps > button[aria-checked="true"] { background: var(--accent); color: var(--text-on-accent); }

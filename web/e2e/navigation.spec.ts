@@ -61,14 +61,14 @@ test('the mobile menu opens as a dialog and closes with Escape', async ({ page, 
   await expect(dialog).toBeHidden();
 });
 
-test('the theme toggle switches to light and survives a reload', async ({ page }) => {
+test('the theme toggle switches to dark and survives a reload', async ({ page }) => {
   await page.goto('/en');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await page.getByRole('button', { name: 'Switch to the dark theme' }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await page.getByRole('button', { name: 'Switch to the light theme' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
   await page.reload();
-  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-  await expect(page.getByRole('button', { name: 'Switch to the dark theme' })).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.getByRole('button', { name: 'Switch to the light theme' })).toBeVisible();
 });
 
 test('the language list stays inside a phone screen', async ({ page, isMobile }) => {

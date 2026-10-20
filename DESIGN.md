@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: fassa-frame
-description: Studio visual language for Fassa Frame's guide, edit preview, landing surfaces, and design-system showcase. Dark studio is the default theme; light paper is the alternative theme visitors can choose.
+description: Studio visual language for Fassa Frame's guide, edit preview, landing surfaces, and design-system showcase. The public guide opens in light paper; dark studio remains a saved visitor preference.
 colors:
   ink-950: "#050506"
   ink-900: "#0b0b0d"
@@ -73,7 +73,7 @@ colors:
   error: "{colors.rec-400}"
   light-surface: "{colors.paper-100}"
   light-on-surface: "{colors.paper-900}"
-  light-secondary: "{colors.lime-400}"
+  light-secondary: "{colors.sky-400}"
   light-error: "{colors.crimson-700}"
 typography:
   display:
@@ -286,12 +286,12 @@ This file is the visual contract and the source of truth for tokens. The YAML fr
 
 ## Overview
 
-A local video studio directed through conversation. The interface speaks like a calm editing director: direct, honest about what it does, and focused on the next decision. Visually it is solid color plus purposeful motion — near-black studio surfaces, saturated orange for the one main action, electric volt for live state and focus, and sun for caption highlights. No brown, sepia, or muddy gradients; light is an effect, not a UI background.
+A local video studio directed through conversation. The interface speaks like a calm editing director: direct, honest about what it does, and focused on the next decision. Visually it is solid color plus purposeful motion — paper surfaces, ink typography, amber for the main action, sky blue for artwork and an accessible blue for focus; dark studio remains available. No brown, sepia, or muddy gradients; light is an effect, not a UI background.
 
 Two themes share every component:
 
 - **Dark studio** (default, `:root` or `data-theme="dark"`): the export's v2 language for the preview, landing surfaces, and showcase.
-- **Light paper** (`data-theme="light"`): the editorial palette — paper, ink, olive, and lime — with the same orange brand accent. The guide in `web/` renders in the dark studio theme by default and switches to light paper through a saved visitor preference.
+- **Light paper** (`data-theme="light"`): the editorial palette — paper, ink, amber, and sky blue — with the same orange brand accent. The guide in `web/` renders in light paper by default and switches to dark studio through a saved visitor preference.
 
 ## Colors
 
@@ -301,11 +301,11 @@ Primitives never change with the theme; components consume only semantic roles, 
 |---|---|---|---|
 | `--bg-page` / `--bg-deep` | ink-900 / ink-950 | paper-100 / paper-200 | Page and top bars |
 | `--surface-card` / `--surface-raised` / `--surface-tile` | ink-800 / ink-700 / ink-600 | paper-50 / paper-0 / paper-200 | Panels, raised items, tool tiles |
-| `--surface-well` / `--surface-selected` | ink-850 / ink-700 | paper-50 / olive-100 | Fields, selected choices |
+| `--surface-well` / `--surface-selected` | ink-850 / ink-700 | paper-50 / paper-200 | Fields, selected choices |
 | `--line-1` / `--line-2` / `--line-strong` | white 7% / 12% / 22% | paper-300 / 400 / 500 | Hairlines and borders |
-| `--text-1` / `--text-2` / `--text-3` | fog-50 / fog-400 / fog-500 | paper-900 / 700 / 600 | Primary, secondary, tertiary text |
+| `--text-1` / `--text-2` / `--text-3` | fog-50 / fog-400 / fog-500 | ink-800 / ink-400 / paper-600 | Primary, secondary, tertiary text |
 | `--accent` / `--text-accent` | orange-500 / orange-500 | orange-500 / orange-700 | Main action, accent text |
-| `--accent-2` / `--focus-ring` | volt-400 / volt-400 | lime-400 / olive-700 | Live, success, focus |
+| `--accent-2` / `--focus-ring` | volt-400 / volt-400 | sky-400 / azure-700 | Live, success, focus |
 | `--success` `--warning` `--danger` `--info` | volt, sun, rec, sky | olive-700, amber-700, crimson-700, azure-700 | Status text and outlines |
 
 - Orange carries black text (`--text-on-accent`), never white. One primary orange action per view.
@@ -378,3 +378,9 @@ Commands, code, and source text are English (see `AGENTS.md`); the guide's inter
 - Change a token in this front matter and in the token CSS together; `tests/design-system.test.mjs` checks primitives, radii, and spacing.
 - Fonts are the engine's bundled OFL/Apache files, loaded by the web app with `next/font` and exposed to the tokens as `--font-*-face`; footage stills and 3D objects are referenced from the skill rather than copied.
 - The showcase at `/design-system` (web app route) renders every component, state, and the preview template in both themes.
+
+## Fassa Frame editorial identity (2026-10-20)
+
+The public guide and README share a paper canvas, ink typography, amber actions, sky-blue artwork and paired crop corners. Figtree carries the main headings. Keep the first visit practical: what it does, a useful example, then an assisted setup request. The hero is an original illustration with visitor-controlled stages, not a product recording. Preserve an explicit dark-theme preference. Avoid absolute claims about privacy, edit quality or automatic publication; explain the assistant and optional external services in setup.
+
+The Fassa Frame footer wordmark uses `--size-fluid-footer: clamp(48px, 15vw, 240px)` to keep the full name on one line on mobile and desktop.

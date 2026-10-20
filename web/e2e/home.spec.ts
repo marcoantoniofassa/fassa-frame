@@ -4,11 +4,11 @@ test('the English home presents the guide and its real numbers', async ({ page }
   await page.goto('/en');
   await expect(page).toHaveTitle('Fassa Frame: intent-led editing');
   const heading = page.getByRole('heading', { level: 1 });
-  await expect(heading).toContainText('You have');
-  await expect(heading).toContainText('the story.');
+  await expect(heading).toContainText('Your idea.');
+  await expect(heading).toContainText('Your vision.');
   await expect(page.getByLabel('145', { exact: true })).toBeVisible();
   await expect(page.getByLabel('54', { exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { level: 2, name: /Everything an editor does/ })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: /Tools for a clearer story/ })).toBeVisible();
 });
 
 test('home calls to action lead to the localized pages', async ({ page }) => {
@@ -16,7 +16,7 @@ test('home calls to action lead to the localized pages', async ({ page }) => {
   await page.getByRole('link', { name: 'Criar meu primeiro pedido' }).click();
   await expect(page).toHaveURL(/\/pt-br\/criar$/);
   await page.goto('/es');
-  await page.getByRole('link', { name: 'Instalar la skill' }).click();
+  await page.getByRole('link', { name: 'Cómo empezar' }).click();
   await expect(page).toHaveURL(/\/es\/instalacion$/);
 });
 
@@ -33,4 +33,15 @@ test('reduced motion keeps every section readable', async ({ browser }) => {
   await expect(page.getByRole('heading', { level: 2, name: /Menos operaciones/ })).toBeVisible();
   await expect(page.getByText('Dale el acabado')).toBeVisible();
   await context.close();
+});
+
+
+test('the editorial cover is interactive and keeps the visitor in control', async ({ page }) => {
+  await page.goto('/pt-br');
+  await expect(page.getByText('Tem uma história aí.')).toBeVisible();
+  await page.getByRole('radio', { name: 'Construa', exact: true }).click();
+  await expect(page.getByText('Dê ritmo. Dê forma.')).toBeVisible();
+  await page.getByRole('radio', { name: 'Refine', exact: true }).click();
+  await expect(page.getByText('Sua história. Seu jeito.')).toBeVisible();
+  await expect(page.getByRole('radio', { name: 'Refine', exact: true })).toHaveAttribute('aria-checked', 'true');
 });

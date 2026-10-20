@@ -1,4 +1,4 @@
-import { Button, Card, Counter, Eyebrow, Highlight, KineticCaption, Marquee, PromptCard, Reveal, SceneCard, StepItem, Waveform } from '@editonny/design-system';
+import { Button, Card, Counter, Eyebrow, Highlight, KineticCaption, PromptCard, Reveal, SceneCard, StepItem, Waveform } from '@editonny/design-system';
 import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import type { Example } from '@/features/examples/examples';
@@ -6,19 +6,9 @@ import { Link } from '@/i18n/navigation';
 import { CutDemo, FormatDemo, ReviewDemo } from './Demos';
 import styles from './home.module.css';
 
-export function Tapes({ scenes }: { scenes: number }) {
-  const t = useTranslations('Home.tapes');
-  return (
-    <div className={styles.tapes} aria-hidden="true">
-      <Marquee tone="orange" size={58} rotate={-3} speed={34} items={t('one', { scenes }).split('|')} className={styles.tapeOne} />
-      <Marquee tone="volt" size={40} reverse rotate={2.5} speed={28} items={t('two').split('|')} className={styles.tapeTwo} />
-    </div>
-  );
-}
-
 export function Stats({ scenes, requests }: { scenes: number; requests: number }) {
   const t = useTranslations('Home.stats');
-  const stats = [[scenes, '', t('scenes'), 'accent'], [requests, '', t('requests'), 'plain'], [4, '', t('formats'), 'plain'], [100, '%', t('local'), 'live']] as const;
+  const stats = [[scenes, '', t('scenes'), 'accent'], [requests, '', t('requests'), 'plain'], [4, '', t('formats'), 'plain'], [2, '', t('local'), 'live']] as const;
   return (
     <ul className={`${styles.section} ${styles.stats}`} aria-label={t('label')}>
       {stats.map(([value, suffix, label, tone], i) => (
@@ -44,7 +34,7 @@ function TileHead({ kicker, title, text, dark }: { kicker: string; title: string
 }
 
 function Tile({ span, variant = 'surface', padding = 'var(--space-7)', className = '', children }: { span: number; variant?: 'surface' | 'orange' | 'volt'; padding?: string; className?: string; children: ReactNode }) {
-  return <Card spotlight lift padding={padding} radius="2xl" variant={variant} className={`${styles.tile} ${className}`} style={{ gridColumn: `span ${span}` }}>{children}</Card>;
+  return <Card padding={padding} radius="2xl" variant={variant} className={`${styles.tile} ${className}`} style={{ gridColumn: `span ${span}` }}>{children}</Card>;
 }
 
 export function Bento() {

@@ -14,7 +14,7 @@ import './globals.css';
 
 export const metadata: Metadata = { metadataBase: SITE_URL };
 
-export const viewport: Viewport = { themeColor: BRAND.ink900, colorScheme: 'dark light' };
+export const viewport: Viewport = { themeColor: BRAND.paper100, colorScheme: 'light dark' };
 
 export function generateStaticParams() {
   return localeParams();
@@ -24,7 +24,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   const locale = resolveLocale((await params).locale);
   if (!hasLocale(routing.locales, locale)) notFound();
   return (
-    <html lang={locale} data-theme="dark" className={fontVariables} suppressHydrationWarning>
+    <html lang={locale} data-theme="light" className={fontVariables} suppressHydrationWarning>
       <head><ThemeScript /></head>
       <body>
         <ClientMessages groups={SHELL_MESSAGES}>
