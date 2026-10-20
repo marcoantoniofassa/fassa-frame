@@ -1,0 +1,14 @@
+{
+  "name": "fassa-frame",
+  "version": "0.1.0",
+  "description": "Intent-led local video editing. Fassa Hub fork of Editonny by Matheus Gomes.",
+  "author": {
+    "name": "Marco Fassa"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Fassa Frame",
+    "shortDescription": "Edição guiada por intenção."
+  },
+  "license": "MIT"
+}

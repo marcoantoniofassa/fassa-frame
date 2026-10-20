@@ -1,0 +1,5 @@
+interface:
+  display_name: "Fassa Frame"
+  short_description: "Edição guiada por intenção, para cada vídeo"
+  brand_color: "#E8A838"
+  default_prompt: "Use $fassa-frame para editar meus vídeos conforme material, objetivo, público, destino, identidade e intenção editorial. Preserve os originais e as escolhas aprovadas; use as técnicas adequadas e confira o resultado."

@@ -1,0 +1,68 @@
+/* editonny typography tokens. Mirrors DESIGN.md. The --font-*-face variables come from the app's font loader; the
+   quoted family names are the fallback when a page loads the font files itself. */
+:root {
+  --font-sans: var(--font-figtree-face, "Figtree"), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-figtree-face, "Figtree"), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-kinetic: var(--font-anton-face, "Anton"), Impact, "Arial Narrow", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  /* Lettering used inside rendered videos */
+  --font-caption-impact: var(--font-anton-face, "Anton"), Impact, sans-serif;
+  --font-caption-clean: var(--font-montserrat-face, "Montserrat"), var(--font-sans);
+  --font-caption-hand: var(--font-caveat-face, "Caveat"), cursive;
+  --font-caption-marker: var(--font-marker-face, "Permanent Marker"), cursive;
+  /* Paper editorial surface (public guide): system sans with serif emphasis */
+  --font-editorial: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+  --weight-black: 900;
+
+  --size-mega: 160px;
+  --size-display: 112px;
+  --size-h1: 80px;
+  --size-h2: 56px;
+  --size-5xl: 48px;
+  --size-4xl: 40px;
+  --size-h3: 32px;
+  --size-3xl: 30px;
+  --size-2xl: 26px;
+  --size-xl: 24px;
+  --size-h4: 22px;
+  --size-lg: 20px;
+  --size-body-lg: 18px;
+  --size-md: 16px;
+  --size-body: 15px;
+  --size-ui: 14px;
+  --size-small: 13px;
+  --size-caption: 12px;
+  --size-eyebrow: 11px;
+  --size-2xs: 10px;
+  --size-fluid-hero: clamp(60px, 7.6vw, 124px);
+  --size-fluid-page: clamp(56px, 6.4vw, 100px);
+  --size-fluid-section: clamp(44px, 5vw, 72px);
+  --size-fluid-stat: clamp(64px, 7vw, 108px);
+  --size-fluid-callout: clamp(72px, 9vw, 150px);
+  --size-fluid-footer: clamp(120px, 21vw, 330px);
+  --size-fluid-headline: clamp(36px, 4.8vw, 72px);
+
+  --leading-mega: 0.86;
+  --leading-tight: 0.94;
+  --leading-snug: 1.08;
+  --leading-body: 1.55;
+  --tracking-mega: -0.06em;
+  --tracking-display: -0.05em;
+  --tracking-heading: -0.035em;
+  --tracking-body: 0;
+  --tracking-eyebrow: 0.16em;
+
+  --text-display: var(--weight-heavy) var(--size-display) / var(--leading-tight) var(--font-display);
+  --text-heading: var(--weight-bold) var(--size-h2) / var(--leading-snug) var(--font-display);
+  --text-body: var(--weight-regular) var(--size-body) / var(--leading-body) var(--font-sans);
+  --text-label: var(--weight-semibold) var(--size-small) / 1.3 var(--font-sans);
+  --text-eyebrow: var(--weight-semibold) var(--size-eyebrow) / 1.5 var(--font-mono);
+  --text-timecode: var(--weight-semibold) var(--size-small) / 1 var(--font-mono);
+}

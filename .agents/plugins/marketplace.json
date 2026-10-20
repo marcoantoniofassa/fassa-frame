@@ -1,0 +1,20 @@
+{
+  "name": "fassa-frame-local",
+  "interface": {
+    "displayName": "Fassa Frame · Local"
+  },
+  "plugins": [
+    {
+      "name": "fassa-frame",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

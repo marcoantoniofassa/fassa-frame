@@ -1,0 +1,321 @@
+{
+  "Metadata": {
+    "siteName": "Fassa Frame",
+    "tagline": "You have the story. We give it rhythm.",
+    "ogAlt": "Fassa Frame — local video editing through conversation",
+    "home": {
+      "title": "Fassa Frame: intent-led editing",
+      "description": "Your local video studio, guided by conversation. Cuts, captions, sound, and motion with the AI you already use."
+    },
+    "create": {
+      "title": "Create a request — Fassa Frame",
+      "description": "Fill in a short brief and take a ready editing request to Claude Code or Codex. No files leave your computer."
+    },
+    "catalog": {
+      "title": "Motion scene catalog — Fassa Frame",
+      "description": "Browse 145 motion scenes that explain, highlight, and set a rhythm, and add one to your editing request."
+    },
+    "examples": {
+      "title": "Examples and requests — Fassa Frame",
+      "description": "Find a ready-made editing request for your goal and adapt it to your footage."
+    },
+    "install": {
+      "title": "Installation — Fassa Frame",
+      "description": "Install the Fassa Frame skill for Codex and Claude Code and check your environment before the first edit."
+    }
+  },
+  "Nav": {
+    "label": "Main",
+    "home": "Home",
+    "create": "Create a request",
+    "catalog": "Catalog",
+    "examples": "Examples",
+    "install": "Install"
+  },
+  "Header": {
+    "homeLabel": "home page",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Menu"
+  },
+  "Footer": {
+    "tagline": "Intent-led editing.",
+    "guide": "Guide",
+    "start": "Start",
+    "credits": "Fassa Frame by Marco Fassa. Based on Editonny by {name}.",
+    "links": "Author and project links",
+    "license": "Open source under the MIT license."
+  },
+  "Language": {
+    "label": "Language",
+    "search": "Search languages…",
+    "empty": "No language found"
+  },
+  "Theme": {
+    "toDark": "Switch to the dark theme",
+    "toLight": "Switch to the light theme"
+  },
+  "Common": {
+    "skip": "Skip to content",
+    "newTab": "(opens in a new tab)"
+  },
+  "NotFound": {
+    "title": "This page is not here.",
+    "body": "The link may be old or mistyped. Start again from the home page.",
+    "home": "Back to home"
+  },
+  "Home": {
+    "hero": {
+      "badge": "NEW",
+      "news": "Editing and motion in one workflow, on your computer",
+      "line1": "You have",
+      "line2": "the story.",
+      "line3": "We give it",
+      "words": "rhythm.|cuts.|motion.|captions.|sound.",
+      "lead": "From raw footage to the last detail. Cuts, captions, sound, and motion with the AI you already use, and a video ready to post.",
+      "primary": "Create my first request",
+      "secondary": "Install the skill",
+      "local": "100% LOCAL"
+    },
+    "phone": {
+      "alt": "Illustration of a vertical video being edited, not a rendered video",
+      "hookTop": "Nobody told you",
+      "hookBottom": "this about coffee",
+      "caption": "First, ninety-four degrees. Then, the bloom.",
+      "cuts": "14 cuts",
+      "wordsLost": "0 words lost",
+      "rendering": "Rendering",
+      "renderMeta": "1080p · 9:16",
+      "render": "Render",
+      "voice": "VOICE · NOISE REMOVED",
+      "motion": "Motion",
+      "beforeAfter": "Before and after"
+    },
+    "tapes": {
+      "one": "Clean cuts|Word-by-word captions|Motion|Custom soundtrack|Zero noise|{scenes} scenes",
+      "two": "9:16|16:9|1:1|4:5|Claude Code|Codex|100% local"
+    },
+    "stats": {
+      "label": "Fassa Frame in numbers",
+      "scenes": "motion scenes in the catalog",
+      "requests": "requests ready to adapt",
+      "formats": "formats: vertical, square, feed, horizontal",
+      "local": "local. Nothing is uploaded from here."
+    },
+    "bento": {
+      "eyebrow": "Everything in one workflow",
+      "titleA": "Everything an editor does.",
+      "titleB": "In one",
+      "highlight": "conversation.",
+      "lead": "Editing and motion work together on your computer. You review a sample before finishing the whole video.",
+      "cutKicker": "EDITOR / CUT",
+      "cutTitle": "Cut with intention.",
+      "cutText": "Shapes cuts and pauses for the story while preserving words, meaning, and approved choices.",
+      "raw": "RAW · 01:12",
+      "analyzing": "ANALYZING PAUSES…",
+      "done": "CUT · 00:45 ✓",
+      "captionsKicker": "CAPTIONS",
+      "captionsTitle": "Every word, on time.",
+      "captionsText": "Word-by-word captions for people watching without sound.",
+      "captionsSample": "Stop losing people who watch without sound",
+      "sceneGroup": "General",
+      "sceneName": "Revenue counter",
+      "sceneWhen": "Motion that explains: numbers, steps, comparisons.",
+      "formatsKicker": "FORMATS",
+      "formatsTitle": "One video, everywhere.",
+      "formatsText": "Reels, Stories, feed, and YouTube from the same footage.",
+      "soundKicker": "SOUND",
+      "soundTitle": "Clean voice. The right track.",
+      "soundText": "Background noise out, a soundtrack that fits the mood.",
+      "reviewKicker": "REVIEW",
+      "reviewTitle": "You approve before the final.",
+      "reviewText": "The preview opens in your browser: mark the section, say what to change, approve. The AI renders again.",
+      "beatHook": "Hook",
+      "beatSteps": "Steps",
+      "beatCta": "Call to action",
+      "quoteHook": "Nobody told you",
+      "quoteSteps": "94 degrees",
+      "quoteCta": "Save it",
+      "timeline": "Example review timeline"
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "titleA": "Fewer operations.",
+      "highlight": "More direction.",
+      "lead": "This guide prepares the request. Editing happens on your computer, with your AI and the installed package.",
+      "cta": "Build my request",
+      "step1Title": "Say what you want to tell",
+      "step1Text": "Choose the goal, point to the video folder, and set the tone. No timeline skills required.",
+      "step2Title": "Get the first cut right",
+      "step2Text": "The AI checks the environment, works the cut, and prepares an 8–15 second sample. You judge the pace and the look.",
+      "step3Title": "Add the finish",
+      "step3Text": "Captions, sound, and motion help tell the story. After your review, the AI finishes and checks the file."
+    },
+    "starts": {
+      "eyebrow": "A good starting point",
+      "title": "Start with an intention.",
+      "all": "See all {count} requests",
+      "action": "Use this starting point"
+    },
+    "callout": {
+      "line1": "Your next video",
+      "line2": "starts with",
+      "accent": "a request.",
+      "text": "Build the brief in two minutes and take it to Claude Code or Codex.",
+      "cta": "Let's create"
+    }
+  },
+  "Create": {
+    "eyebrow": "Creative direction / Create a request",
+    "titleA": "From your idea",
+    "titleB": "to the",
+    "highlight": "first cut.",
+    "lead": "Fill in the brief and take the request to your AI. No files are sent from here.",
+    "story": "The story",
+    "goalLabel": "What would you like to create?",
+    "goalPlaceholder": "For example: a 45-second tutorial teaching how to brew coffee, with clear steps.",
+    "folderLabel": "Video folder on your computer",
+    "folderPlaceholder": "For example: /Users/you/Videos/coffee",
+    "folderHelp": "Paste the folder path. The guide does not access or upload the files.",
+    "telling": "How to tell it",
+    "format": "Format",
+    "pace": "Pace",
+    "captions": "Captions",
+    "effects": "Visual scenes and effects",
+    "tool": "Your tool",
+    "outputEyebrow": "Your request, ready to take",
+    "outputLabel": "Generated editing request",
+    "copy": "Copy request",
+    "hint": "Open your agent in the project folder and paste the request.",
+    "reset": "Start over",
+    "saved": "Your brief is saved only in this browser.",
+    "sceneLabel": "Scene: {name}",
+    "removeScene": "Remove the scene {name}",
+    "copied": "Request copied. Open your agent in the folder and paste it.",
+    "copyFallback": "Copying is unavailable here. The text is selected: press Ctrl+C or ⌘C.",
+    "cleared": "Brief cleared.",
+    "exampleApplied": "“{title}” applied. Adapt the request to your footage.",
+    "sceneAdded": "Scene added to your request."
+  },
+  "Options": {
+    "formats": {
+      "vertical": "Vertical",
+      "horizontal": "Horizontal",
+      "square": "Square",
+      "portrait": "Portrait feed"
+    },
+    "paces": {
+      "natural": "Natural and flowing",
+      "dynamic": "Dynamic and direct",
+      "calm": "Calm and reflective"
+    },
+    "captions": {
+      "readable": "Clear, with emphasis",
+      "subtle": "Subtle and static",
+      "none": "No captions"
+    },
+    "effects": {
+      "subtle": "Subtle · only what helps",
+      "educational": "Educational · visual ideas",
+      "expressive": "Expressive · more movement",
+      "none": "Editing only · no extra visuals"
+    }
+  },
+  "Library": {
+    "category": "Category",
+    "all": "All",
+    "copy": "Copy request",
+    "close": "Close",
+    "when": "When to use",
+    "copied": "Request copied. Paste it into your agent.",
+    "copyFallback": "Copying is unavailable here. The text is selected: press Ctrl+C or ⌘C.",
+    "preview": "Request preview"
+  },
+  "Catalog": {
+    "eyebrow": "Visual library / Motion",
+    "titleA": "One idea.",
+    "highlight": "Many shapes.",
+    "lead": "Scenes that explain, highlight, and set a rhythm. Hover or focus a card to see it move.",
+    "search": "Search scenes",
+    "searchPlaceholder": "Try: comparison, title, steps…",
+    "count": "{count, plural, one {# scene} other {# scenes}}",
+    "empty": "No scenes found. Try another word or choose all categories.",
+    "note": "Previews are schematic. The real composition is rendered by the agent.",
+    "duration": "Reference duration",
+    "durationValue": "{seconds} s",
+    "format": "Source format",
+    "layout": "Composition",
+    "captions": "Captions during the scene",
+    "hidden": "Hidden",
+    "kept": "Kept",
+    "unknown": "Not specified",
+    "use": "Use in my request",
+    "layouts": {
+      "overlay": "Over the video",
+      "fullscreen": "Full screen",
+      "frame": "Framed"
+    },
+    "motif": {
+      "before": "BEFORE",
+      "after": "AFTER",
+      "cta": "Tap here",
+      "cheer": "NAILED IT!",
+      "zoom": "ZOOM",
+      "chat1": "How do I edit this?",
+      "chat2": "I match the rhythm and captions to your intent.",
+      "chat3": "Perfect!",
+      "hint": "▶ PREVIEW"
+    }
+  },
+  "Examples": {
+    "eyebrow": "Request library / Examples",
+    "titleA": "Your intention.",
+    "highlight": "A good start.",
+    "lead": "From raw footage to the finish. Find an example and adapt the request to your story.",
+    "search": "Search examples",
+    "searchPlaceholder": "Try: lesson, audio, captions…",
+    "count": "{count, plural, one {# request} other {# requests}}",
+    "empty": "No requests found. Try other words or choose all categories.",
+    "action": "View request and tips",
+    "tips": "Tips",
+    "customize": "Customize request"
+  },
+  "Install": {
+    "eyebrow": "Prepare your studio / Installation",
+    "titleA": "One skill.",
+    "highlight": "Your way to create.",
+    "lead": "Editing and visual scenes together. A portable skill for Codex and Claude Code, running on your computer.",
+    "step1Title": "Open the project folder",
+    "step1Text": "Open your Fassa Frame checkout or package in the folder containing install.py. There is no public fork download yet. Prepare Python 3.9+, uv, FFmpeg/ffprobe, Node.js 22.13+ or 24+, and your AI agent.",
+    "step2Title": "Register the skill",
+    "step2Text": "The installer shares one package between both agents. To use just one, replace both with codex or claude. Restart your agent afterward so it discovers the skill.",
+    "step3Title": "Check before editing",
+    "step3Text": "Run the diagnostic. Resolve missing requirements before rendering.",
+    "step4Title": "Make your first request",
+    "step4Text": "Use $fassa-frame in Codex or /fassa-frame in Claude Code. Ask for a sample before the complete project.",
+    "cta": "Build my request",
+    "copy": "Copy",
+    "copied": "Copied",
+    "commandCopied": "Command copied.",
+    "askKicker": "PREFER ASKING YOUR AI?",
+    "askTitle": "Installation starts with a request too.",
+    "askRequest": "Install Fassa Frame from this repository for Codex and Claude Code using the project installer. Check dependencies with the diagnostic, preserve my settings, and explain what is missing before downloading tools or using paid services.",
+    "askCopy": "Copy installation request",
+    "askCopied": "Installation request copied.",
+    "copyFallback": "Copying is unavailable here. The text is selected: press Ctrl+C or ⌘C.",
+    "faq1Title": "Global skill or plugin?",
+    "faq1Body": "The installer registers one copy at ~/.local/share/fassa-frame, with links at ~/.agents/skills/fassa-frame for Codex and ~/.claude/skills/fassa-frame for Claude Code. Choose one installation method.",
+    "faq2Title": "Use just one agent",
+    "faq2Body": "Run python3 install.py --target codex or python3 install.py --target claude, then start a new conversation. Registration is local: it does not sync tools or files with cloud sessions or your phone.",
+    "faq3Title": "Update safely",
+    "faq3Body": "Run the installer again. The previous version moves to ~/.local/share/fassa-frame-backups/ and installation .env files are preserved. Keep footage and projects outside the skill folder, and check the update before deleting any backup.",
+    "faq4Title": "Remove agent registrations",
+    "faq4Body": "Run python3 install.py --target both --uninstall. Add --dry-run to see the destinations first. Only the agent links are removed; the shared package, settings, backups, videos, and projects stay.",
+    "faq5Title": "Load as a Claude Code plugin",
+    "faq5Body": "Run claude --plugin-dir \"/path/to/fassa-frame\" to load this checkout for one session, then invoke /fassa-frame:fassa-frame. The standalone skill uses /fassa-frame; avoid loading both at once. Video tools and the Python environment are still required.",
+    "faq6Title": "What runs locally? What costs money?",
+    "faq6Body": "This guide builds requests and browses examples and scenes. It does not upload or edit footage in the browser. Your agent may require a subscription. Optional external generators may charge fees; the default request asks for your authorization before using them or sending media.",
+    "faq7Title": "How do I review the first sample?",
+    "faq7Body": "Listen for clipped words, check caption accuracy, and see whether framing keeps the subject. Ask for changes before finishing everything."
+  }
+}

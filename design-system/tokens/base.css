@@ -1,0 +1,8 @@
+/* Document defaults for pages built entirely with the design system. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg-page); color: var(--text-1); font: var(--text-body); -webkit-font-smoothing: antialiased; }
+a { color: var(--text-accent); text-underline-offset: 4px; transition: color var(--dur-fast); }
+a:hover { color: var(--accent-hover); }
+em { font-style: normal; color: var(--text-accent); }
+::selection { background: var(--orange-500); color: var(--ink-950); }
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }

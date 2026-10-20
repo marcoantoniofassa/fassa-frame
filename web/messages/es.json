@@ -1,0 +1,321 @@
+{
+  "Metadata": {
+    "siteName": "Fassa Frame",
+    "tagline": "Tú tienes la historia. Nosotros le damos ritmo.",
+    "ogAlt": "Fassa Frame — edición de video local por conversación",
+    "home": {
+      "title": "Fassa Frame: edición guiada por intención",
+      "description": "Tu estudio de video local, guiado por conversación. Cortes, subtítulos, sonido y motion con la IA que ya usas."
+    },
+    "create": {
+      "title": "Crear pedido — Fassa Frame",
+      "description": "Completa un brief corto y lleva un pedido de edición listo a Claude Code o Codex. Ningún archivo sale de tu computadora."
+    },
+    "catalog": {
+      "title": "Catálogo de escenas de motion — Fassa Frame",
+      "description": "Explora 145 escenas de motion que explican, destacan y marcan el ritmo, y agrega una a tu pedido de edición."
+    },
+    "examples": {
+      "title": "Ejemplos y pedidos — Fassa Frame",
+      "description": "Encuentra un pedido de edición listo para tu objetivo y adáptalo a tu material."
+    },
+    "install": {
+      "title": "Instalación — Fassa Frame",
+      "description": "Instala la skill Fassa Frame en Codex y Claude Code y revisa tu entorno antes de la primera edición."
+    }
+  },
+  "Nav": {
+    "label": "Principal",
+    "home": "Inicio",
+    "create": "Crear pedido",
+    "catalog": "Catálogo",
+    "examples": "Ejemplos",
+    "install": "Instalar"
+  },
+  "Header": {
+    "homeLabel": "página de inicio",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "menuTitle": "Menú"
+  },
+  "Footer": {
+    "tagline": "Edición guiada por intención.",
+    "guide": "Guía",
+    "start": "Empezar",
+    "credits": "Fassa Frame de Marco Fassa. Basado en Editonny de {name}.",
+    "links": "Enlaces del autor y del proyecto",
+    "license": "Código abierto bajo la licencia MIT."
+  },
+  "Language": {
+    "label": "Idioma",
+    "search": "Buscar idiomas…",
+    "empty": "No se encontró ningún idioma"
+  },
+  "Theme": {
+    "toDark": "Cambiar al tema oscuro",
+    "toLight": "Cambiar al tema claro"
+  },
+  "Common": {
+    "skip": "Saltar al contenido",
+    "newTab": "(se abre en una pestaña nueva)"
+  },
+  "NotFound": {
+    "title": "Esta página no está aquí.",
+    "body": "Puede que el enlace sea antiguo o esté mal escrito. Vuelve a empezar desde el inicio.",
+    "home": "Volver al inicio"
+  },
+  "Home": {
+    "hero": {
+      "badge": "NUEVO",
+      "news": "Edición y motion en un solo flujo, en tu computadora",
+      "line1": "Tú tienes",
+      "line2": "la historia.",
+      "line3": "Nosotros le damos",
+      "words": "ritmo.|cortes.|motion.|subtítulos.|sonido.",
+      "lead": "Del material en bruto al último detalle. Cortes, subtítulos, sonido y motion con la IA que ya usas, y un video listo para publicar.",
+      "primary": "Crear mi primer pedido",
+      "secondary": "Instalar la skill",
+      "local": "100% LOCAL"
+    },
+    "phone": {
+      "alt": "Ilustración de un video vertical en edición, no un video renderizado",
+      "hookTop": "Nadie te contó",
+      "hookBottom": "esto sobre el café",
+      "caption": "Primero, noventa y cuatro grados. Luego, el bloom.",
+      "cuts": "14 cortes",
+      "wordsLost": "0 palabras perdidas",
+      "rendering": "Renderizando",
+      "renderMeta": "1080p · 9:16",
+      "render": "Render",
+      "voice": "VOZ · RUIDO ELIMINADO",
+      "motion": "Motion",
+      "beforeAfter": "Antes y después"
+    },
+    "tapes": {
+      "one": "Cortes limpios|Subtítulos palabra por palabra|Motion|Música a medida|Cero ruido|{scenes} escenas",
+      "two": "9:16|16:9|1:1|4:5|Claude Code|Codex|100% local"
+    },
+    "stats": {
+      "label": "Fassa Frame en números",
+      "scenes": "escenas de motion en el catálogo",
+      "requests": "pedidos listos para adaptar",
+      "formats": "formatos: vertical, cuadrado, feed, horizontal",
+      "local": "local. Nada se sube desde aquí."
+    },
+    "bento": {
+      "eyebrow": "Todo en un flujo",
+      "titleA": "Todo lo que hace un editor.",
+      "titleB": "En una",
+      "highlight": "conversación.",
+      "lead": "La edición y el motion trabajan juntos en tu computadora. Revisas una muestra antes de terminar el video completo.",
+      "cutKicker": "EDITOR / CORTE",
+      "cutTitle": "Corta con intención.",
+      "cutText": "Elige cortes y pausas para la historia, conservando palabras, significado y decisiones aprobadas.",
+      "raw": "BRUTO · 01:12",
+      "analyzing": "ANALIZANDO PAUSAS…",
+      "done": "CORTE · 00:45 ✓",
+      "captionsKicker": "SUBTÍTULOS",
+      "captionsTitle": "Cada palabra, a tiempo.",
+      "captionsText": "Subtítulos palabra por palabra para quien mira sin sonido.",
+      "captionsSample": "Deja de perder a quien mira sin sonido",
+      "sceneGroup": "Generales",
+      "sceneName": "Dinero subiendo",
+      "sceneWhen": "Motion que explica: números, pasos, comparaciones.",
+      "formatsKicker": "FORMATOS",
+      "formatsTitle": "Un video, en todas partes.",
+      "formatsText": "Reels, Stories, feed y YouTube con el mismo material.",
+      "soundKicker": "SONIDO",
+      "soundTitle": "Voz limpia. La música justa.",
+      "soundText": "Fuera el ruido de fondo, con una música que acompaña el clima.",
+      "reviewKicker": "REVISIÓN",
+      "reviewTitle": "Apruebas antes del final.",
+      "reviewText": "La vista previa se abre en tu navegador: marca el tramo, di qué cambiar y aprueba. La IA vuelve a renderizar.",
+      "beatHook": "Gancho",
+      "beatSteps": "Pasos",
+      "beatCta": "Llamado",
+      "quoteHook": "Nadie te contó",
+      "quoteSteps": "94 grados",
+      "quoteCta": "Guárdalo",
+      "timeline": "Línea de tiempo de revisión de ejemplo"
+    },
+    "how": {
+      "eyebrow": "Cómo funciona",
+      "titleA": "Menos operaciones.",
+      "highlight": "Más dirección.",
+      "lead": "Esta guía prepara el pedido. La edición ocurre en tu computadora, con tu IA y el paquete instalado.",
+      "cta": "Armar mi pedido",
+      "step1Title": "Cuenta lo que quieres decir",
+      "step1Text": "Elige el objetivo, indica la carpeta de los videos y define el tono. No necesitas saber usar una línea de tiempo.",
+      "step2Title": "Acierta el primer corte",
+      "step2Text": "La IA revisa el entorno, trabaja el corte y prepara una muestra de 8–15 segundos. Tú evalúas el ritmo y el aspecto.",
+      "step3Title": "Dale el acabado",
+      "step3Text": "Subtítulos, sonido y motion ayudan a contar la historia. Después de tu revisión, la IA termina y verifica el archivo."
+    },
+    "starts": {
+      "eyebrow": "Un buen punto de partida",
+      "title": "Empieza con una intención.",
+      "all": "Ver los {count} pedidos",
+      "action": "Usar este punto de partida"
+    },
+    "callout": {
+      "line1": "Tu próximo video",
+      "line2": "empieza con",
+      "accent": "un pedido.",
+      "text": "Arma el brief en dos minutos y llévalo a Claude Code o Codex.",
+      "cta": "Vamos a crear"
+    }
+  },
+  "Create": {
+    "eyebrow": "Dirección creativa / Crear pedido",
+    "titleA": "De tu idea",
+    "titleB": "al",
+    "highlight": "primer corte.",
+    "lead": "Completa el brief y lleva el pedido a tu IA. No se envía ningún archivo desde aquí.",
+    "story": "La historia",
+    "goalLabel": "¿Qué quieres crear?",
+    "goalPlaceholder": "Por ejemplo: un tutorial de 45 segundos que enseñe a preparar café, con pasos claros.",
+    "folderLabel": "Carpeta de los videos en tu computadora",
+    "folderPlaceholder": "Por ejemplo: /Users/tu/Videos/cafe",
+    "folderHelp": "Pega la ruta de la carpeta. La guía no accede a los archivos ni los sube.",
+    "telling": "Cómo contarlo",
+    "format": "Formato",
+    "pace": "Ritmo",
+    "captions": "Subtítulos",
+    "effects": "Escenas visuales y efectos",
+    "tool": "Tu herramienta",
+    "outputEyebrow": "Tu pedido, listo para llevar",
+    "outputLabel": "Pedido de edición generado",
+    "copy": "Copiar pedido",
+    "hint": "Abre tu agente en la carpeta del proyecto y pega el pedido.",
+    "reset": "Empezar de nuevo",
+    "saved": "Tu brief se guarda solo en este navegador.",
+    "sceneLabel": "Escena: {name}",
+    "removeScene": "Quitar la escena {name}",
+    "copied": "Pedido copiado. Abre tu agente en la carpeta y pégalo.",
+    "copyFallback": "No se puede copiar aquí. El texto está seleccionado: usa Ctrl+C o ⌘C.",
+    "cleared": "Brief borrado.",
+    "exampleApplied": "“{title}” aplicado. Adapta el pedido a tu material.",
+    "sceneAdded": "Escena agregada a tu pedido."
+  },
+  "Options": {
+    "formats": {
+      "vertical": "Vertical",
+      "horizontal": "Horizontal",
+      "square": "Cuadrado",
+      "portrait": "Feed vertical"
+    },
+    "paces": {
+      "natural": "Natural y fluido",
+      "dynamic": "Dinámico y directo",
+      "calm": "Tranquilo y reflexivo"
+    },
+    "captions": {
+      "readable": "Claros, con énfasis",
+      "subtle": "Discretos y estáticos",
+      "none": "Sin subtítulos"
+    },
+    "effects": {
+      "subtle": "Sutil · solo lo que ayuda",
+      "educational": "Didáctico · ideas visuales",
+      "expressive": "Expresivo · más movimiento",
+      "none": "Solo edición · sin visuales extra"
+    }
+  },
+  "Library": {
+    "category": "Categoría",
+    "all": "Todas",
+    "copy": "Copiar pedido",
+    "close": "Cerrar",
+    "when": "Cuándo usar",
+    "copied": "Pedido copiado. Pégalo en tu agente.",
+    "copyFallback": "No se puede copiar aquí. El texto está seleccionado: usa Ctrl+C o ⌘C.",
+    "preview": "Vista previa del pedido"
+  },
+  "Catalog": {
+    "eyebrow": "Biblioteca visual / Motion",
+    "titleA": "Una idea.",
+    "highlight": "Muchas formas.",
+    "lead": "Escenas para explicar, destacar y marcar el ritmo. Pasa el mouse o enfoca una tarjeta para verla moverse.",
+    "search": "Buscar escenas",
+    "searchPlaceholder": "Prueba: comparación, título, pasos…",
+    "count": "{count, plural, one {# escena} other {# escenas}}",
+    "empty": "No se encontraron escenas. Prueba otra palabra o elige todas las categorías.",
+    "note": "Las vistas previas son esquemáticas. La composición real la renderiza el agente.",
+    "duration": "Duración de referencia",
+    "durationValue": "{seconds} s",
+    "format": "Formato de origen",
+    "layout": "Composición",
+    "captions": "Subtítulos durante la escena",
+    "hidden": "Ocultos",
+    "kept": "Se mantienen",
+    "unknown": "Sin especificar",
+    "use": "Usar en mi pedido",
+    "layouts": {
+      "overlay": "Sobre el video",
+      "fullscreen": "Pantalla completa",
+      "frame": "En marco"
+    },
+    "motif": {
+      "before": "ANTES",
+      "after": "DESPUÉS",
+      "cta": "Toca aquí",
+      "cheer": "¡LO LOGRASTE!",
+      "zoom": "ZOOM",
+      "chat1": "¿Cómo edito esto?",
+      "chat2": "Adapto el ritmo y los subtítulos a tu intención.",
+      "chat3": "¡Perfecto!",
+      "hint": "▶ VISTA PREVIA"
+    }
+  },
+  "Examples": {
+    "eyebrow": "Biblioteca de pedidos / Ejemplos",
+    "titleA": "Tu intención.",
+    "highlight": "Un buen comienzo.",
+    "lead": "Del material en bruto al acabado. Encuentra un ejemplo y adapta el pedido a tu historia.",
+    "search": "Buscar ejemplos",
+    "searchPlaceholder": "Prueba: clase, audio, subtítulos…",
+    "count": "{count, plural, one {# pedido} other {# pedidos}}",
+    "empty": "No se encontraron pedidos. Prueba otras palabras o elige todas las categorías.",
+    "action": "Ver pedido y consejos",
+    "tips": "Consejos",
+    "customize": "Personalizar pedido"
+  },
+  "Install": {
+    "eyebrow": "Prepara tu estudio / Instalación",
+    "titleA": "Una skill.",
+    "highlight": "Tu forma de crear.",
+    "lead": "Edición y escenas visuales juntas. Una skill portátil para Codex y Claude Code, que se ejecuta en tu computadora.",
+    "step1Title": "Abre la carpeta del proyecto",
+    "step1Text": "Abre el checkout o paquete Fassa Frame en la carpeta que contiene install.py. Todavía no hay descarga pública del fork. Prepara Python 3.9+, uv, FFmpeg/ffprobe, Node.js 22.13+ o 24+ y tu agente de IA.",
+    "step2Title": "Registra la skill",
+    "step2Text": "El instalador comparte un único paquete entre los dos agentes. Para usar solo uno, cambia both por codex o claude. Después, reinicia el agente para que encuentre la skill.",
+    "step3Title": "Revisa antes de editar",
+    "step3Text": "Ejecuta el diagnóstico. Resuelve lo que falte antes de renderizar.",
+    "step4Title": "Haz tu primer pedido",
+    "step4Text": "Usa $fassa-frame en Codex o /fassa-frame en Claude Code. Pide una muestra antes del proyecto completo.",
+    "cta": "Armar mi pedido",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "commandCopied": "Comando copiado.",
+    "askKicker": "¿PREFIERES PEDÍRSELO A TU IA?",
+    "askTitle": "La instalación también empieza con un pedido.",
+    "askRequest": "Instala Fassa Frame desde este repositorio para Codex y Claude Code usando el instalador del proyecto. Revisa las dependencias con el diagnóstico, conserva mi configuración y explica lo que falta antes de descargar herramientas o usar servicios de pago.",
+    "askCopy": "Copiar pedido de instalación",
+    "askCopied": "Pedido de instalación copiado.",
+    "copyFallback": "No se puede copiar aquí. El texto está seleccionado: usa Ctrl+C o ⌘C.",
+    "faq1Title": "¿Skill global o plugin?",
+    "faq1Body": "El instalador registra una copia en ~/.local/share/fassa-frame, con enlaces en ~/.agents/skills/fassa-frame para Codex y en ~/.claude/skills/fassa-frame para Claude Code. Elige un solo método de instalación.",
+    "faq2Title": "Usar solo un agente",
+    "faq2Body": "Ejecuta python3 install.py --target codex o python3 install.py --target claude y empieza una conversación nueva. El registro es local: no sincroniza herramientas ni archivos con sesiones en la nube ni con el celular.",
+    "faq3Title": "Actualizar con seguridad",
+    "faq3Body": "Vuelve a ejecutar el instalador. La versión anterior pasa a ~/.local/share/fassa-frame-backups/ y se conservan los archivos .env de la instalación. Mantén los videos y proyectos fuera de la carpeta de la skill y revisa la actualización antes de borrar cualquier copia de seguridad.",
+    "faq4Title": "Quitar los registros de los agentes",
+    "faq4Body": "Ejecuta python3 install.py --target both --uninstall. Agrega --dry-run para ver primero los destinos. Solo se quitan los enlaces de los agentes; el paquete compartido, la configuración, las copias de seguridad, los videos y los proyectos se conservan.",
+    "faq5Title": "Cargar como plugin de Claude Code",
+    "faq5Body": "Ejecuta claude --plugin-dir \"/ruta/a/fassa-frame\" para cargar este checkout en una sesión y llama a /fassa-frame:fassa-frame. La skill independiente usa /fassa-frame; no cargues ambas formas a la vez. Las herramientas de video y el entorno de Python siguen siendo necesarios.",
+    "faq6Title": "¿Qué se ejecuta en local? ¿Qué tiene costo?",
+    "faq6Body": "Esta guía arma pedidos y muestra ejemplos y escenas. No sube ni edita videos en el navegador. Tu agente puede requerir una suscripción. Los generadores externos opcionales pueden cobrar; el pedido predeterminado pide tu autorización antes de usarlos o de enviar archivos multimedia.",
+    "faq7Title": "¿Cómo reviso la primera muestra?",
+    "faq7Body": "Escucha si hay palabras cortadas, revisa que los subtítulos sean correctos y mira si el encuadre mantiene a la persona. Pide cambios antes de terminar todo."
+  }
+}

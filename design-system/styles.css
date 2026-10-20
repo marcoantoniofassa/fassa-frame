@@ -1,0 +1,8 @@
+/* Entry point for pages built with the editonny design system: tokens, document defaults, components.
+   Font files are loaded by the app (next/font) and exposed through the --font-*-face variables in tokens/typography.css. */
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/motion.css";
+@import "tokens/base.css";
+@import "components/components.css";

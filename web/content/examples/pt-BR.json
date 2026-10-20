@@ -1,0 +1,542 @@
+{
+  "first-video": {
+    "title": "Meu primeiro vídeo",
+    "summary": "Um ponto de partida para transformar uma gravação em um vídeo claro.",
+    "when": "Você tem o vídeo bruto e ainda não escolheu um estilo.",
+    "goal": "Monte um vídeo com começo, desenvolvimento e conclusão a partir do material. Escolha as tomadas completas mais claras, retire erros e repetições sem perder o sentido e preserve pausas expressivas. Proponha uma abertura curta baseada na fala e use imagens de apoio apenas se estiverem disponíveis",
+    "tips": [
+      "Informe quem vai assistir e a duração desejada.",
+      "Se houver uma chamada final, diga qual ação o público deve realizar."
+    ]
+  },
+  "environment-test": {
+    "title": "Testar o ambiente com um trecho",
+    "summary": "Confira as ferramentas antes de editar um projeto longo.",
+    "when": "O editonny acabou de ser instalado ou mudou de computador.",
+    "goal": "Confira o ambiente do editonny e use um vídeo curto meu para testar corte, legenda, áudio e uma cena simples do catálogo. Informe o que funcionou e o que precisa ser preparado; não considere a instalação validada apenas porque reconheceu o pedido",
+    "tips": [
+      "Use um arquivo sem conteúdo pessoal sensível.",
+      "O teste deve produzir um MP4 que possa ser assistido."
+    ]
+  },
+  "ad": {
+    "title": "Anúncio com uma mensagem clara",
+    "summary": "Gancho, demonstração e chamada com fatos do seu material.",
+    "when": "Você quer apresentar uma oferta em um vídeo curto.",
+    "goal": "Monte um anúncio de 20 a 40 segundos com gancho baseado na fala, problema, demonstração e chamada final para o destino que eu informar. Use legendas legíveis, poucos movimentos e prova visual somente com arquivos reais fornecidos. Aponte afirmações sem sustentação para revisão, sem prometer aprovação de plataforma ou resultado comercial",
+    "tips": [
+      "Informe produto, público e destino do clique.",
+      "Forneça a oferta correta e imagens autorizadas para a demonstração."
+    ]
+  },
+  "reels": {
+    "title": "Reels de conteúdo",
+    "summary": "Uma ideia completa, com ritmo e sem venda forçada.",
+    "when": "Você quer transformar uma fala em conteúdo para redes sociais.",
+    "goal": "Edite um Reels que apresente uma ideia completa e comece pelo ponto mais interessante da própria fala. Corte redundâncias, preserve a conclusão e varie o enquadramento apenas quando isso ajudar o ritmo. Destaque poucas expressões importantes e não acrescente chamada de venda",
+    "tips": [
+      "Indique a duração e o tema principal.",
+      "Uma trilha é opcional; a voz deve continuar fácil de entender."
+    ]
+  },
+  "vsl": {
+    "title": "VSL com momentos visuais",
+    "summary": "Organize a apresentação de venda e ilustre as passagens decisivas.",
+    "when": "Sua fala apresenta um produto ou serviço em uma página de vendas.",
+    "goal": "Organize a VSL em gancho, problema, explicação, demonstração, oferta e chamada, usando apenas os blocos presentes na gravação. Mantenha a pessoa como fio condutor e legendas discretas. Use cenas breves para listas, números e demonstrações que realmente ajudem; depois volte à câmera. Apresente o plano por blocos e respeite a duração que eu informar",
+    "tips": [
+      "Informe a duração desejada e os dados atuais da oferta.",
+      "Envie provas reais; um desenho explicativo não substitui evidência."
+    ]
+  },
+  "lesson": {
+    "title": "Aula com abertura e corte natural",
+    "summary": "Uma abertura clara e o restante focado no aprendizado.",
+    "when": "Você tem uma aula longa com repetições ou tentativas de fala.",
+    "goal": "Edite a aula com uma abertura curta que apresente o aprendizado. Concentre títulos e ênfases visuais na introdução; no restante, retire erros e repetições sem acelerar ações que o aluno precisa acompanhar. Preserve o áudio de demonstrações e vídeos exibidos na tela e mantenha as explicações completas",
+    "tips": [
+      "Marque trechos que precisam ficar completos.",
+      "Informe se há exercícios ou pausas para o aluno praticar."
+    ]
+  },
+  "interview": {
+    "title": "Entrevista com contexto",
+    "summary": "Respostas completas, com perguntas e reações que façam sentido.",
+    "when": "Você quer organizar uma conversa, entrevista ou depoimento.",
+    "goal": "Selecione respostas que se sustentem com contexto e preserve as perguntas necessárias para compreendê-las. Retire esperas e repetições sem mudar a posição de quem fala. Se houver câmeras ou áudios separados, confira o sincronismo antes de alternar enquadramentos. Identifique participantes apenas com nomes e funções que eu fornecer",
+    "tips": [
+      "Informe quais assuntos precisam aparecer.",
+      "Um trecho isolado não deve inverter a intenção da resposta."
+    ]
+  },
+  "select-takes": {
+    "title": "Escolher entre várias tomadas",
+    "summary": "Compare as gravações e monte uma fala contínua.",
+    "when": "O mesmo texto foi gravado mais de uma vez.",
+    "goal": "Compare as tomadas e escolha cada frase pela clareza, completude e continuidade de imagem e áudio, sem assumir que a última é sempre a melhor. Monte uma sequência natural e informe o arquivo e trecho de origem de cada parte. Sinalize diferenças de conteúdo que afetem o sentido para eu decidir",
+    "tips": [
+      "Agrupe os arquivos do mesmo roteiro na pasta.",
+      "Avise se alguma tomada já foi escolhida por você."
+    ]
+  },
+  "explain": {
+    "title": "Explicar com um diagrama",
+    "summary": "Transforme um processo em etapas visuais sincronizadas.",
+    "when": "A fala descreve relações, escolhas ou uma sequência difícil de visualizar.",
+    "goal": "Identifique uma explicação que ganhe clareza com um diagrama e mostre suas partes conforme forem mencionadas. Faça o mesmo esquema evoluir, usando setas, estados e rótulos curtos, sem abrir um cartão novo a cada palavra. Preserve a narração e diferencie ilustração de dados medidos",
+    "tips": [
+      "Diga qual processo ou relação precisa ficar claro.",
+      "Informe quais valores são medidos e quais elementos são apenas esquemáticos."
+    ]
+  },
+  "introduce": {
+    "title": "Apresentar uma ideia ou serviço",
+    "summary": "Contexto, proposta e próximo passo em uma narrativa simples.",
+    "when": "Você precisa explicar o que faz ou apresentar um projeto.",
+    "goal": "Organize a apresentação em contexto, proposta, funcionamento e próximo passo, respeitando a fala disponível. Use títulos curtos para orientar o público e imagens próprias para ilustrar o que está sendo apresentado. Não invente benefícios, clientes ou resultados; indique o que falta no material",
+    "tips": [
+      "Informe para quem é a apresentação.",
+      "Envie a grafia correta dos nomes e a identidade visual disponível."
+    ]
+  },
+  "demonstrate": {
+    "title": "Mostrar a diferença com provas reais",
+    "summary": "Um antes e depois que permite comparar o que realmente mudou.",
+    "when": "Você tem registros reais de duas etapas de um processo ou resultado.",
+    "goal": "Monte uma comparação de antes e depois usando somente os arquivos reais que eu identificar. Deixe claros a ordem, o contexto e o que mudou, com enquadramentos comparáveis e tempo suficiente para observar. Preserve diferenças relevantes de luz, escala ou condições e sinalize quando impedirem uma comparação justa. Não use imagens geradas como prova nem atribua resultados que o material não demonstra",
+    "tips": [
+      "Identifique quais arquivos são o antes e o depois, com datas ou condições relevantes.",
+      "Se faltar uma das etapas, proponha uma demonstração do material disponível sem inventar a comparação."
+    ]
+  },
+  "screen-camera": {
+    "title": "Demonstração com tela e câmera",
+    "summary": "Mostre onde olhar, clicar ou digitar sem perder a sequência.",
+    "when": "Você gravou um tutorial de ferramenta ou produto.",
+    "goal": "Mostre primeiro o contexto da tela e depois aproxime a área da ação real, com um destaque por vez e o nome do passo. Preserve o tempo necessário para acompanhar digitação e respostas da interface. Se houver câmera, use uma janela que não cubra os controles. Oculte dados pessoais presentes na gravação e confira os trechos com movimento",
+    "tips": [
+      "Uma gravação de tela nítida permite aproximações melhores.",
+      "Indique dados que precisam ser ocultados."
+    ]
+  },
+  "split-screen": {
+    "title": "Imagem em cima, pessoa embaixo",
+    "summary": "Combine a explicação com imagens ou capturas fornecidas.",
+    "when": "Você comenta um produto, página ou imagem durante a fala.",
+    "goal": "Nos trechos em que a fala mencionar uma imagem fornecida, monte tela dividida com a imagem acima e a pessoa abaixo. Associe cada arquivo à frase certa, preserve proporções e mantenha texto e rosto legíveis. Volte à pessoa em tela cheia quando a imagem deixar de ajudar",
+    "tips": [
+      "Informe quais imagens correspondem a cada assunto.",
+      "Não amplie um print a ponto de tornar o texto ilegível."
+    ]
+  },
+  "evidence-card": {
+    "title": "Prova visual em destaque",
+    "summary": "Dê espaço a um arquivo real enquanto a explicação continua.",
+    "when": "Um print, vídeo ou produto precisa ser visto com clareza.",
+    "goal": "Quando a fala citar a evidência que eu fornecer, mostre esse arquivo em destaque, com um rótulo fiel à sua origem e a pessoa em uma moldura pequena se houver espaço. Preserve a leitura e retorne à câmera depois. Não substitua prova ausente por uma simulação, nem apresente um resultado ilustrativo como real",
+    "tips": [
+      "Envie o arquivo original da prova e sua identificação.",
+      "Remova ou oculte informações pessoais sem autorização de exibição."
+    ]
+  },
+  "background-cutout": {
+    "title": "Pessoa recortada sobre imagens",
+    "summary": "Teste o recorte antes de trocar o fundo de todo o vídeo.",
+    "when": "Você quer aparecer diante de imagens de apoio.",
+    "goal": "Teste um trecho com a pessoa recortada diante das imagens fornecidas, mantendo rosto, cabelo e mãos legíveis. Examine as bordas em movimento antes de aplicar ao restante. Se o material não permitir um recorte consistente, mostre a limitação e proponha uma moldura ou tela dividida",
+    "tips": [
+      "Fundo simples e boa iluminação ajudam o recorte.",
+      "Escolha uma amostra com movimento, não apenas um quadro parado."
+    ]
+  },
+  "paper-notes": {
+    "title": "Visual de papelaria",
+    "summary": "Notas, etiquetas e listas com aparência de papel.",
+    "when": "Você quer um visual leve para contar uma experiência ou explicar etapas.",
+    "goal": "Use uma composição de papelaria com etiquetas, notas e marca-texto em poucas cores. Faça listas aparecerem junto da fala e altere o mesmo papel quando um item mudar de estado. Mantenha o texto legível e a pessoa visível; use fotos próprias se forem necessárias à história",
+    "tips": [
+      "Escolha uma cor de destaque.",
+      "Risque ou marque como concluído apenas o que a fala realmente confirma."
+    ]
+  },
+  "answer-question": {
+    "title": "Responder uma pergunta",
+    "summary": "Abra com a dúvida e dê espaço à resposta.",
+    "when": "O vídeo responde a uma dúvida recorrente ou a um comentário.",
+    "goal": "Mostre a pergunta em um cartão breve no início, depois mantenha a pessoa em tela cheia e destaque somente as expressões que organizam a resposta. Use a pergunta que eu fornecer ou proponha uma a partir da fala. Não invente autor, foto ou comentário recebido",
+    "tips": [
+      "Envie o comentário real se quiser exibi-lo.",
+      "Uma pergunta genérica pode aparecer sem identidade de usuário."
+    ]
+  },
+  "bold-phrases": {
+    "title": "Frases fortes em letras grandes",
+    "summary": "Poucas expressões contam a ideia com hierarquia visual.",
+    "when": "Uma fala curta tem palavras ou frases que merecem destaque.",
+    "goal": "Escolha poucas expressões que contem a ideia e apresente uma por vez em letras grandes, sincronizadas com a fala, fora do rosto e dentro da área segura. Dê tempo para ler a frase completa, preserve negações e retire o destaque antes do próximo. Evite duplicar o mesmo texto grande e pequeno, mantendo a cobertura acessível da fala",
+    "tips": [
+      "A frase precisa caber sem encobrir o rosto.",
+      "Se não houver tempo de leitura, use menos destaques."
+    ]
+  },
+  "fullscreen-explainer": {
+    "title": "Uma explicação em tela cheia",
+    "summary": "Troque brevemente a câmera por uma cena que explique a fala.",
+    "when": "Um trecho é mais fácil de entender com desenho e movimento.",
+    "goal": "No trecho que eu indicar, substitua a imagem da câmera por uma cena explicativa em tela cheia mantendo a voz original. Escolha uma peça adequada do catálogo ou adapte uma composição disponível. Faça cada mudança acompanhar a ideia correspondente e volte à câmera ao terminar a explicação",
+    "tips": [
+      "Informe início, fim e o que a pessoa precisa entender.",
+      "Um único objeto mudando de estado costuma ser mais claro que várias telas."
+    ]
+  },
+  "data-card": {
+    "title": "Cartão com dado real",
+    "summary": "Mostre uma informação sem tirar a pessoa da tela.",
+    "when": "A fala menciona um número, prazo ou comparação comprovável.",
+    "goal": "Mostre um cartão compacto quando o dado for mencionado, com valor, unidade e rótulo fornecidos. Posicione na área livre sem cobrir rosto, mãos ou legendas. Use entrada discreta e tempo de leitura suficiente. Se o dado não estiver na fala ou nos arquivos, peça confirmação em vez de completar por conta própria",
+    "tips": [
+      "Inclua unidade, período e fonte do dado.",
+      "Não confunda um contador animado com uma medição feita pelo sistema."
+    ]
+  },
+  "typed-request": {
+    "title": "Pedido aparecendo na tela",
+    "summary": "Ilustre uma instrução sendo digitada e enviada.",
+    "when": "Você explica o que pediu a uma ferramenta ou a uma IA.",
+    "goal": "Ilustre o pedido mencionado na fala em uma barra de texto que se preenche, seguida do envio no momento indicado. Mostre apenas o resultado que estiver documentado ou descreva claramente a tela como ilustração. Não trate a animação como gravação de uma execução real",
+    "tips": [
+      "Forneça o texto do pedido e o resultado correto.",
+      "Use uma interface genérica quando não houver captura real."
+    ]
+  },
+  "gauge": {
+    "title": "Medidor de nível ou progresso",
+    "summary": "Uma escala visual para acompanhar um valor ou uma avaliação.",
+    "when": "A fala descreve custo, risco, nível ou progresso.",
+    "goal": "Escolha um medidor ou barra que represente o conceito mencionado. Use apenas escala, unidade e valor fornecidos e sincronize o movimento com a fala. Para uma avaliação qualitativa, use rótulos como baixo, médio e alto sem inventar uma precisão numérica",
+    "tips": [
+      "Defina o que a escala mede.",
+      "Uma barra cheia não deve sugerir conclusão se o processo ainda não terminou."
+    ]
+  },
+  "search-comment": {
+    "title": "Busca e chamada para comentar",
+    "summary": "Uma busca ilustrativa conduz ao assunto e à ação final.",
+    "when": "A narrativa começa com uma dúvida e termina pedindo uma resposta.",
+    "goal": "Ilustre o termo de busca mencionado na fala e faça aparecer um resultado com título e resumo fornecidos. Deixe claro que é uma representação, sem inventar posição em buscadores. Se houver chamada final, use uma caixa de comentário genérica com a palavra exata que eu pedir",
+    "tips": [
+      "Informe termo, resultado e palavra da chamada.",
+      "Não use identidade ou foto de um comentarista fictício como depoimento."
+    ]
+  },
+  "step-list": {
+    "title": "Lista e passo a passo",
+    "summary": "Cada item aparece quando é explicado.",
+    "when": "A fala enumera tarefas, etapas ou critérios.",
+    "goal": "Monte uma lista ou sequência de passos com os itens ditos, revelando cada um na hora correspondente. Destaque o item atual e marque como concluído somente quando isso for confirmado. Preserve o contexto e evite que a lista dispute espaço com a legenda",
+    "tips": [
+      "Liste a grafia correta dos itens.",
+      "Divida listas longas em grupos que possam ser lidos."
+    ]
+  },
+  "profession-panel": {
+    "title": "Painel para explicar uma profissão",
+    "summary": "Use uma cena do catálogo para tornar uma explicação concreta.",
+    "when": "Você explica um serviço, processo ou conceito da sua área.",
+    "goal": "Busque no catálogo editonny uma cena adequada à minha área e à explicação real do vídeo. Apresente a escolha com os textos que serão adaptados, mantenha a pessoa visível quando necessário e use só informações fornecidas. Se não houver uma cena específica, proponha um diagrama simples que cumpra a mesma função",
+    "tips": [
+      "Informe profissão, assunto e público.",
+      "Substitua todos os nomes e números de demonstração da cena."
+    ]
+  },
+  "hand-tracked-object": {
+    "title": "Objeto acompanhando a mão",
+    "summary": "Uma imagem fornecida acompanha um gesto em um trecho curto.",
+    "when": "Você aponta ou apresenta algo com a palma visível.",
+    "goal": "Teste uma imagem ou logo fornecida acompanhando minha mão no trecho indicado, usando os recursos disponíveis no ambiente. Confira posição, escala e continuidade durante o gesto. Se a mão sair do quadro ou o rastreamento falhar, interrompa o efeito de forma natural ou proponha um cartão fixo; não aplique ao vídeo inteiro sem avaliar o teste",
+    "tips": [
+      "Envie a imagem com transparência quando possível.",
+      "Uma amostra deve incluir a parte mais difícil do movimento."
+    ]
+  },
+  "layered-depth": {
+    "title": "Texto atrás, objeto à frente",
+    "summary": "Crie profundidade com camadas e um recorte testado.",
+    "when": "Uma palavra ou objeto precisa ganhar destaque em relação à pessoa.",
+    "goal": "Teste uma composição com texto atrás da pessoa e um elemento fornecido à frente, mantendo o rosto livre. Use movimentos discretos entre as camadas e volte à câmera normal depois da ênfase. Confira as bordas do recorte em movimento e descreva o resultado como composição em camadas, sem apresentá-lo como 3D real",
+    "tips": [
+      "Escolha apenas um momento de destaque.",
+      "Se o recorte não funcionar bem, uma moldura preserva a clareza."
+    ]
+  },
+  "spatial-explanation": {
+    "title": "Explicação espacial em 3D",
+    "summary": "Use volume quando profundidade e posição ajudam a entender.",
+    "when": "A explicação envolve camadas, encaixes, caminhos ou peças.",
+    "goal": "Avalie uma cena 3D disponível no editonny para explicar a relação espacial da fala. Use geometria simples, rótulos legíveis e movimento que revele o que uma vista plana esconderia. Mostre primeiro um teste curto com o movimento principal e confirme que o ambiente consegue renderizá-lo. Se não for viável, proponha uma versão em diagrama 2D",
+    "tips": [
+      "Explique qual relação precisa ser vista em profundidade.",
+      "A escala visual é ilustrativa, salvo se você fornecer medidas."
+    ]
+  },
+  "editing-process": {
+    "title": "Mostrar as etapas da edição",
+    "summary": "Uma sequência visual apresenta o processo com dados verificáveis.",
+    "when": "Você quer explicar como o vídeo foi construído.",
+    "goal": "Mostre as etapas reais da edição em pequenos indicadores sincronizados com a fala: transcrição, seleção de tomadas, corte e acabamento. Use contagens ou durações apenas quando forem medidas neste projeto. Identifique a sequência como demonstração do processo, sem sugerir execução ao vivo se o vídeo foi montado depois",
+    "tips": [
+      "Informe quais etapas você quer mostrar.",
+      "Não invente tempo economizado ou número de cortes."
+    ]
+  },
+  "reference": {
+    "title": "Analisar e adaptar uma referência",
+    "summary": "Observe ritmo, texto e composição sem copiar o conteúdo.",
+    "when": "Você tem um vídeo cujo acabamento combina com o seu projeto.",
+    "goal": "Analise o arquivo de referência que eu fornecer e resuma ritmo dos cortes, enquadramento, legendas, cores, animações e som. Diferencie o que foi observado do que é uma sugestão. Adapte os princípios ao meu material preservando minha fala e minhas imagens, e mostre uma amostra antes de estender o estilo",
+    "tips": [
+      "Forneça o arquivo da referência ou um link que possa ser acessado.",
+      "Diga o que você gosta nela; não é necessário repetir todos os efeitos."
+    ]
+  },
+  "visual-identity": {
+    "title": "Escolher cores e acabamento",
+    "summary": "Um conjunto consistente de cor, legenda e títulos.",
+    "when": "Você quer definir ou mudar o visual do vídeo.",
+    "goal": "Proponha um visual coerente para o vídeo com as cores e materiais de marca que eu informar. Combine legenda, títulos, cartões e fundos com contraste suficiente para leitura. Se eu ainda não tiver preferência, apresente duas direções simples, como fundo escuro com destaque ou papelaria clara, e aplique a escolhida na amostra",
+    "tips": [
+      "Informe uma cor principal ou envie sua referência de marca.",
+      "Descreva o efeito visual desejado, mesmo sem conhecer nomes de estilos."
+    ]
+  },
+  "polish": {
+    "title": "Polir uma edição pronta",
+    "summary": "Ajustes de leitura, ritmo e som sem refazer a narrativa.",
+    "when": "O corte funciona e falta acabamento.",
+    "goal": "Revise a edição existente e corrija apenas problemas de acabamento: palavras cortadas, pausas acidentais, legendas difíceis de ler, elementos cobrindo o rosto, entradas fora da fala e desequilíbrio entre voz e música. Preserve a estrutura aprovada e informe os ajustes realizados",
+    "tips": [
+      "Envie o projeto editável quando existir.",
+      "Marque o que já está aprovado para manter essa decisão."
+    ]
+  },
+  "adjust-interval": {
+    "title": "Mudar só um trecho",
+    "summary": "Uma revisão localizada com o restante preservado.",
+    "when": "Quase tudo está pronto e só um detalhe precisa mudar.",
+    "goal": "No intervalo que eu indicar da edição atual, aplique somente a alteração descrita e preserve o restante. Confirme se os tempos se referem ao vídeo final ou ao bruto e confira as emendas de entrada e saída após o ajuste. Salve uma nova versão",
+    "tips": [
+      "Escreva início, fim e mudança desejada.",
+      "Exemplo: de 00:12 a 00:18, troque a imagem de apoio."
+    ]
+  },
+  "pacing": {
+    "title": "Ajustar pausas e ritmo",
+    "summary": "Uma fala mais fluida sem perder intenção.",
+    "when": "O vídeo está arrastado ou os cortes ficaram apertados demais.",
+    "goal": "Revise o ritmo da edição: reduza esperas sem função e repetições, mas preserve respiração natural, ênfases e o tempo de entender uma demonstração. Se houver cortes apertados, recupere suas bordas a partir do original. Não imponha um limite único de silêncio para todas as frases nem acelere a voz sem eu pedir",
+    "tips": [
+      "Diga se quer mais direto ou mais calmo.",
+      "Marque uma passagem cujo ritmo você considera bom."
+    ]
+  },
+  "shorten": {
+    "title": "Caber em uma duração",
+    "summary": "Reduza redundâncias mantendo a ideia completa.",
+    "when": "O vídeo ultrapassou o tempo disponível.",
+    "goal": "Reduza o vídeo até a duração que eu informar, retirando primeiro ideias repetidas e desvios. Preserve o contexto, a conclusão e a chamada quando existir. Liste os trechos propostos para remoção; se o limite comprometer o sentido, explique o conflito em vez de truncar palavras ou acelerar a fala automaticamente",
+    "tips": [
+      "Informe o limite em segundos.",
+      "Diga quais informações são indispensáveis."
+    ]
+  },
+  "replace-hook": {
+    "title": "Trocar o texto de abertura",
+    "summary": "Atualize o gancho mantendo a edição aprovada.",
+    "when": "Você quer experimentar outra frase na tela.",
+    "goal": "Substitua somente o texto do gancho pela frase que eu fornecer. Ajuste quebra de linhas, tamanho e duração de leitura sem alterar o corpo do vídeo. Confira se o novo texto continua fiel à fala e ao conteúdo, e salve como uma nova versão",
+    "tips": [
+      "Escreva o texto exato.",
+      "Se quiser trocar também a fala, forneça uma tomada compatível."
+    ]
+  },
+  "visual-pacing": {
+    "title": "Dar ritmo visual",
+    "summary": "Aproximações e mudanças motivadas pela fala.",
+    "when": "O vídeo parece estático apesar de a explicação funcionar.",
+    "goal": "Identifique passagens que pedem ênfase e acrescente aproximações suaves ou uma mudança de composição nesses pontos. Preserve orientação espacial e tempo de leitura. Prefira variar elementos já presentes e evite uma frequência fixa de efeitos que distraia da fala",
+    "tips": [
+      "Indique o trecho que parece mais parado.",
+      "Movimento deve ajudar a seguir a ideia, não competir com ela."
+    ]
+  },
+  "reduce-clutter": {
+    "title": "Limpar uma tela poluída",
+    "summary": "Uma ideia principal por vez, com espaço para leitura.",
+    "when": "Legenda, cartões e imagens disputam atenção.",
+    "goal": "Revise os trechos com excesso de informação e retire ou reorganize o que não ajuda a compreensão. Deixe uma ideia principal por vez, evite textos duplicados e preserve as legendas necessárias para acessibilidade. Reduza movimentos e sons concorrentes sem alterar a mensagem",
+    "tips": [
+      "Informe quais elementos são obrigatórios.",
+      "Uma mudança de posição pode resolver sem apagar conteúdo."
+    ]
+  },
+  "clear-face": {
+    "title": "Tirar o texto da frente do rosto",
+    "summary": "Reposicione legendas e cenas ao longo do movimento.",
+    "when": "Um elemento cobre olhos, boca, mãos ou informação importante.",
+    "goal": "Revise a posição do rosto e dos elementos importantes ao longo do vídeo e reposicione legendas, títulos e cenas que os encobrem. Confira começo, meio, fim e mudanças de enquadramento, mantendo os textos dentro da área segura do formato de entrega",
+    "tips": [
+      "Indique um tempo em que o problema aparece.",
+      "A solução precisa funcionar durante o movimento, não só em um quadro."
+    ]
+  },
+  "correct-captions": {
+    "title": "Corrigir palavras da legenda",
+    "summary": "Nomes, números e termos difíceis escritos corretamente.",
+    "when": "A transcrição entendeu uma palavra de forma errada.",
+    "goal": "Corrija na legenda as substituições que eu informar e revise nomes próprios, marcas, números e termos técnicos no restante. Confira a fala antes de mudar uma palavra ambígua. Preserve os tempos e a edição aprovada, ajustando a quebra de linhas quando necessário",
+    "tips": [
+      "Informe a palavra errada e sua forma correta.",
+      "Um pequeno glossário evita repetir erros em outros vídeos."
+    ]
+  },
+  "animate-moment": {
+    "title": "Animar uma palavra ou momento",
+    "summary": "Uma intervenção precisa na passagem escolhida.",
+    "when": "Você já sabe onde quer uma lista, seta, notificação ou carimbo.",
+    "goal": "No tempo e na palavra que eu indicar, aplique uma cena adequada do catálogo, como lista, número, notificação, carimbo ou destaque desenhado. Use o texto fornecido, sincronize o movimento com a fala e mantenha o restante da edição. Não transforme a cena em prova de um evento que não aconteceu",
+    "tips": [
+      "Informe tempo, palavra e o que deve aparecer.",
+      "Setas e círculos devem apontar para algo visível no próprio vídeo."
+    ]
+  },
+  "change-format": {
+    "title": "Adaptar para outro formato",
+    "summary": "Reenquadre pessoa, textos e cenas para o novo destino.",
+    "when": "A mesma edição precisa funcionar em outro tamanho de tela.",
+    "goal": "Crie uma nova versão no formato selecionado, preservando o corte e reposicionando rosto, legendas, imagens e cenas. Não estique a imagem nem corte texto importante. Quando o recorte não comportar o conteúdo, use uma composição com margens ou moldura e mostre os trechos mais difíceis da adaptação",
+    "tips": [
+      "Escolha o formato de destino no formulário.",
+      "Mantenha também a versão original."
+    ]
+  },
+  "voice-effect": {
+    "title": "Efeito de voz em um trecho",
+    "summary": "Uma mudança breve de timbre para reforçar uma intenção.",
+    "when": "Uma frase pede um efeito de rádio, megafone, robô ou outro tratamento disponível.",
+    "goal": "No intervalo que eu indicar, consulte os efeitos de voz disponíveis no editonny e teste o que melhor corresponde à intenção que eu descrever. Preserve as palavras, o sincronismo e a voz original fora do trecho, com entradas e saídas suaves. Mostre a amostra para conferir inteligibilidade e intensidade antes de aplicar; não prometa imitar uma pessoa ou reproduzir exatamente um efeito de outra ferramenta",
+    "tips": [
+      "Informe início, fim e o clima desejado para a frase.",
+      "Se o corte mudar depois, refaça o efeito a partir do áudio atualizado."
+    ]
+  },
+  "generated-media": {
+    "title": "Mídia gerada para uma cena",
+    "summary": "Avalie uma transformação visual e teste a integração com o vídeo.",
+    "when": "A ideia envolve transformar um objeto, trocar um fundo ou acrescentar um elemento visual.",
+    "goal": "Consulte as receitas disponíveis no editonny e avalie como criar a transformação visual que eu descrever, usando os recursos realmente disponíveis neste ambiente. Identifique a mídia necessária, limitações, eventual envio de arquivos a terceiros e custos antes da execução. Não envie mídia nem gaste créditos sem minha autorização específica. Preserve o original e teste um trecho curto antes de integrar o resultado ao corte, mantendo a continuidade e a voz. Identifique o resultado como efeito ou ilustração, nunca como registro ou prova real",
+    "tips": [
+      "Descreva o que muda, em qual trecho e como o resultado deve entrar no vídeo.",
+      "Se a receita depender de um recurso indisponível, proponha mídia fornecida por você ou uma composição local mais simples."
+    ]
+  },
+  "sound-effects": {
+    "title": "Sons nos momentos certos",
+    "summary": "Reforce entradas e movimentos sem cansar quem ouve.",
+    "when": "As animações estão mudas ou há sons demais.",
+    "goal": "Revise os efeitos sonoros e deixe apenas os que reforçam movimentos ou mudanças importantes. Sincronize o pico do som com o movimento correspondente e ajuste o volume para não encobrir a fala. Se eu pedir som em cada animação, mantenha efeitos leves e elimine sobreposições confusas",
+    "tips": [
+      "Diga se quer sons discretos ou mais marcados.",
+      "Use efeitos disponíveis com direito de uso."
+    ]
+  },
+  "music": {
+    "title": "Trilha abaixo da voz",
+    "summary": "Uma música de apoio com volume consistente.",
+    "when": "Você quer incluir uma trilha ou corrigir seu volume.",
+    "goal": "Use a música que eu fornecer ou uma trilha autorizada disponível, combinando o trecho com o clima do vídeo. Ajuste o nível para manter a voz em primeiro plano, reduzindo a música durante a fala e evitando entradas ou saídas bruscas. Confira o áudio final; não adicione música se o direito de uso não estiver claro",
+    "tips": [
+      "Envie a música e informe que pode utilizá-la.",
+      "Diga se a trilha está alta, quase inaudível ou ainda não foi escolhida."
+    ]
+  },
+  "clean-audio": {
+    "title": "Reduzir ruído de fundo",
+    "summary": "Teste uma limpeza que preserve a voz.",
+    "when": "Ventilador, rua ou outro ruído atrapalham a fala.",
+    "goal": "Avalie o áudio e prepare uma comparação curta antes e depois de uma redução de ruído moderada. Preserve a naturalidade e a inteligibilidade da voz, evitando som metálico. Informe o que não pôde ser recuperado, especialmente distorção ou reverberação forte, e aplique o ajuste ao restante somente depois de avaliar a amostra",
+    "tips": [
+      "Use o áudio original com a melhor qualidade disponível.",
+      "Um trecho com fala e silêncio ajuda a perceber a diferença."
+    ]
+  },
+  "finish-sample": {
+    "title": "Aplicar o padrão aprovado",
+    "summary": "Estenda a amostra ao restante sem inventar outro estilo.",
+    "when": "Você aprovou o corte e o acabamento da amostra.",
+    "goal": "Use a amostra que eu identificar como aprovada para concluir o restante do vídeo. Mantenha legenda, cores, composição e tratamento de áudio consistentes, adaptando apenas o necessário a cada trecho. Registre o padrão no projeto e confira a exportação completa antes de entregar",
+    "tips": [
+      "Identifique qual versão da amostra foi aprovada.",
+      "Se alguma parte exige solução diferente, peça que seja sinalizada."
+    ]
+  },
+  "reuse-style": {
+    "title": "Repetir o estilo em outro vídeo",
+    "summary": "Aproveite um padrão já aprovado com o novo conteúdo.",
+    "when": "Você quer consistência em uma série de vídeos.",
+    "goal": "Leia o padrão salvo no projeto aprovado que eu indicar e use-o como base para esta edição. Preserve cores, tipografia, legenda e tratamento de áudio, adaptando ritmo e cenas ao conteúdo novo. Não copie textos, dados ou provas do vídeo anterior sem conferir se ainda se aplicam",
+    "tips": [
+      "Informe a pasta do projeto aprovado.",
+      "Se só houver um MP4, use-o como referência e descreva as limitações."
+    ]
+  },
+  "hook-versions": {
+    "title": "Várias aberturas, um mesmo corpo",
+    "summary": "Compare ganchos mantendo o restante igual.",
+    "when": "Você gravou aberturas diferentes para o mesmo vídeo.",
+    "goal": "Crie uma versão para cada gancho fornecido, usando o mesmo corpo, conclusão e acabamento aprovados. Confira a continuidade entre cada abertura e o corpo, ajuste somente a emenda necessária e exporte arquivos separados com nomes claros. Mostre primeiro uma versão completa como referência e não escolha um vencedor sem dados de teste",
+    "tips": [
+      "Indique a pasta dos ganchos e o corpo que deve ser mantido.",
+      "Diferencie troca de fala de uma simples troca de título."
+    ]
+  },
+  "resume": {
+    "title": "Continuar de onde parou",
+    "summary": "Recupere as decisões e identifique a próxima etapa.",
+    "when": "A conversa foi interrompida ou o projeto ficou para outro dia.",
+    "goal": "Leia o estado e as decisões registradas na pasta do projeto e confira os arquivos existentes antes de retomar. Resuma o que já está aprovado, o que falta e qual será a próxima etapa. Preserve as versões anteriores e peça somente os arquivos ou decisões que não puder recuperar",
+    "tips": [
+      "Use a pasta do projeto, além do vídeo final.",
+      "Informe a última versão que você chegou a assistir."
+    ]
+  },
+  "mobile-review": {
+    "title": "Revisar o vídeo pelo celular",
+    "summary": "Atualizações curtas e uma amostra fácil de avaliar na tela pequena.",
+    "when": "Você está pelo celular e tem acesso a um ambiente capaz de editar seus arquivos.",
+    "goal": "Estou acompanhando pelo celular. Confira se o ambiente atual tem acesso ao arquivo anexado ou à pasta informada e às ferramentas do editonny; se não tiver, explique o que falta sem prometer edição dentro do navegador do guia. Use mensagens curtas, mostre o corte antes do acabamento e entregue uma amostra que eu consiga avaliar aqui. No final, informe como acessar e salvar o MP4 neste ambiente",
+    "tips": [
+      "O guia monta pedidos; ele não recebe nem edita seus vídeos.",
+      "Prefira o arquivo original a uma cópia comprimida por mensagens."
+    ]
+  },
+  "mobile-style": {
+    "title": "Escolher o estilo por uma amostra",
+    "summary": "Compare texto, cor e movimento sem precisar conhecer o catálogo.",
+    "when": "Você já tem o corte e quer decidir o acabamento pelo celular.",
+    "goal": "Com o corte que eu identificar como aprovado, apresente duas opções simples de acabamento em quadros ou amostras: uma legenda discreta e outra com destaque na palavra falada. Use o gancho e a cor que eu informar, ou proponha textos fiéis à fala. Identifique quadros estáticos como prévias e mostre movimento em vídeo antes da escolha final",
+    "tips": [
+      "Informe uma cor, o texto do gancho e a quantidade de animação desejada.",
+      "Confira a leitura no tamanho real da tela do celular."
+    ]
+  },
+  "final-review": {
+    "title": "Conferir antes de publicar",
+    "summary": "Uma revisão técnica e editorial com problemas localizados no tempo.",
+    "when": "O vídeo foi exportado e você quer conferir a entrega.",
+    "goal": "Revise o MP4 final: reprodução, duração, voz, trilha, sincronismo, palavras cortadas, legendas, nomes, números, enquadramento e dados pessoais visíveis. Aponte problemas com tempo e sugestão de correção, incluindo promessas ou provas sem sustentação. Se eu pedir análise de regras de uma plataforma, consulte suas regras atuais e deixe clara a incerteza da aprovação. Não publique o arquivo",
+    "tips": [
+      "Informe o destino e o formato esperado.",
+      "A revisão não garante alcance, desempenho ou aprovação de anúncio."
+    ]
+  }
+}

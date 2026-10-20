@@ -1,0 +1,542 @@
+{
+  "first-video": {
+    "title": "My first video",
+    "summary": "Turn a recording into a clear, complete video.",
+    "when": "You have raw footage and have not chosen a style yet.",
+    "goal": "Build a video with a beginning, development, and conclusion from my footage. Choose the clearest complete takes and keep the meaning intact. Suggest a short opening based on the actual speech and use supporting images only when available",
+    "tips": [
+      "Describe the audience and desired duration.",
+      "If there is a closing call to action, specify what viewers should do."
+    ]
+  },
+  "environment-test": {
+    "title": "Test the setup with a short clip",
+    "summary": "Check the tools before starting a long project.",
+    "when": "You just installed editonny or changed computers.",
+    "goal": "Check the editonny environment and use a short video of mine to test cutting, captions, audio, and a simple catalog scene. Report what worked and what needs preparation. Recognizing this request alone does not validate the installation",
+    "tips": [
+      "Use a file without sensitive personal content.",
+      "The test should produce a playable MP4."
+    ]
+  },
+  "ad": {
+    "title": "An ad with one clear message",
+    "summary": "A hook, demonstration, and call to action grounded in your footage.",
+    "when": "You want to present an offer in a short video.",
+    "goal": "Build a 20–40 second ad with a hook based on the speech, problem, demonstration, and a final call to the destination I specify. Use readable captions, restrained movement, and visual evidence only from real supplied files. Flag unsupported claims for review; do not promise platform approval or commercial results",
+    "tips": [
+      "Specify the product, audience, and click destination.",
+      "Supply the correct offer and authorized demonstration images."
+    ]
+  },
+  "reels": {
+    "title": "A complete idea for Reels",
+    "summary": "Useful content with a natural pace and no forced sales pitch.",
+    "when": "You want to turn a spoken explanation into social content.",
+    "goal": "Edit a Reel that conveys one complete idea and opens with the most interesting point from the actual speech. Preserve the conclusion, vary framing only when it helps the pace, emphasize a few important phrases, and do not add a sales call to action",
+    "tips": [
+      "Specify the main topic and duration.",
+      "Music is optional; the voice must remain easy to understand."
+    ]
+  },
+  "vsl": {
+    "title": "A sales video with useful visuals",
+    "summary": "Organize the presentation and illustrate its key points.",
+    "when": "Your recording presents a product or service for a sales page.",
+    "goal": "Organize the sales video into hook, problem, explanation, demonstration, offer, and call to action using only sections present in the recording. Keep the speaker as the main thread with subtle captions. Use brief scenes for lists, numbers, and demonstrations that improve understanding, then return to the camera. Present a section plan and respect my duration",
+    "tips": [
+      "Specify the desired duration and current offer details.",
+      "Supply real evidence; an explanatory illustration is not proof."
+    ]
+  },
+  "lesson": {
+    "title": "A lesson with a clear opening",
+    "summary": "A brief introduction followed by focused learning.",
+    "when": "You recorded a long lesson with repeated explanations or false starts.",
+    "goal": "Edit the lesson with a short opening that introduces the learning outcome. Concentrate titles and visual emphasis in the introduction. Keep demonstrations at a pace learners can follow, preserve audio from screen recordings and examples, and retain complete explanations and intentional practice pauses",
+    "tips": [
+      "Identify sections that must remain complete.",
+      "Mention exercises or pauses intended for practice."
+    ]
+  },
+  "interview": {
+    "title": "An interview with context",
+    "summary": "Complete answers with the questions and reactions they need.",
+    "when": "You want to organize a conversation, interview, or testimonial.",
+    "goal": "Select answers that make sense in context and keep the questions needed to understand them. Do not change the position expressed by a speaker. If cameras or audio were recorded separately, verify synchronization before switching views. Identify participants only with names and roles I supply",
+    "tips": [
+      "List the topics that must appear.",
+      "An isolated clip must not reverse the intent of an answer."
+    ]
+  },
+  "select-takes": {
+    "title": "Choose between several takes",
+    "summary": "Compare recordings and assemble continuous speech.",
+    "when": "The same script was recorded more than once.",
+    "goal": "Compare takes and choose each sentence for clarity, completeness, and visual and audio continuity. Do not assume the last take is best. Build a natural sequence and report the source file and interval of each section. Flag content differences that affect meaning for my decision",
+    "tips": [
+      "Group recordings of the same script.",
+      "Identify any take you already selected."
+    ]
+  },
+  "explain": {
+    "title": "Explain with a diagram",
+    "summary": "Turn a process into synchronized visual steps.",
+    "when": "Speech describes relationships, choices, or a sequence that is hard to picture.",
+    "goal": "Find an explanation that benefits from a diagram and reveal its parts as they are mentioned. Evolve the same diagram using arrows, states, and short labels rather than opening a new card for every word. Preserve the narration and distinguish illustrations from measured data",
+    "tips": [
+      "Describe the process or relationship that needs clarification.",
+      "Identify measured values and elements that are only illustrative."
+    ]
+  },
+  "introduce": {
+    "title": "Introduce an idea or service",
+    "summary": "Context, proposal, and next steps in a simple narrative.",
+    "when": "You need to explain what you do or introduce a project.",
+    "goal": "Organize the presentation into context, proposal, operation, and next steps using the available speech. Use short titles to guide viewers and supplied images to illustrate the explanation. Do not invent benefits, clients, or results; identify missing material",
+    "tips": [
+      "Describe the intended audience.",
+      "Supply correct names and available brand assets."
+    ]
+  },
+  "demonstrate": {
+    "title": "Show the difference with real evidence",
+    "summary": "A before-and-after comparison that shows what actually changed.",
+    "when": "You have real records of two stages of a process or result.",
+    "goal": "Build a before-and-after comparison using only the real files I identify. Make the order, context, and change clear with comparable framing and enough viewing time. Preserve relevant differences in lighting, scale, or conditions and flag anything that prevents a fair comparison. Do not present generated images as evidence or claim results the material does not demonstrate",
+    "tips": [
+      "Identify the before and after files, dates, and relevant conditions.",
+      "If one stage is missing, explain the available material without inventing a comparison."
+    ]
+  },
+  "screen-camera": {
+    "title": "Demonstrate with screen and camera",
+    "summary": "Show where to look, click, or type without losing the sequence.",
+    "when": "You recorded a software or product tutorial.",
+    "goal": "Establish the screen context, then zoom into the actual action with one highlight and step name at a time. Preserve the time needed to follow typing and interface responses. Keep the camera window clear of controls and hide personal information in the recording. Check passages with movement",
+    "tips": [
+      "A sharp screen recording supports useful zooms.",
+      "Identify any data that must be hidden."
+    ]
+  },
+  "split-screen": {
+    "title": "Image above, speaker below",
+    "summary": "Combine an explanation with supplied images or screenshots.",
+    "when": "You discuss a product, page, or image during your talk.",
+    "goal": "When the speech mentions a supplied image, use a split screen with the image above and speaker below. Match each file to the right sentence, preserve proportions, and keep text and face readable. Return to the speaker in fullscreen when the image stops helping",
+    "tips": [
+      "Match each image to its subject.",
+      "Do not enlarge a screenshot until its text becomes unreadable."
+    ]
+  },
+  "evidence-card": {
+    "title": "Give real evidence room on screen",
+    "summary": "Feature a real file while the explanation continues.",
+    "when": "A screenshot, video, or product needs to be clearly visible.",
+    "goal": "When the speech cites supplied evidence, feature that file with an accurate source label and a small speaker frame if space allows. Preserve readability and return to the camera afterward. Do not replace missing evidence with a simulation or present an illustrative result as real",
+    "tips": [
+      "Supply the original evidence file and its identification.",
+      "Hide personal information that is not authorized for display."
+    ]
+  },
+  "background-cutout": {
+    "title": "Place the speaker over images",
+    "summary": "Test the cutout before replacing an entire background.",
+    "when": "You want to appear in front of supporting images.",
+    "goal": "Test a short speaker cutout against the supplied images, keeping the face, hair, and hands clear. Inspect moving edges before extending it. If the recording cannot support a consistent cutout, show the limitation and propose a frame or split screen",
+    "tips": [
+      "A simple background and good lighting help.",
+      "Choose a sample with movement, not just one still frame."
+    ]
+  },
+  "paper-notes": {
+    "title": "A paper and stationery look",
+    "summary": "Notes, labels, and lists with a paper texture.",
+    "when": "You want a light visual style for a story or explanation.",
+    "goal": "Use a paper composition with labels, notes, and highlighter marks in a small color palette. Reveal lists with the speech and update the same sheet when an item changes state. Keep text readable and the speaker visible. Use supplied photos when the story needs them",
+    "tips": [
+      "Choose one accent color.",
+      "Cross out or complete only items confirmed by the speech."
+    ]
+  },
+  "answer-question": {
+    "title": "Answer a question",
+    "summary": "Open with the question and give the answer room.",
+    "when": "The video answers a common question or an actual comment.",
+    "goal": "Show the question in a brief opening card, then keep the speaker in fullscreen and highlight only phrases that organize the answer. Use a supplied question or suggest one grounded in the speech. Do not invent an author, photo, or received comment",
+    "tips": [
+      "Supply the actual comment if you want to show it.",
+      "A generic question can appear without a user identity."
+    ]
+  },
+  "bold-phrases": {
+    "title": "Emphasize key phrases with large type",
+    "summary": "A few carefully chosen phrases establish visual hierarchy.",
+    "when": "A short talk includes words or phrases worth highlighting.",
+    "goal": "Choose a few phrases that convey the idea and show one at a time in large type, synchronized to the speech, clear of the face and inside the safe area. Allow enough time to read the complete phrase, preserve negations, and remove each highlight before the next. Avoid duplicate large and small text while maintaining accessible coverage of speech",
+    "tips": [
+      "Each phrase must fit without covering the face.",
+      "Use fewer highlights when reading time is limited."
+    ]
+  },
+  "fullscreen-explainer": {
+    "title": "Explain a passage in fullscreen",
+    "summary": "Briefly replace the camera with a scene that explains the speech.",
+    "when": "A passage becomes clearer through drawing and movement.",
+    "goal": "Within my specified interval, replace the camera image with a fullscreen explanatory scene while keeping the original voice. Select a suitable catalog scene or adapt an available composition. Synchronize each change with its idea and return to the camera after the explanation",
+    "tips": [
+      "Specify the start, end, and intended understanding.",
+      "One object changing state is often clearer than several screens."
+    ]
+  },
+  "data-card": {
+    "title": "A card with real data",
+    "summary": "Show information without taking the speaker off screen.",
+    "when": "The speech mentions a verifiable number, deadline, or comparison.",
+    "goal": "Show a compact card when the data is mentioned, using the supplied value, unit, and label. Place it in free space away from the face, hands, and captions. Use a subtle entrance and enough reading time. Ask for confirmation rather than completing missing facts",
+    "tips": [
+      "Include the unit, period, and data source.",
+      "An animated counter does not imply a measurement by the system."
+    ]
+  },
+  "typed-request": {
+    "title": "Show a request being typed",
+    "summary": "Illustrate an instruction being typed and submitted.",
+    "when": "You explain what you asked a tool or AI to do.",
+    "goal": "Illustrate the spoken request in a text bar that fills and submits at the specified moment. Show only a documented result or clearly label the screen as illustrative. Do not present the animation as a recording of a real execution",
+    "tips": [
+      "Supply the request text and correct result.",
+      "Use a generic interface when there is no real screen recording."
+    ]
+  },
+  "gauge": {
+    "title": "A level or progress gauge",
+    "summary": "A visual scale for a value or qualitative assessment.",
+    "when": "Speech describes cost, risk, level, or progress.",
+    "goal": "Choose a gauge or bar that represents the spoken concept. Use only the supplied scale, unit, and value, and synchronize movement with the speech. For qualitative assessments, use labels such as low, medium, and high instead of inventing numerical precision",
+    "tips": [
+      "Define what the scale measures.",
+      "A full bar must not imply completion of an unfinished process."
+    ]
+  },
+  "search-comment": {
+    "title": "A search and a comment invitation",
+    "summary": "An illustrated search leads to a topic and closing action.",
+    "when": "The story starts with a question and ends by inviting a response.",
+    "goal": "Illustrate the search term mentioned in the speech and reveal a result using supplied title and summary text. Make its illustrative status clear and do not invent search rankings. If there is a closing invitation, use a generic comment box with the exact word I request",
+    "tips": [
+      "Supply the term, result, and response word.",
+      "Do not present a fictional commenter as a testimonial."
+    ]
+  },
+  "step-list": {
+    "title": "A list or step-by-step sequence",
+    "summary": "Reveal each item as it is explained.",
+    "when": "The speech lists tasks, stages, or criteria.",
+    "goal": "Build a list or sequence from the spoken items and reveal each at its corresponding time. Emphasize the current item and mark it complete only when confirmed. Preserve context and keep the list clear of captions",
+    "tips": [
+      "Supply the correct spelling of each item.",
+      "Split long lists into readable groups."
+    ]
+  },
+  "profession-panel": {
+    "title": "Explain your field with a panel",
+    "summary": "Use a catalog scene to make an explanation concrete.",
+    "when": "You explain a service, process, or concept in your field.",
+    "goal": "Search the editonny catalog for a scene that suits my field and the actual explanation. Present the selection with adapted text, keep the speaker visible when needed, and use only supplied information. If no specific scene exists, propose a simple diagram serving the same purpose",
+    "tips": [
+      "Specify the profession, topic, and audience.",
+      "Replace all demonstration names and numbers in the scene."
+    ]
+  },
+  "hand-tracked-object": {
+    "title": "Let an object follow a hand",
+    "summary": "A supplied image follows a gesture in a short interval.",
+    "when": "You point or present something with your palm visible.",
+    "goal": "Test a supplied image or logo following my hand in the specified interval using available tools. Check position, scale, and continuity throughout the gesture. If the hand leaves the frame or tracking fails, end the effect naturally or propose a fixed card. Evaluate the test before extending it",
+    "tips": [
+      "Supply a transparent image when possible.",
+      "Include the hardest part of the movement in the sample."
+    ]
+  },
+  "layered-depth": {
+    "title": "Text behind, object in front",
+    "summary": "Create depth with layers and a tested cutout.",
+    "when": "A word or object needs emphasis around the speaker.",
+    "goal": "Test a composition with text behind the speaker and a supplied foreground element, keeping the face clear. Use subtle movement between layers and return to the normal camera view after the emphasis. Check cutout edges in motion and describe the result as layered composition rather than true 3D",
+    "tips": [
+      "Choose one moment for emphasis.",
+      "A frame can preserve clarity when a cutout is unreliable."
+    ]
+  },
+  "spatial-explanation": {
+    "title": "Explain a spatial relationship in 3D",
+    "summary": "Use volume when depth and position improve understanding.",
+    "when": "An explanation involves layers, fits, paths, or parts.",
+    "goal": "Evaluate an available editonny 3D scene for the spoken spatial relationship. Use simple geometry, readable labels, and movement that reveals what a flat view would hide. Start with a short test of the main movement and verify rendering support. If it is not feasible, propose a 2D diagram",
+    "tips": [
+      "Explain which relationship needs depth.",
+      "Scale is illustrative unless you supply measurements."
+    ]
+  },
+  "editing-process": {
+    "title": "Show the editing process",
+    "summary": "Present real editing stages with verifiable project data.",
+    "when": "You want to explain how a video was built.",
+    "goal": "Show actual editing stages with small indicators synchronized to the speech: transcription, take selection, cutting, and finishing. Use counts and durations only when measured in this project. Label the sequence as a process demonstration rather than suggesting live execution of a previously edited video",
+    "tips": [
+      "Specify which stages you want to show.",
+      "Do not invent time saved or a number of cuts."
+    ]
+  },
+  "reference": {
+    "title": "Analyze and adapt a reference",
+    "summary": "Study pace, text, and composition without copying the content.",
+    "when": "You have a video whose finishing suits your project.",
+    "goal": "Analyze my reference file and summarize its cutting pace, framing, captions, colors, animations, and sound. Separate observations from suggestions. Adapt those principles to my material while preserving my speech and images, and show a sample before extending the style",
+    "tips": [
+      "Supply the reference file or an accessible link.",
+      "Explain what you like; there is no need to repeat every effect."
+    ]
+  },
+  "visual-identity": {
+    "title": "Choose colors and finishing",
+    "summary": "A consistent set of colors, captions, and titles.",
+    "when": "You want to define or change the video style.",
+    "goal": "Suggest a coherent look using my colors and brand assets. Coordinate captions, titles, cards, and backgrounds with readable contrast. If I have no preference, present two simple directions, such as dark with an accent or light paper, and apply the selected direction to a sample",
+    "tips": [
+      "Supply a main color or brand reference.",
+      "Describe the desired look without needing style names."
+    ]
+  },
+  "polish": {
+    "title": "Polish an existing edit",
+    "summary": "Improve readability, pace, and sound within the approved narrative.",
+    "when": "The cut works and needs finishing.",
+    "goal": "Review the current edit and fix finishing problems: clipped words, accidental pauses, unreadable captions, elements covering faces, mistimed entrances, and voice/music imbalance. Preserve the approved structure and report the adjustments",
+    "tips": [
+      "Supply the editable project when available.",
+      "Identify decisions already approved."
+    ]
+  },
+  "adjust-interval": {
+    "title": "Change only one interval",
+    "summary": "A localized revision with everything else preserved.",
+    "when": "Almost everything is ready and one detail needs a change.",
+    "goal": "Apply only my described change within the specified interval of the current edit and preserve everything else. Establish whether times refer to the final video or raw footage, check both junctions, and save a new version",
+    "tips": [
+      "Specify the start, end, and requested change.",
+      "Example: replace the supporting image from 00:12 to 00:18."
+    ]
+  },
+  "pacing": {
+    "title": "Adjust pauses and pacing",
+    "summary": "Make speech flow without losing its intent.",
+    "when": "The video drags or cuts feel too tight.",
+    "goal": "Review the pacing while preserving intentional breathing, emphasis, and time to understand demonstrations. Recover tight cut boundaries from the originals. Do not impose one silence threshold on every sentence or speed up the voice unless I ask",
+    "tips": [
+      "Say whether you want a more direct or calmer result.",
+      "Identify a passage whose pace already works."
+    ]
+  },
+  "shorten": {
+    "title": "Fit a target duration",
+    "summary": "Remove redundancy while keeping the idea complete.",
+    "when": "The video exceeds its available time.",
+    "goal": "Shorten the video to my target duration, removing repeated ideas and tangents first. Preserve context, conclusion, and any call to action. List proposed removals. If the limit compromises meaning, explain the conflict rather than clipping words or automatically accelerating speech",
+    "tips": [
+      "Specify the limit in seconds.",
+      "Identify indispensable information."
+    ]
+  },
+  "replace-hook": {
+    "title": "Replace the opening text",
+    "summary": "Update the hook within the approved edit.",
+    "when": "You want to try a different phrase on screen.",
+    "goal": "Replace only the opening text with my exact phrase. Adjust line breaks, size, and reading duration without changing the body of the video. Verify that the new text remains faithful to the speech and content, and save a new version",
+    "tips": [
+      "Write the exact text.",
+      "Supply a matching take if you also want to replace the speech."
+    ]
+  },
+  "visual-pacing": {
+    "title": "Add motivated visual movement",
+    "summary": "Use framing changes where the speech calls for emphasis.",
+    "when": "The video looks static despite a clear explanation.",
+    "goal": "Find passages needing emphasis and add gentle zooms or composition changes at those points. Preserve spatial orientation and reading time. Prefer varying existing elements and avoid a fixed frequency of distracting effects",
+    "tips": [
+      "Identify a passage that feels static.",
+      "Movement should help viewers follow the idea."
+    ]
+  },
+  "reduce-clutter": {
+    "title": "Clear a crowded screen",
+    "summary": "One main idea at a time, with room to read.",
+    "when": "Captions, cards, and images compete for attention.",
+    "goal": "Review crowded passages and remove or reorganize elements that do not help understanding. Show one main idea at a time, avoid duplicate text, and preserve captions needed for accessibility. Reduce competing movement and sounds without changing the message",
+    "tips": [
+      "Identify mandatory elements.",
+      "Repositioning can solve a collision without removing content."
+    ]
+  },
+  "clear-face": {
+    "title": "Keep text clear of the face",
+    "summary": "Reposition captions and scenes throughout the movement.",
+    "when": "An element covers eyes, mouth, hands, or important information.",
+    "goal": "Review face and important-content positions throughout the video and move overlapping captions, titles, and scenes. Check the beginning, middle, end, and framing changes while keeping text inside the delivery format safe area",
+    "tips": [
+      "Identify a time when the collision appears.",
+      "The solution must work in motion, not just in one frame."
+    ]
+  },
+  "correct-captions": {
+    "title": "Correct caption wording",
+    "summary": "Spell names, numbers, and technical terms correctly.",
+    "when": "Transcription misheard a word.",
+    "goal": "Apply my caption replacements and review proper names, brands, numbers, and technical terms. Listen before changing ambiguous words. Preserve the approved cut and timing, adjusting line breaks when needed",
+    "tips": [
+      "Supply the incorrect word and correct replacement.",
+      "A short glossary prevents repeated mistakes."
+    ]
+  },
+  "animate-moment": {
+    "title": "Animate a word or moment",
+    "summary": "A precise visual intervention in a chosen passage.",
+    "when": "You know where a list, arrow, notification, or stamp belongs.",
+    "goal": "Apply a suitable catalog scene at my specified word and time, such as a list, number, notification, stamp, or drawn highlight. Use supplied text, synchronize movement with speech, and preserve the rest of the edit. Do not turn an illustration into evidence of an event that did not occur",
+    "tips": [
+      "Specify the time, word, and intended element.",
+      "Arrows and circles must point to something visible in the video."
+    ]
+  },
+  "change-format": {
+    "title": "Adapt to another format",
+    "summary": "Reframe people, text, and scenes for a new destination.",
+    "when": "The same edit needs a different screen shape.",
+    "goal": "Create a new version in the selected format, preserving the cut and repositioning faces, captions, images, and scenes. Do not stretch the image or crop important text. Use margins or a frame when the crop cannot contain the content, and show the most difficult adapted passages",
+    "tips": [
+      "Select the destination format in the form.",
+      "Keep the original version too."
+    ]
+  },
+  "voice-effect": {
+    "title": "A voice effect in one interval",
+    "summary": "A brief change in tone to reinforce an intention.",
+    "when": "A phrase calls for a radio, megaphone, robot, or another available treatment.",
+    "goal": "Within my specified interval, inspect available editonny voice effects and test the one matching my intent. Preserve words, synchronization, and the original voice outside that interval, with smooth boundaries. Show a sample to check intelligibility and strength; do not promise to imitate a person or exactly reproduce another tool",
+    "tips": [
+      "Specify start, end, and the intended mood.",
+      "If the cut changes later, rebuild the effect from the updated audio."
+    ]
+  },
+  "generated-media": {
+    "title": "Generated media for a scene",
+    "summary": "Evaluate a transformation and test its video integration.",
+    "when": "The idea involves transforming an object, changing a background, or adding an element.",
+    "goal": "Inspect available editonny recipes and evaluate my visual transformation using tools actually present in this environment. Identify required media, limitations, third-party transmission, and costs before execution. Do not send media or spend credits without my specific authorization. Preserve the original and test a short interval before integrating the result, maintaining continuity and voice. Label the result as an effect or illustration rather than real evidence",
+    "tips": [
+      "Describe what changes, where, and how it should enter the video.",
+      "If a required tool is unavailable, propose supplied media or a simpler local composition."
+    ]
+  },
+  "sound-effects": {
+    "title": "Sounds at the right moments",
+    "summary": "Reinforce entrances and movement without tiring the listener.",
+    "when": "Animations are silent or there are too many effects.",
+    "goal": "Review sound effects and retain only those reinforcing important movement or changes. Align each sound peak with its movement and keep it below the speech. If I request a sound for every animation, keep effects light and remove confusing overlaps",
+    "tips": [
+      "Specify subtle or more pronounced sound.",
+      "Use available effects with appropriate usage rights."
+    ]
+  },
+  "music": {
+    "title": "Keep music below the voice",
+    "summary": "Supporting music with a consistent level.",
+    "when": "You want to add music or fix its volume.",
+    "goal": "Use supplied or authorized available music and match its passage to the mood. Keep the voice in the foreground, lower music during speech, and avoid abrupt entrances and exits. Check the final mix and do not add music when its usage rights are unclear",
+    "tips": [
+      "Supply music and confirm your right to use it.",
+      "Say whether it is too loud, nearly inaudible, or not selected yet."
+    ]
+  },
+  "clean-audio": {
+    "title": "Reduce background noise",
+    "summary": "Test cleanup that preserves the voice.",
+    "when": "A fan, traffic, or other noise interferes with speech.",
+    "goal": "Evaluate the audio and prepare a short before-and-after comparison with moderate noise reduction. Preserve natural, intelligible speech and avoid metallic artifacts. Report what cannot be recovered, especially distortion or strong reverberation, and evaluate the sample before extending the treatment",
+    "tips": [
+      "Use the best available original audio.",
+      "Include speech and silence in the comparison."
+    ]
+  },
+  "finish-sample": {
+    "title": "Extend an approved sample",
+    "summary": "Apply the sample consistently to the rest of the video.",
+    "when": "You approved the sample cut and finishing.",
+    "goal": "Use my identified approved sample to finish the rest of the video. Keep captions, colors, composition, and audio consistent while adapting only what each passage needs. Record the style in the project and check the complete export before delivery",
+    "tips": [
+      "Identify the approved sample version.",
+      "Ask that passages needing a different solution be flagged."
+    ]
+  },
+  "reuse-style": {
+    "title": "Reuse a style in another video",
+    "summary": "Carry an approved visual language into new content.",
+    "when": "You want consistency across a video series.",
+    "goal": "Read the saved style from my identified approved project and use it as the basis for this edit. Preserve colors, typography, captions, and audio treatment while adapting pacing and scenes to the new content. Do not copy old text, data, or evidence without checking that it still applies",
+    "tips": [
+      "Supply the approved project folder.",
+      "If only an MP4 exists, use it as a reference and explain the limits."
+    ]
+  },
+  "hook-versions": {
+    "title": "Several openings, one main video",
+    "summary": "Compare hooks while keeping the body consistent.",
+    "when": "You recorded different openings for the same video.",
+    "goal": "Create one version for each supplied hook using the same approved body, conclusion, and finishing. Check continuity at every opening junction, adjust only the necessary transition, and export separate clearly named files. Show one complete reference version first and do not select a winner without test data",
+    "tips": [
+      "Identify the hook folder and the body to retain.",
+      "Distinguish replacing speech from merely changing a title."
+    ]
+  },
+  "resume": {
+    "title": "Continue where you left off",
+    "summary": "Recover decisions and identify the next step.",
+    "when": "The conversation stopped or the project was paused.",
+    "goal": "Read recorded project state and decisions and inspect existing files before resuming. Summarize what is approved, what remains, and the next step. Preserve earlier versions and ask only for missing files or decisions that cannot be recovered",
+    "tips": [
+      "Supply the project folder as well as the exported video.",
+      "Identify the last version you watched."
+    ]
+  },
+  "mobile-review": {
+    "title": "Review the video from your phone",
+    "summary": "Short updates and a sample suited to a small screen.",
+    "when": "You are on a phone with access to an environment capable of editing your files.",
+    "goal": "I am following from my phone. Check that this environment can access the attachment or specified folder and editonny tools. If not, explain what is missing without promising browser editing in the guide. Keep updates short, show the cut before finishing, and deliver a sample I can review here. Explain how to access and save the final MP4 in this environment",
+    "tips": [
+      "The guide builds requests; it does not receive or edit footage.",
+      "Prefer the original file to a messaging-app compression."
+    ]
+  },
+  "mobile-style": {
+    "title": "Choose a style from a sample",
+    "summary": "Compare text, color, and movement without browsing the whole catalog.",
+    "when": "You have an approved cut and want to choose finishing on your phone.",
+    "goal": "With my identified approved cut, present two simple finishing options in frames or samples: subtle captions and spoken-word emphasis. Use my hook and color or suggest text faithful to the speech. Label still frames as previews and show video movement before the final choice",
+    "tips": [
+      "Supply a color, hook text, and preferred amount of animation.",
+      "Check readability at the actual phone display size."
+    ]
+  },
+  "final-review": {
+    "title": "Check before publishing",
+    "summary": "A technical and editorial review with time-specific findings.",
+    "when": "The video is exported and you want to inspect the delivery.",
+    "goal": "Review the final MP4 for playback, duration, voice, music, synchronization, clipped words, captions, names, numbers, framing, and visible personal data. Report problems with times and suggested corrections, including unsupported promises or evidence. If I request platform-policy analysis, consult current rules and state approval uncertainty. Do not publish the file",
+    "tips": [
+      "Specify the destination and expected format.",
+      "Review does not guarantee reach, performance, or ad approval."
+    ]
+  }
+}

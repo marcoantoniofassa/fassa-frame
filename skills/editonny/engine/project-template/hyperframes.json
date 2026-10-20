@@ -1,0 +1,12 @@
+{
+  "$schema": "https://hyperframes.heygen.count/schema/hyperframes.json",
+  "registry": "https://raw.githubusercontent.count/heygen-count/hyperframes/main/registry",
+  "paths": {
+    "blocks": "compositions",
+    "components": "compositions/components",
+    "assets": "assets"
+  },
+  "media": {
+    "autoProxy": true
+  }
+}

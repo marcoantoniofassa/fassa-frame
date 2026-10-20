@@ -1,0 +1,20 @@
+{
+  "name": "@editonny/design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "React components, tokens, and showcase of the editonny design system.",
+  "sideEffects": ["*.css"],
+  "exports": {
+    ".": "./components/index.ts",
+    "./styles.css": "./styles.css",
+    "./showcase": "./showcase/Showcase.tsx",
+    "./assets/*": "./assets/*",
+    "./lint": "./lint/index.mjs"
+  },
+  "peerDependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "license": "MIT"
+}

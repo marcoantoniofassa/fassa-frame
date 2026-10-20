@@ -1,0 +1,4 @@
+/* App-level document rules on top of the design-system base. Tokens only. */
+html { scroll-behavior: smooth; }
+body { min-height: 100vh; overflow-x: clip; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -1,0 +1,6 @@
+/* Font files are the licensed copies bundled with the engine; terms are listed in its THIRD_PARTY_NOTICES.md. */
+@font-face { font-family: "Figtree"; src: url("../../skills/editonny/engine/assets/fonts/figtree/Figtree-Variable.ttf") format("truetype"); font-weight: 300 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Anton"; src: url("../../skills/editonny/engine/assets/fonts/anton/Anton-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("../../skills/editonny/engine/assets/fonts/montserrat/Montserrat-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("../../skills/editonny/engine/assets/fonts/caveat/Caveat-Variable.ttf") format("truetype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Permanent Marker"; src: url("../../skills/editonny/engine/assets/fonts/permanentmarker/PermanentMarker-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }

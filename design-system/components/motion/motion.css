@@ -1,0 +1,37 @@
+/* Motion: Marquee, KineticText, Counter, Aurora, Reveal. */
+.ds-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.ds-marquee { --marquee-bg: var(--orange-500); --marquee-fg: var(--ink-950); --marquee-sep: var(--fog-50); overflow: hidden; padding: calc(var(--marquee-size) * 0.28) 0; background: var(--marquee-bg); }
+.ds-marquee[data-rotated="true"] { transform: rotate(var(--marquee-rotate)) scale(1.04); }
+.ds-marquee[data-tone="volt"] { --marquee-bg: var(--volt-400); --marquee-sep: var(--orange-500); }
+.ds-marquee[data-tone="black"] { --marquee-bg: var(--ink-950); --marquee-fg: var(--fog-50); --marquee-sep: var(--orange-500); }
+.ds-marquee[data-tone="white"] { --marquee-bg: var(--fog-50); --marquee-sep: var(--orange-500); }
+.ds-marquee[data-tone="outline"] { --marquee-bg: transparent; --marquee-fg: transparent; --marquee-sep: var(--orange-500); }
+.ds-marquee__track { display: flex; width: max-content; animation: ed-marquee var(--marquee-speed) linear infinite; }
+.ds-marquee[data-reverse="true"] .ds-marquee__track { animation-direction: reverse; }
+.ds-marquee[data-pause="true"]:is(:hover, [data-force~="hover"]) .ds-marquee__track { animation-play-state: paused; }
+.ds-marquee__run { display: flex; flex: none; align-items: center; gap: calc(var(--marquee-size) * 0.45); padding-right: calc(var(--marquee-size) * 0.45); }
+.ds-marquee__item { font-family: var(--font-kinetic); font-size: var(--marquee-size); line-height: 1; letter-spacing: 0.005em; text-transform: uppercase; white-space: nowrap; color: var(--marquee-fg); }
+.ds-marquee[data-tone="outline"] .ds-marquee__item { -webkit-text-stroke: 1.5px var(--text-2); }
+.ds-marquee__sep { font-family: var(--font-sans); font-size: calc(var(--marquee-size) * 0.6); line-height: 1; color: var(--marquee-sep); }
+
+.ds-kinetic { --kinetic-color: var(--text-on-accent); --kinetic-box: var(--accent); position: relative; display: inline-flex; vertical-align: bottom; overflow: hidden; }
+.ds-kinetic[data-boxed="true"] { padding: 0 0.14em 0.04em; border-radius: 0.12em; background: var(--kinetic-box); color: var(--kinetic-color); }
+.ds-kinetic[data-boxed="false"] { color: var(--kinetic-box); }
+.ds-kinetic__word { display: inline-block; animation: ed-word-in 0.6s var(--ease-out) both; }
+
+.ds-counter { font-variant-numeric: tabular-nums; }
+
+.ds-aurora { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.ds-aurora[data-palette="fire"] { --a1: var(--aurora-fire-1); --a2: var(--aurora-fire-2); --a3: var(--aurora-fire-3); }
+.ds-aurora[data-palette="volt"] { --a1: var(--aurora-volt-1); --a2: var(--aurora-volt-2); --a3: var(--aurora-volt-3); }
+.ds-aurora[data-palette="mono"] { --a1: var(--aurora-mono-1); --a2: var(--aurora-mono-2); --a3: var(--aurora-mono-3); }
+.ds-aurora__blob { position: absolute; border-radius: 50%; filter: blur(40px); opacity: var(--aurora-opacity, 1); }
+.ds-aurora__blob:nth-child(1) { top: -20%; left: 45%; width: 60%; height: 60%; background: radial-gradient(circle, var(--a1), transparent 65%); animation: ed-blob-1 16s var(--ease-in-out) infinite; }
+.ds-aurora__blob:nth-child(2) { top: 10%; left: 70%; width: 45%; height: 45%; background: radial-gradient(circle, var(--a2), transparent 65%); animation: ed-blob-2 12s var(--ease-in-out) infinite; }
+.ds-aurora__blob:nth-child(3) { top: 45%; left: -10%; width: 50%; height: 50%; background: radial-gradient(circle, var(--a3), transparent 65%); animation: ed-blob-2 18s var(--ease-in-out) infinite; }
+
+.ds-reveal { opacity: 0; transform: translateY(var(--reveal-y, 28px)); filter: blur(6px); transition: opacity 0.8s var(--ease-out) var(--reveal-delay, 0ms), transform 0.8s var(--ease-out) var(--reveal-delay, 0ms), filter 0.8s var(--ease-out) var(--reveal-delay, 0ms); }
+.ds-reveal[data-visible="true"] { opacity: 1; transform: none; filter: none; }
+/* Without JavaScript the observer never runs, so reveal content immediately. */
+@media (scripting: none) { .ds-reveal { opacity: 1; transform: none; filter: none; } }

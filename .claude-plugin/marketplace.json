@@ -1,0 +1,17 @@
+{
+  "name": "fassa-frame-local",
+  "owner": {
+    "name": "Marco Fassa"
+  },
+  "plugins": [
+    {
+      "name": "fassa-frame",
+      "source": "./",
+      "description": "Local video editing and visual scenes",
+      "version": "0.1.0"
+    }
+  ],
+  "metadata": {
+    "description": "Conversation-guided local video editing."
+  }
+}

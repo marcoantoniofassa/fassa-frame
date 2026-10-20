@@ -1,0 +1,31 @@
+{
+  "name": "@editonny/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Public editonny guide: request builder, scene catalog, examples, and installation.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test:e2e": "next build && playwright test"
+  },
+  "dependencies": {
+    "@editonny/design-system": "*",
+    "next": "16.4.2",
+    "next-intl": "4.14.9",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "babel-plugin-react-compiler": "1.0.0",
+    "server-only": "0.0.1"
+  },
+  "license": "MIT"
+}

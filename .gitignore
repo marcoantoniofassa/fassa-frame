@@ -1,0 +1,52 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+.work/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+playwright-report/
+test-results/
+graphify-out/
+
+# Local plan execution artifacts
+.superpowers/
+
+# Local MCP registration with machine-specific paths
+.codex/config.toml
+
+# Local environments, editor settings, and test output
+venv/
+.idea/
+.vscode/
+htmlcov/
+.coverage.*
+*.egg-info/
+
+# Local installer receipts, logs, credentials, and distribution archives
+.editonny-install.json
+*.log
+*.pem
+*.key
+*.p12
+*.zip
+*.zip.sha256
+*.zip.tmp
+
+# Temporary design and execution notes; canonical documentation stays tracked
+docs/superpowers/
+
+# Next.js build output and generated types
+.next/
+next-env.d.ts
+*.tsbuildinfo
+.vercel/
+
+# Fassa Frame installer receipts
+.fassa-frame-install.json

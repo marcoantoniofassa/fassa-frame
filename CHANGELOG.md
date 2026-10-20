@@ -1,0 +1,14 @@
+# Novidades
+
+## 0.1.0 — 20/10/2026
+
+Primeira distribuição independente da Fassa Frame, baseada no Editonny de Matheus Gomes.
+
+- Página inicial em português, pedidos prontos e primeiros passos para marketing e gestão.
+- Instalação compartilhada para Codex e Claude Code, com simulação, proteção de destinos e recuperação.
+- Edição guiada pela intenção e preservação das escolhas aprovadas em revisões pontuais.
+- Ferramentas locais de edição, cenas, transcrição e conferência mantidas com atribuição.
+- Pacote versionado com checksum; guia para atualizar sem misturar projetos e ferramenta.
+- Distribuição sem materiais privados e sem os arquivos opcionais cuja redistribuição individual não foi comprovada.
+
+Esta versão é para testes acompanhados. Os limites e as verificações estão em `docs/release-validation.md` e `docs/distribution.md`.

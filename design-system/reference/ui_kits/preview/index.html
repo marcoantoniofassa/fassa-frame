@@ -1,0 +1,167 @@
+<!-- @dsCard group="Preview da edição" viewport="1440x900" name="Preview da edição" subtitle="App local de revisão: Corte, Estilo e Final" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Preview da edição</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head><body><div id="root"></div>
+<script type="text/babel" data-source="TopBar.jsx">
+(() => {
+const { Wordmark, SegmentedControl, IconButton, StatusLine } = window.EditonnyDesignSystem_f6f5bd;
+function TopBar({ tab, setTab, status, onHelp }) {
+  return (<>
+    <header style={{ display:'grid', gridTemplateColumns:'minmax(0,1fr) auto minmax(0,1fr)', alignItems:'center', gap:16, height:64, padding:'0 20px', background:'var(--bg-deep)', borderBottom:'1px solid var(--line-1)' }}>
+      <div style={{ display:'flex', alignItems:'center', gap:12, minWidth:0 }}><Wordmark iconOnly size={26} /><span style={{ font:'650 15px var(--font-sans)' }}>Preview da edição</span><span style={{ color:'var(--text-3)' }}>/ cafe-tutorial</span></div>
+      <SegmentedControl options={[{value:'cut',label:'Corte',dot:status.awaiting==='cut'},{value:'style',label:'Estilo',dot:status.awaiting==='style'},{value:'final',label:'Final'}]} value={tab} onChange={setTab} />
+      <div style={{ justifySelf:'end' }}><IconButton icon="keyboard" label="Atalhos do teclado" onClick={onHelp} size={40} /></div>
+    </header>
+    <StatusLine state={status.state} badge={status.badge} text={status.text} meta={status.meta} />
+  </>);
+}
+window.TopBar = TopBar;
+})();
+</script>
+<script type="text/babel" data-source="CutView.jsx">
+(() => {
+const { Card, Transport, Timeline, MarkItem, Button, TextField, Kbd, Badge, KineticCaption, ProgressRing } = window.EditonnyDesignSystem_f6f5bd;
+const SEGS = [{start:0,end:6,beat:'Gancho',quote:'Ninguém te contou isso sobre café'},{start:6,end:17,beat:'Problema',quote:'A maioria passa do ponto da água'},{start:17,end:33,beat:'Passo a passo',quote:'Primeiro, 94 graus. Depois, o bloom'},{start:33,end:45,beat:'Chamada',quote:'Salva pra testar amanhã'}];
+function CutView({ final, onApprove, toast }) {
+  const [t, setT] = React.useState(9.2); const [playing, setPlaying] = React.useState(false);
+  const [marks, setMarks] = React.useState([{start:22,end:26,note:'tira essa parte, ficou repetido'}]);
+  const [inPt, setIn] = React.useState(null); const [note, setNote] = React.useState('');
+  React.useEffect(() => { if (!playing) return; const id = setInterval(() => setT(v => v + .1 > 45 ? 0 : v + .1), 100); return () => clearInterval(id); }, [playing]);
+  const fmt = s => `${String(Math.floor(s/60)).padStart(2,'0')}:${(s%60).toFixed(2).padStart(5,'0')}`;
+  const seg = SEGS.find(s => t >= s.start && t < s.end) || SEGS[0];
+  const add = e => { e.preventDefault(); setMarks([...marks, { start: inPt, end: Math.max(inPt + .5, t), note: note || 'ajustar este trecho' }]); setIn(null); setNote(''); toast('Marcação adicionada'); };
+  return (
+    <div style={{ display:'grid', gridTemplateColumns:'auto minmax(0,1fr)', gap:20, padding:'16px 20px 20px' }}>
+      <div style={{ display:'flex', flexDirection:'column', gap:12, width:340 }}>
+        <div onClick={() => setPlaying(!playing)} style={{ position:'relative', aspectRatio:'9 / 16', borderRadius:'var(--radius-xl)', overflow:'hidden', background:'#000', border:'1px solid var(--line-1)', cursor:'pointer' }}>
+          <img src="../../../../skills/editonny/visuals/assets/visuals/img/city.jpg" alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', objectPosition:`${30 + t}% 50%` }} />
+          <div style={{ position:'absolute', inset:0, background:'var(--grad-protect)' }} />
+          {(final || t < 6) && <div style={{ position:'absolute', top:'18%', left:20, right:20, font:'800 30px/1.05 var(--font-caption-clean)', textTransform:'uppercase', color:'#fff', textShadow:'0 2px 12px rgba(0,0,0,.5)' }}>Ninguém te contou <span style={{ color:'var(--gold-400)' }}>isso</span> sobre café</div>}
+          <div style={{ position:'absolute', bottom:'14%', left:14, right:14 }}><KineticCaption key={seg.quote} text={seg.quote} playing={playing} loop={false} size={24} highlight={final ? 'var(--sun-400)' : 'var(--fog-50)'} /></div>
+          {!playing && <span style={{ position:'absolute', left:'50%', top:'50%', transform:'translate(-50%,-50%)', width:64, height:64, display:'grid', placeItems:'center', borderRadius:'50%', background:'var(--glass-28)', border:'1px solid rgba(255,255,255,.25)', backdropFilter:'blur(8px)' }}><span style={{ width:0, height:0, marginLeft:5, borderLeft:'20px solid #fff', borderTop:'12px solid transparent', borderBottom:'12px solid transparent' }} /></span>}
+          <div style={{ position:'absolute', top:14, right:14 }}>{final ? <Badge tone="volt" live>FINAL · 1080p</Badge> : <Badge mono>CORTE v2</Badge>}</div>
+        </div>
+        <Transport playing={playing} onToggle={() => setPlaying(!playing)} time={fmt(t)} duration="00:45.00" onStep={d => setT(v => Math.max(0, Math.min(45, v + d / 30)))} />
+        <p style={{ margin:0, minHeight:36, font:'400 12.5px/1.45 var(--font-sans)', color:'var(--text-2)' }}><b style={{ font:'700 10px var(--font-sans)', letterSpacing:'.08em', textTransform:'uppercase', color:'var(--ember-300)', marginRight:6 }}>{seg.beat}</b>“{seg.quote}”</p>
+      </div>
+      <div style={{ display:'flex', flexDirection:'column', gap:14, minWidth:0 }}>
+        <Card padding={16} radius="lg">
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:10 }}><h3 style={{ margin:0, font:'650 13px var(--font-sans)' }}>Linha do tempo</h3><span style={{ font:'400 12px var(--font-sans)', color:'var(--text-3)' }}>Clique para navegar · 2 cliques marcam o trecho</span></div>
+          <Timeline duration={45} playhead={t} playing={playing} segments={SEGS} marks={marks} onSeek={setT} />
+        </Card>
+        <Card padding={16} radius="lg" style={{ flex:1 }}>
+          <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6 }}><h3 style={{ margin:0, font:'650 13px var(--font-sans)' }}>Marcações <span style={{ color:'var(--text-3)', fontWeight:500 }}>{marks.length}</span></h3><span style={{ font:'400 12px var(--font-sans)', color:'var(--warning-400)' }}>Não salvo</span></div>
+          <p style={{ margin:'0 0 12px', font:'400 12.5px var(--font-sans)', color:'var(--text-2)' }}>Achou algo para mudar? Marque o começo e o fim do trecho e diga o que fazer.</p>
+          <div style={{ display:'flex', gap:8, flexWrap:'wrap', marginBottom:12 }}>
+            <Button size="sm" variant="dark" onClick={() => setIn(t)}>Marcar início <Kbd>I</Kbd></Button>
+            <Button size="sm" variant="dark" disabled={inPt === null}>Marcar fim <Kbd>O</Kbd></Button>
+            <Button size="sm" variant="secondary" icon="sparkles" onClick={() => toast('Pedido de motion em ' + fmt(t))}>Motion aqui <Kbd>M</Kbd></Button>
+          </div>
+          {inPt !== null && <form onSubmit={add} style={{ display:'grid', gap:8, padding:12, marginBottom:12, background:'var(--surface-raised)', border:'1px solid var(--accent-line)', borderRadius:'var(--radius-md)' }}>
+            <span style={{ font:'600 12px var(--font-mono)', color:'var(--ember-300)' }}>{fmt(inPt)} – {fmt(Math.max(inPt + .5, t))}</span>
+            <TextField autoFocus placeholder="O que mudar neste trecho? Ex.: tira essa parte" value={note} onChange={e => setNote(e.target.value)} />
+            <div style={{ display:'flex', justifyContent:'flex-end', gap:8 }}><Button size="sm" variant="ghost" type="button" onClick={() => setIn(null)}>Cancelar</Button><Button size="sm" type="submit">Adicionar marcação</Button></div>
+          </form>}
+          <div style={{ display:'grid', gap:6 }}>{marks.map((m, i) => <MarkItem key={i} index={i + 1} range={`${fmt(m.start)} – ${fmt(m.end)}`} note={m.note} current={t >= m.start && t <= m.end} onRemove={() => setMarks(marks.filter((_, j) => j !== i))} />)}</div>
+        </Card>
+        <Card padding={12} radius="lg" style={{ display:'grid', gridTemplateColumns:'minmax(0,1fr) auto', gap:12, alignItems:'center' }}>
+          <TextField placeholder="Comentário para o agente (opcional)" />
+          <div style={{ display:'flex', gap:8 }}>{final && <Button variant="ghost" icon="download">Baixar vídeo</Button>}<Button variant="secondary" onClick={() => toast('Marcações salvas')}>Salvar marcações</Button><Button variant="volt" icon="check" onClick={onApprove}>Aprovar</Button></div>
+        </Card>
+      </div>
+    </div>
+  );
+}
+window.CutView = CutView;
+})();
+</script>
+<script type="text/babel" data-source="StyleView.jsx">
+(() => {
+const { ChoiceCard, Switch, TextField, Button, Card, SegmentedControl } = window.EditonnyDesignSystem_f6f5bd;
+const TYPES = [['Câmera cheia','Você ocupa a tela toda','user'],['Tela dividida','Imagem em cima, você embaixo','rows-2'],['Tela verde','Fundo trocado atrás de você','layers']];
+const HOOKS = ['Tarja','Caixa alta','Manuscrito','Neon'];
+const CAPS = [['Palavra a palavra','var(--font-caption-clean)'],['Impacto','var(--font-caption-impact)'],['Marcador','var(--font-caption-marker)'],['Discreta','var(--font-sans)']];
+const MUSIC = [['Calma','respira com a fala'],['Batida calma','lo-fi leve'],['Alegre','energia para dicas'],['Sem trilha','só a voz']];
+const SWATCHES = ['#FFC400','#FF5A1F','#FFFFFF','#6FD3A0','#8FB4FF'];
+function Sec({ n, title, sub, children }) {
+  return <section style={{ padding:'20px 0 24px', borderBottom:'1px solid var(--line-1)' }}><header style={{ display:'flex', gap:12, marginBottom:16 }}><span style={{ display:'grid', placeItems:'center', width:26, height:26, flex:'none', font:'700 11px var(--font-mono)', color:'var(--text-2)', border:'1px solid var(--line-strong)', borderRadius:'50%' }}>{n}</span><div><h3 style={{ margin:0, font:'650 16px var(--font-sans)' }}>{title}</h3><p style={{ margin:0, font:'400 13px var(--font-sans)', color:'var(--text-2)' }}>{sub}</p></div></header>{children}</section>;
+}
+function StyleView({ toast }) {
+  const [type, setType] = React.useState(0); const [accent, setAccent] = React.useState('#FFC400');
+  const [hook, setHook] = React.useState('Ninguém te contou isso sobre café'); const [hs, setHs] = React.useState(0);
+  const [cap, setCap] = React.useState(0); const [music, setMusic] = React.useState(1); const [pv, setPv] = React.useState('hook');
+  const [el, setEl] = React.useState({ legendas:true, gancho:true, animacoes:true, chamada:false });
+  const grid = (min, children) => <div role="radiogroup" style={{ display:'grid', gridTemplateColumns:`repeat(auto-fill, minmax(${min}px, 1fr))`, gap:10 }}>{children}</div>;
+  const thumb = (label, font, on) => <div style={{ aspectRatio:'9 / 16', width:'100%', display:'grid', placeItems:'center', padding:8, borderRadius:10, background:on?'var(--ink-950)':'var(--orange-500)', font:`800 15px/1.1 ${font}`, textTransform:'uppercase', textAlign:'center', color: on ? accent : 'var(--ink-950)', transition:'background var(--dur-fast), color var(--dur-fast)' }}>{label}</div>;
+  return (
+    <div style={{ display:'grid', gridTemplateColumns:'minmax(0,1fr) 340px', gap:28, maxWidth:1240, margin:'0 auto', padding:'8px 20px 40px' }}>
+      <div>
+        <Sec n="1" title="Tipo de edição" sub="Como você aparece na tela.">{grid(210, TYPES.map((x, i) => <ChoiceCard key={i} icon={x[2]} title={x[0]} description={x[1]} selected={type === i} onSelect={() => setType(i)} />))}</Sec>
+        <Sec n="2" title="Cor de destaque" sub="Usada nas legendas, no gancho e na chamada.">
+          <div style={{ display:'flex', alignItems:'center', gap:10 }}><span style={{ width:40, height:40, borderRadius:10, background:accent, border:'1px solid var(--line-strong)' }} /><code style={{ padding:'10px 14px', font:'600 13px var(--font-mono)', background:'var(--surface-well)', border:'1px solid var(--line-2)', borderRadius:'var(--radius-md)' }}>{accent}</code>
+          {SWATCHES.map(c => <button key={c} aria-label={c} onClick={() => setAccent(c)} style={{ width:28, height:28, padding:0, borderRadius:'50%', background:c, border:'2px solid var(--bg-page)', boxShadow: accent === c ? '0 0 0 2px var(--text-1)' : '0 0 0 1px var(--line-strong)', cursor:'pointer' }} />)}</div>
+        </Sec>
+        <Sec n="3" title="Gancho" sub="A frase que aparece nos primeiros segundos.">
+          <TextField label="Texto do gancho" counter={90} value={hook} onChange={e => setHook(e.target.value)} help="Deixe vazio para o agente sugerir." style={{ marginBottom:14 }} />
+          {grid(120, HOOKS.map((h, i) => <ChoiceCard key={h} media={<div style={{ width:'100%' }}>{thumb(h, i === 2 ? 'var(--font-caption-hand)' : i === 1 ? 'var(--font-caption-impact)' : 'var(--font-caption-clean)', hs === i)}</div>} title="" selected={hs === i} onSelect={() => setHs(i)} style={{ flexDirection:'column', padding:6 }} />))}
+        </Sec>
+        <Sec n="4" title="Legendas" sub="Pensadas para quem assiste sem som.">{grid(120, CAPS.map((c, i) => <ChoiceCard key={c[0]} media={<div style={{ width:'100%' }}>{thumb('cada palavra', c[1], cap === i)}<div style={{ marginTop:8, font:'600 13px var(--font-sans)' }}>{c[0]}</div></div>} title="" selected={cap === i} onSelect={() => setCap(i)} style={{ flexDirection:'column', padding:6 }} />))}</Sec>
+        <Sec n="5" title="Elementos" sub="Ligue só o que combina com o seu vídeo.">
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(250px,1fr))', gap:8 }}>{[['legendas','Legendas'],['gancho','Gancho na abertura'],['animacoes','Animações de motion'],['chamada','Chamada no final']].map(([k, l]) => <Switch key={k} label={l} checked={el[k]} onChange={v => setEl({ ...el, [k]: v })} />)}</div>
+        </Sec>
+        <Sec n="6" title="Trilha de fundo" sub="Escolha o clima da música. A trilha sai da sua biblioteca.">{grid(190, MUSIC.map((m, i) => <ChoiceCard key={m[0]} icon={i === 3 ? 'volume-x' : 'music'} title={m[0]} description={m[1]} selected={music === i} onSelect={() => setMusic(i)} />))}</Sec>
+      </div>
+      <aside style={{ position:'sticky', top:16, alignSelf:'start', display:'grid', gap:12 }}>
+        <Card padding={14} radius="lg">
+          <SegmentedControl size="sm" options={[{value:'hook',label:'Gancho'},{value:'caption',label:'Legenda'}]} value={pv} onChange={setPv} style={{ display:'flex', marginBottom:12 }} />
+          <div style={{ position:'relative', aspectRatio:'9 / 16', borderRadius:'var(--radius-lg)', overflow:'hidden', background:'#000' }}>
+            <img src="../../../../skills/editonny/visuals/assets/visuals/img/city.jpg" alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }} />
+            <div style={{ position:'absolute', inset:0, background:'var(--grad-protect)' }} />
+            {pv === 'hook' ? <div style={{ position:'absolute', top:'16%', left:18, right:18, font:`800 26px/1.05 ${hs === 2 ? 'var(--font-caption-hand)' : hs === 1 ? 'var(--font-caption-impact)' : 'var(--font-caption-clean)'}`, textTransform: hs === 2 ? 'none' : 'uppercase', color:'#fff' }}><span style={{ background: hs === 0 ? accent : 'transparent', color: hs === 0 ? 'var(--ink-900)' : hs === 3 ? accent : '#fff', textShadow: hs === 3 ? `0 0 18px ${accent}` : 'none', padding: hs === 0 ? '0 6px' : 0, boxDecorationBreak:'clone', WebkitBoxDecorationBreak:'clone' }}>{hook || 'Seu gancho aqui'}</span></div>
+            : <div style={{ position:'absolute', bottom:'18%', left:0, right:0, textAlign:'center', font:`800 22px ${CAPS[cap][1]}`, color:'#fff', textTransform:'uppercase' }}>cada <span style={{ color:accent }}>palavra</span></div>}
+          </div>
+          <p style={{ margin:'10px 0 0', textAlign:'center', font:'400 12px var(--font-sans)', color:'var(--text-3)' }}>Amostra aproximada. O render final sai do agente.</p>
+        </Card>
+        <Card padding={16} radius="lg">
+          <dl style={{ display:'grid', gridTemplateColumns:'auto minmax(0,1fr)', gap:'7px 14px', margin:'0 0 14px', font:'400 13px var(--font-sans)' }}>
+            {[['Tipo', TYPES[type][0]], ['Destaque', accent], ['Gancho', HOOKS[hs]], ['Legenda', CAPS[cap][0]], ['Trilha', MUSIC[music][0]]].map(([k, v]) => <React.Fragment key={k}><dt style={{ color:'var(--text-3)' }}>{k}</dt><dd style={{ margin:0, textAlign:'right' }}>{v}</dd></React.Fragment>)}
+          </dl>
+          <Button block onClick={() => toast('Estilo salvo. O agente vai renderizar o final.')}>Salvar estilo</Button>
+        </Card>
+      </aside>
+    </div>
+  );
+}
+window.StyleView = StyleView;
+})();
+</script>
+<script type="text/babel">
+const { Toast, Dialog, Button, Kbd } = window.EditonnyDesignSystem_f6f5bd;
+const STATUS = {
+  cut: { state:'awaiting', badge:'Sua vez', text:'O primeiro corte está pronto. Marque o que mudar ou aprove.', meta:'corte v2 · 00:45 · 4 blocos', awaiting:'cut' },
+  style: { state:'awaiting', badge:'Sua vez', text:'Corte aprovado. Escolha o estilo do acabamento.', meta:'9:16 · 1080p', awaiting:'style' },
+  final: { state:'done', text:'Vídeo final pronto e conferido.', meta:'final.mp4 · 1080p · 38 MB' },
+};
+function App(){
+  const [tab,setTab]=React.useState(localStorage.getItem('pv-tab')||'cut');
+  const [msg,setMsg]=React.useState(null); const [confirm,setConfirm]=React.useState(false); const [help,setHelp]=React.useState(false);
+  const go=t=>{setTab(t);localStorage.setItem('pv-tab',t);};
+  const toast=m=>{setMsg(m);clearTimeout(window.__t);window.__t=setTimeout(()=>setMsg(null),2200);};
+  return <div style={{minHeight:'100vh',background:'var(--bg-page)'}}>
+    <TopBar tab={tab} setTab={go} status={STATUS[tab]} onHelp={()=>setHelp(true)}/>
+    {tab==='cut'&&<CutView toast={toast} onApprove={()=>setConfirm(true)}/>}
+    {tab==='style'&&<StyleView toast={m=>{toast(m);setTimeout(()=>go('final'),900);}}/>}
+    {tab==='final'&&<CutView final toast={toast} onApprove={()=>toast('Vídeo aprovado. Pronto para postar.')}/>}
+    <Dialog open={confirm} eyebrow="Revisão do corte" title="Aprovar o corte?" onClose={()=>setConfirm(false)} actions={<><Button size="sm" variant="ghost" onClick={()=>setConfirm(false)}>Voltar</Button><Button size="sm" onClick={()=>{setConfirm(false);go('style');toast('Corte aprovado');}}>Aprovar</Button></>}>O agente segue para estilo, legendas e motion. Suas marcações não salvas serão enviadas junto.</Dialog>
+    <Dialog open={help} title="Atalhos do teclado" onClose={()=>setHelp(false)} actions={<Button size="sm" onClick={()=>setHelp(false)}>Entendi</Button>}>
+      <div style={{display:'grid'}}>{[[<Kbd>Espaço</Kbd>,'Tocar ou pausar'],[<><Kbd>←</Kbd> <Kbd>→</Kbd></>,'Voltar ou avançar 1 quadro'],[<Kbd>I</Kbd>,'Marcar o início do trecho'],[<Kbd>O</Kbd>,'Marcar o fim e escrever o que mudar'],[<Kbd>M</Kbd>,'Pedir motion neste ponto'],[<Kbd>?</Kbd>,'Abrir esta ajuda']].map(([k,l],i)=><div key={i} style={{display:'grid',gridTemplateColumns:'130px 1fr',padding:'8px 0',borderBottom:'1px solid var(--line-1)',color:'var(--text-1)'}}><span>{k}</span>{l}</div>)}</div>
+    </Dialog>
+    {msg&&<div style={{position:'fixed',top:116,right:20,zIndex:200}}><Toast>{msg}</Toast></div>}
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

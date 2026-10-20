@@ -1,0 +1,321 @@
+{
+  "Metadata": {
+    "siteName": "Fassa Frame",
+    "tagline": "Você tem a história. A gente dá o ritmo.",
+    "ogAlt": "Fassa Frame — edição de vídeo local por conversa",
+    "home": {
+      "title": "Fassa Frame: edição guiada por intenção",
+      "description": "Seu estúdio de vídeo local, guiado por conversa. Cortes, legendas, som e motion com a IA que você já usa."
+    },
+    "create": {
+      "title": "Criar pedido — Fassa Frame",
+      "description": "Preencha um briefing curto e leve um pedido de edição pronto para o Claude Code ou o Codex. Nenhum arquivo sai do seu computador."
+    },
+    "catalog": {
+      "title": "Catálogo de cenas de motion — Fassa Frame",
+      "description": "Explore 145 cenas de motion que explicam, destacam e dão ritmo, e adicione uma ao seu pedido de edição."
+    },
+    "examples": {
+      "title": "Exemplos e pedidos — Fassa Frame",
+      "description": "Encontre um pedido de edição pronto para o seu objetivo e adapte ao seu material."
+    },
+    "install": {
+      "title": "Instalação — Fassa Frame",
+      "description": "Instale a skill Fassa Frame no Codex e no Claude Code e verifique o ambiente antes da primeira edição."
+    }
+  },
+  "Nav": {
+    "label": "Principal",
+    "home": "Início",
+    "create": "Criar pedido",
+    "catalog": "Catálogo",
+    "examples": "Exemplos",
+    "install": "Instalar"
+  },
+  "Header": {
+    "homeLabel": "página inicial",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "menuTitle": "Menu"
+  },
+  "Footer": {
+    "tagline": "Edição guiada por intenção.",
+    "guide": "Guia",
+    "start": "Começar",
+    "credits": "Fassa Frame, de Marco Fassa. Baseado no Editonny, de {name}.",
+    "links": "Links do autor e do projeto",
+    "license": "Código aberto sob a licença MIT."
+  },
+  "Language": {
+    "label": "Idioma",
+    "search": "Buscar idiomas…",
+    "empty": "Nenhum idioma encontrado"
+  },
+  "Theme": {
+    "toDark": "Mudar para o tema escuro",
+    "toLight": "Mudar para o tema claro"
+  },
+  "Common": {
+    "skip": "Pular para o conteúdo",
+    "newTab": "(abre em nova aba)"
+  },
+  "NotFound": {
+    "title": "Esta página não está aqui.",
+    "body": "O link pode estar antigo ou digitado errado. Recomece pela página inicial.",
+    "home": "Voltar ao início"
+  },
+  "Home": {
+    "hero": {
+      "badge": "NOVO",
+      "news": "Edição e motion em um só fluxo, no seu computador",
+      "line1": "Você tem",
+      "line2": "a história.",
+      "line3": "A gente traz",
+      "words": "ritmo.|cortes.|motion.|legendas.|som.",
+      "lead": "Do bruto ao último detalhe. Cortes, legendas, som e motion com a IA que você já usa, e um vídeo pronto para postar.",
+      "primary": "Criar meu primeiro pedido",
+      "secondary": "Instalar a skill",
+      "local": "100% LOCAL"
+    },
+    "phone": {
+      "alt": "Ilustração de um vídeo vertical sendo editado, não um vídeo renderizado",
+      "hookTop": "Ninguém te contou",
+      "hookBottom": "isso sobre café",
+      "caption": "Primeiro, noventa e quatro graus. Depois, o bloom.",
+      "cuts": "14 cortes",
+      "wordsLost": "0 palavras perdidas",
+      "rendering": "Renderizando",
+      "renderMeta": "1080p · 9:16",
+      "render": "Render",
+      "voice": "VOZ · RUÍDO REMOVIDO",
+      "motion": "Motion",
+      "beforeAfter": "Antes e depois"
+    },
+    "tapes": {
+      "one": "Cortes limpos|Legendas palavra a palavra|Motion|Trilha sob medida|Ruído zero|{scenes} cenas",
+      "two": "9:16|16:9|1:1|4:5|Claude Code|Codex|100% local"
+    },
+    "stats": {
+      "label": "Fassa Frame em números",
+      "scenes": "cenas de motion no catálogo",
+      "requests": "pedidos prontos para adaptar",
+      "formats": "formatos: vertical, quadrado, feed, horizontal",
+      "local": "local. Nada sobe para a nuvem por aqui."
+    },
+    "bento": {
+      "eyebrow": "Tudo em um fluxo",
+      "titleA": "Tudo que um editor faz.",
+      "titleB": "Em uma",
+      "highlight": "conversa.",
+      "lead": "Edição e motion trabalham juntos no seu computador. Você revisa uma amostra antes de finalizar o vídeo inteiro.",
+      "cutKicker": "EDITOR / CORTE",
+      "cutTitle": "Corte com intenção.",
+      "cutText": "Escolhe cortes e pausas para a história, preservando palavras, sentido e escolhas aprovadas.",
+      "raw": "BRUTO · 01:12",
+      "analyzing": "ANALISANDO PAUSAS…",
+      "done": "CORTE · 00:45 ✓",
+      "captionsKicker": "LEGENDAS",
+      "captionsTitle": "Cada palavra, no tempo.",
+      "captionsText": "Legendas palavra a palavra, pensadas para quem assiste sem som.",
+      "captionsSample": "Pare de perder quem assiste sem som",
+      "sceneGroup": "Universais",
+      "sceneName": "Dinheiro subindo",
+      "sceneWhen": "Motion que explica: números, passos, comparações.",
+      "formatsKicker": "FORMATOS",
+      "formatsTitle": "Um vídeo, todo lugar.",
+      "formatsText": "Reels, Stories, feed e YouTube a partir do mesmo material.",
+      "soundKicker": "SOM",
+      "soundTitle": "Voz limpa. Trilha certa.",
+      "soundText": "Ruído de fundo fora e uma trilha com o clima do vídeo.",
+      "reviewKicker": "REVISÃO",
+      "reviewTitle": "Você aprova antes do final.",
+      "reviewText": "A prévia abre no navegador: marque o trecho, diga o que mudar e aprove. A IA renderiza de novo.",
+      "beatHook": "Gancho",
+      "beatSteps": "Passos",
+      "beatCta": "Chamada",
+      "quoteHook": "Ninguém te contou",
+      "quoteSteps": "94 graus",
+      "quoteCta": "Salva aí",
+      "timeline": "Linha do tempo de revisão de exemplo"
+    },
+    "how": {
+      "eyebrow": "Como funciona",
+      "titleA": "Menos operações.",
+      "highlight": "Mais direção.",
+      "lead": "Este guia prepara o pedido. A edição acontece no seu computador, com a sua IA e o pacote instalado.",
+      "cta": "Montar meu pedido",
+      "step1Title": "Conte o que quer dizer",
+      "step1Text": "Escolha o objetivo, indique a pasta dos vídeos e defina o tom. Não precisa saber usar uma linha do tempo.",
+      "step2Title": "Acerte o primeiro corte",
+      "step2Text": "A IA confere o ambiente, trabalha o corte e prepara uma amostra de 8–15 segundos. Você avalia o ritmo e o visual.",
+      "step3Title": "Dê o acabamento",
+      "step3Text": "Legendas, som e motion ajudam a contar a história. Depois da sua revisão, a IA finaliza e verifica o arquivo."
+    },
+    "starts": {
+      "eyebrow": "Um bom ponto de partida",
+      "title": "Comece com uma intenção.",
+      "all": "Ver os {count} pedidos",
+      "action": "Usar este ponto de partida"
+    },
+    "callout": {
+      "line1": "Seu próximo vídeo",
+      "line2": "começa com",
+      "accent": "um pedido.",
+      "text": "Monte o briefing em dois minutos e leve para o Claude Code ou o Codex.",
+      "cta": "Vamos criar"
+    }
+  },
+  "Create": {
+    "eyebrow": "Direção criativa / Criar pedido",
+    "titleA": "Da sua ideia",
+    "titleB": "ao",
+    "highlight": "primeiro corte.",
+    "lead": "Preencha o briefing e leve o pedido para a sua IA. Nenhum arquivo é enviado por aqui.",
+    "story": "A história",
+    "goalLabel": "O que você quer criar?",
+    "goalPlaceholder": "Por exemplo: um tutorial de 45 segundos ensinando a preparar café, com etapas claras.",
+    "folderLabel": "Pasta dos vídeos no seu computador",
+    "folderPlaceholder": "Por exemplo: /Users/voce/Videos/cafe",
+    "folderHelp": "Cole o caminho da pasta. O guia não acessa nem envia os arquivos.",
+    "telling": "O jeito de contar",
+    "format": "Formato",
+    "pace": "Ritmo",
+    "captions": "Legendas",
+    "effects": "Cenas visuais e efeitos",
+    "tool": "Sua ferramenta",
+    "outputEyebrow": "Seu pedido, pronto para levar",
+    "outputLabel": "Pedido de edição gerado",
+    "copy": "Copiar pedido",
+    "hint": "Abra seu agente na pasta do projeto e cole o pedido.",
+    "reset": "Recomeçar",
+    "saved": "Seu briefing fica salvo só neste navegador.",
+    "sceneLabel": "Cena: {name}",
+    "removeScene": "Remover a cena {name}",
+    "copied": "Pedido copiado. Abra seu agente na pasta e cole.",
+    "copyFallback": "Não foi possível copiar aqui. O texto está selecionado: use Ctrl+C ou ⌘C.",
+    "cleared": "Briefing limpo.",
+    "exampleApplied": "“{title}” aplicado. Adapte o pedido ao seu material.",
+    "sceneAdded": "Cena adicionada ao seu pedido."
+  },
+  "Options": {
+    "formats": {
+      "vertical": "Vertical",
+      "horizontal": "Horizontal",
+      "square": "Quadrado",
+      "portrait": "Feed retrato"
+    },
+    "paces": {
+      "natural": "Natural e fluido",
+      "dynamic": "Dinâmico e direto",
+      "calm": "Calmo e contemplativo"
+    },
+    "captions": {
+      "readable": "Claras, com destaque",
+      "subtle": "Discretas e estáticas",
+      "none": "Sem legendas"
+    },
+    "effects": {
+      "subtle": "Sutil · só o necessário",
+      "educational": "Didático · ideias visuais",
+      "expressive": "Expressivo · mais movimento",
+      "none": "Só edição · sem visuais extras"
+    }
+  },
+  "Library": {
+    "category": "Categoria",
+    "all": "Todas",
+    "copy": "Copiar pedido",
+    "close": "Fechar",
+    "when": "Quando usar",
+    "copied": "Pedido copiado. Cole no seu agente.",
+    "copyFallback": "Não foi possível copiar aqui. O texto está selecionado: use Ctrl+C ou ⌘C.",
+    "preview": "Prévia do pedido"
+  },
+  "Catalog": {
+    "eyebrow": "Biblioteca visual / Motion",
+    "titleA": "Uma ideia.",
+    "highlight": "Muitas formas.",
+    "lead": "Cenas para explicar, destacar e dar ritmo. Passe o mouse ou foque um cartão para ver cada uma se mexer.",
+    "search": "Buscar cenas",
+    "searchPlaceholder": "Tente: comparação, título, passos…",
+    "count": "{count, plural, one {# cena} other {# cenas}}",
+    "empty": "Nenhuma cena encontrada. Tente outra palavra ou escolha todas as categorias.",
+    "note": "As prévias são esquemáticas. A composição real é renderizada pelo agente.",
+    "duration": "Duração de referência",
+    "durationValue": "{seconds} s",
+    "format": "Formato de origem",
+    "layout": "Composição",
+    "captions": "Legendas durante a cena",
+    "hidden": "Ocultas",
+    "kept": "Mantidas",
+    "unknown": "Não informado",
+    "use": "Usar no meu pedido",
+    "layouts": {
+      "overlay": "Sobre o vídeo",
+      "fullscreen": "Tela cheia",
+      "frame": "Em moldura"
+    },
+    "motif": {
+      "before": "ANTES",
+      "after": "DEPOIS",
+      "cta": "Toque aqui",
+      "cheer": "MANDOU BEM!",
+      "zoom": "ZOOM",
+      "chat1": "Como edito isso?",
+      "chat2": "Ajusto ritmo e legendas à sua intenção.",
+      "chat3": "Perfeito!",
+      "hint": "▶ PRÉVIA"
+    }
+  },
+  "Examples": {
+    "eyebrow": "Biblioteca de pedidos / Exemplos",
+    "titleA": "Sua intenção.",
+    "highlight": "Um bom começo.",
+    "lead": "Do vídeo bruto ao acabamento. Encontre um exemplo e adapte o pedido à sua história.",
+    "search": "Buscar exemplos",
+    "searchPlaceholder": "Tente: aula, áudio, legendas…",
+    "count": "{count, plural, one {# pedido} other {# pedidos}}",
+    "empty": "Nenhum pedido encontrado. Tente outras palavras ou escolha todas as categorias.",
+    "action": "Ver pedido e dicas",
+    "tips": "Dicas",
+    "customize": "Personalizar pedido"
+  },
+  "Install": {
+    "eyebrow": "Prepare seu estúdio / Instalação",
+    "titleA": "Uma skill.",
+    "highlight": "Seu jeito de criar.",
+    "lead": "Edição e cenas visuais juntas. Uma skill portátil para Codex e Claude Code, executada no seu computador.",
+    "step1Title": "Abra a pasta do projeto",
+    "step1Text": "Abra o checkout ou pacote Fassa Frame na pasta que contém install.py. Ainda não há download público do fork. Prepare Python 3.9+, uv, FFmpeg/ffprobe, Node.js 22.13+ ou 24+ e seu agente de IA.",
+    "step2Title": "Registre a skill",
+    "step2Text": "O instalador compartilha um único pacote entre os dois agentes. Para usar só um, troque both por codex ou claude. Depois, reinicie o agente para ele encontrar a skill.",
+    "step3Title": "Confira antes de editar",
+    "step3Text": "Rode o diagnóstico. Resolva os itens pendentes antes de renderizar.",
+    "step4Title": "Faça seu primeiro pedido",
+    "step4Text": "Use $fassa-frame no Codex ou /fassa-frame no Claude Code. Peça uma amostra antes do projeto completo.",
+    "cta": "Montar meu pedido",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "commandCopied": "Comando copiado.",
+    "askKicker": "PREFERE PEDIR À IA?",
+    "askTitle": "A instalação também começa com um pedido.",
+    "askRequest": "Instale o Fassa Frame deste repositório para Codex e Claude Code usando o instalador do projeto. Confira as dependências com o diagnóstico, preserve minhas configurações e explique o que falta antes de baixar ferramentas ou usar serviços pagos.",
+    "askCopy": "Copiar pedido de instalação",
+    "askCopied": "Pedido de instalação copiado.",
+    "copyFallback": "Não foi possível copiar aqui. O texto está selecionado: use Ctrl+C ou ⌘C.",
+    "faq1Title": "Skill global ou plugin?",
+    "faq1Body": "O instalador registra uma cópia em ~/.local/share/fassa-frame, com links em ~/.agents/skills/fassa-frame para o Codex e em ~/.claude/skills/fassa-frame para o Claude Code. Escolha um único método de instalação.",
+    "faq2Title": "Usar só um agente",
+    "faq2Body": "Rode python3 install.py --target codex ou python3 install.py --target claude e comece uma nova conversa. O registro é local: não sincroniza ferramentas nem arquivos com sessões na nuvem ou com o celular.",
+    "faq3Title": "Atualizar com segurança",
+    "faq3Body": "Rode o instalador de novo. A versão anterior vai para ~/.local/share/fassa-frame-backups/ e os arquivos .env da instalação são preservados. Mantenha vídeos e projetos fora da pasta da skill e confira a atualização antes de apagar qualquer backup.",
+    "faq4Title": "Remover os registros dos agentes",
+    "faq4Body": "Rode python3 install.py --target both --uninstall. Adicione --dry-run para ver os destinos antes. Só os links dos agentes são removidos; o pacote compartilhado, as configurações, os backups, os vídeos e os projetos continuam.",
+    "faq5Title": "Carregar como plugin do Claude Code",
+    "faq5Body": "Rode claude --plugin-dir \"/caminho/para/fassa-frame\" para carregar este checkout em uma sessão e chame /fassa-frame:fassa-frame. A skill avulsa usa /fassa-frame; não carregue as duas formas ao mesmo tempo. As ferramentas de vídeo e o ambiente Python continuam necessários.",
+    "faq6Title": "O que roda localmente? O que tem custo?",
+    "faq6Body": "Este guia monta pedidos e mostra exemplos e cenas. Ele não envia nem edita vídeos no navegador. Seu agente pode exigir assinatura. Geradores externos opcionais podem cobrar; o pedido padrão pede sua autorização antes de usá-los ou de enviar mídia.",
+    "faq7Title": "Como revisar a primeira amostra?",
+    "faq7Body": "Escute se há palavras cortadas, confira se as legendas estão corretas e veja se o enquadramento mantém a pessoa. Peça ajustes antes de finalizar tudo."
+  }
+}

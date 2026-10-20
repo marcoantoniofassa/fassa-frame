@@ -1,0 +1,302 @@
+/*
+ * editonny color tokens. DESIGN.md is the source of truth; keep both in sync.
+ * Primitives are theme-independent. Components use only the semantic layer,
+ * which the dark (default) and light themes map to primitives below.
+ */
+:root {
+  /* Studio neutrals: solid near-blacks without a brown cast */
+  --ink-950: #050506;
+  --ink-900: #0b0b0d;
+  --ink-850: #111114;
+  --ink-800: #17171b;
+  --ink-700: #212126;
+  --ink-600: #2c2c33;
+  --ink-500: #3b3b44;
+  --ink-400: #5a5a66;
+  --fog-50: #fafafa;
+  --fog-200: #e4e4e7;
+  --fog-400: #a1a1aa;
+  /* Added for WCAG AA small text on studio cards (fog-600 measures 3.7:1). */
+  --fog-500: #8b8b94;
+  --fog-600: #71717a;
+  --white: #ffffff;
+
+  /* Orange: the brand color, solid and saturated */
+  --orange-50: #fff1ea;
+  --orange-100: #ffd6c2;
+  --orange-300: #f4c46f;
+  --orange-500: #e8a838;
+  --orange-600: #d69324;
+  --orange-700: #b82f00;
+  --orange-800: #7a1f00;
+  --orange-900: #2b0b00;
+
+  /* Volt: live, success, marks, and focus (inherits the guide lime) */
+  --volt-300: #e9ff8f;
+  --volt-400: #d4ff3a;
+  --volt-600: #a6d600;
+
+  /* Sun: caption highlight */
+  --sun-300: #ffe566;
+  --sun-400: #ffd60a;
+
+  /* Raw status hues */
+  --rec-400: #ff3b5c;
+  --sky-400: #4dc3ff;
+
+  /* Paper: the public guide's editorial light palette */
+  --paper-0: #ffffff;
+  --paper-50: #fafaf6;
+  --paper-100: #f4f3ed;
+  --paper-200: #e8ebdf;
+  --paper-300: #d8dbcf;
+  --paper-400: #bfc5b5;
+  --paper-500: #aeb3a4;
+  --paper-600: #6a6e61;
+  --paper-700: #66695e;
+  --paper-750: #606957;
+  --paper-900: #242721;
+
+  /* Olive and lime: guide accents, illustration tints, and light-theme status */
+  --olive-100: #e9eedc;
+  --olive-200: #dce4ca;
+  --olive-250: #d8e5b3;
+  --olive-300: #c7d6b9;
+  --olive-350: #b7c79e;
+  --olive-400: #b3c78e;
+  --olive-450: #91a56f;
+  --olive-500: #84966c;
+  --olive-550: #7e965b;
+  --olive-575: #748858;
+  --olive-600: #637d31;
+  --olive-650: #627346;
+  --olive-700: #557522;
+  --olive-800: #526343;
+  --forest-700: #354935;
+  --lime-400: #d6f66b;
+  --lime-500: #c9ec51;
+  --amber-700: #7a5f00;
+  --crimson-700: #c4122f;
+  --azure-700: #0b6fa8;
+
+  /* Glass and shade (studio) */
+  --glass-04: rgba(255, 255, 255, 0.04);
+  --glass-08: rgba(255, 255, 255, 0.08);
+  --glass-12: rgba(255, 255, 255, 0.12);
+  --glass-18: rgba(255, 255, 255, 0.18);
+  --glass-28: rgba(255, 255, 255, 0.28);
+  --shade-40: rgba(5, 5, 6, 0.4);
+  --shade-60: rgba(5, 5, 6, 0.6);
+  --shade-85: rgba(5, 5, 6, 0.85);
+
+  /* Over media: footage is dark in both themes */
+  --on-media: var(--white);
+  --on-media-2: rgba(255, 255, 255, 0.7);
+  --on-media-dim: rgba(255, 255, 255, 0.25);
+  --media-line: rgba(255, 255, 255, 0.14);
+  --media-glare: rgba(255, 255, 255, 0.22);
+  --spotlight-accent: rgba(232, 168, 56, 0.22);
+  --spotlight-light: rgba(255, 255, 255, 0.35);
+  --media-chip: rgba(5, 5, 6, 0.55);
+  --media-ink: var(--ink-950);
+  --media-scrim-top: rgba(5, 5, 6, 0.55);
+  --media-scrim-bottom: rgba(5, 5, 6, 0.85);
+
+  /* Brand-colored effects, identical in both themes */
+  --accent-soft: rgba(232, 168, 56, 0.14);
+  --accent-line: rgba(232, 168, 56, 0.6);
+  --accent-ring: rgba(232, 168, 56, 0.18);
+  --accent-glow-soft: rgba(232, 168, 56, 0.15);
+  --accent-glow: rgba(232, 168, 56, 0.45);
+  --accent-halo: rgba(232, 168, 56, 0.55);
+  --sun-soft: rgba(255, 214, 10, 0.08);
+  --text-on-accent: var(--ink-950);
+  --text-on-accent-2: rgba(5, 5, 6, 0.78);
+  --text-on-accent-3: rgba(5, 5, 6, 0.6);
+  --line-on-accent: rgba(5, 5, 6, 0.2);
+  --caption-highlight: var(--sun-400);
+
+  /* Signature gradients */
+  --grad-fire: linear-gradient(120deg, var(--orange-500) 0%, #ff7a00 55%, var(--sun-400) 100%);
+  --grad-aurora: radial-gradient(40% 50% at 20% 30%, rgba(232, 168, 56, 0.55), transparent 70%), radial-gradient(35% 45% at 80% 20%, rgba(255, 214, 10, 0.35), transparent 70%), radial-gradient(45% 50% at 60% 90%, rgba(232, 168, 56, 0.35), transparent 70%);
+  --grad-beam: conic-gradient(transparent 0 62%, var(--orange-500) 78%, var(--sun-400) 86%, transparent 94%);
+  --grad-protect: linear-gradient(180deg, rgba(5, 5, 6, 0) 40%, rgba(5, 5, 6, 0.9) 100%);
+  --grad-text: linear-gradient(90deg, var(--orange-500), var(--sun-400), var(--orange-500));
+  --grad-ring: conic-gradient(var(--orange-500), var(--sun-400), var(--volt-400), var(--orange-500));
+  --grad-shine: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  --aurora-fire-1: rgba(232, 168, 56, 0.75);
+  --aurora-fire-2: rgba(255, 214, 10, 0.45);
+  --aurora-fire-3: rgba(232, 168, 56, 0.5);
+  --aurora-volt-1: rgba(212, 255, 58, 0.45);
+  --aurora-volt-2: rgba(232, 168, 56, 0.55);
+  --aurora-volt-3: rgba(212, 255, 58, 0.25);
+  --aurora-mono-1: rgba(255, 255, 255, 0.18);
+  --aurora-mono-2: rgba(255, 255, 255, 0.1);
+  --aurora-mono-3: rgba(232, 168, 56, 0.3);
+}
+
+/* Dark studio theme (default) */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-page: var(--ink-900);
+  --bg-deep: var(--ink-950);
+  --surface-card: var(--ink-800);
+  --surface-raised: var(--ink-700);
+  --surface-tile: var(--ink-600);
+  --surface-tile-hover: var(--ink-500);
+  --surface-well: var(--ink-850);
+  --surface-well-hover: var(--ink-800);
+  --surface-selected: var(--ink-700);
+  --surface-code: var(--ink-950);
+  --surface-glass: var(--glass-08);
+  --surface-glass-strong: var(--glass-18);
+  --surface-overlay: var(--glass-12);
+  --surface-hover: var(--glass-08);
+  --surface-track: var(--shade-60);
+  --surface-header: rgba(11, 11, 13, 0.66);
+  --surface-float: rgba(23, 23, 27, 0.78);
+  --surface-chip: rgba(23, 23, 27, 0.72);
+  --surface-accent: var(--orange-500);
+  --surface-accent-2: var(--volt-400);
+  --surface-inverse: var(--fog-50);
+  --scrim: rgba(5, 5, 6, 0.7);
+  --line-1: rgba(255, 255, 255, 0.07);
+  --line-2: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --line-glass: rgba(255, 255, 255, 0.14);
+  --text-1: var(--fog-50);
+  --text-2: var(--fog-400);
+  --text-3: var(--fog-500);
+  --text-label: var(--fog-200);
+  --text-outline: var(--ink-400);
+  --text-inverse: var(--ink-900);
+  --text-code: var(--fog-50);
+  --text-accent: var(--orange-500);
+  --surface-contrast: var(--ink-950);
+  --surface-contrast-hover: var(--ink-800);
+  --text-on-contrast: var(--fog-50);
+  --line-contrast: rgba(255, 255, 255, 0.12);
+  --text-accent-soft: var(--orange-300);
+  --live: var(--volt-400);
+  --wordmark-dot: var(--volt-400);
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-300);
+  --accent-press: var(--orange-600);
+  --accent-2: var(--volt-400);
+  --accent-2-hover: var(--volt-300);
+  --accent-2-soft: rgba(212, 255, 58, 0.14);
+  --accent-2-line: rgba(212, 255, 58, 0.4);
+  --accent-2-text: var(--volt-400);
+  --accent-2-hatch: rgba(212, 255, 58, 0.16);
+  --accent-2-hatch-faint: rgba(212, 255, 58, 0.04);
+  --focus-ring: var(--volt-400);
+  --success: var(--volt-400);
+  --warning: var(--sun-400);
+  --danger: var(--rec-400);
+  --info: var(--sky-400);
+  --warning-soft: rgba(255, 214, 10, 0.14);
+  --warning-line: rgba(255, 214, 10, 0.4);
+  --danger-soft: rgba(255, 59, 92, 0.14);
+  --danger-line: rgba(255, 59, 92, 0.45);
+  --rec: var(--rec-400);
+  --playhead: var(--white);
+  --playhead-glow: rgba(255, 255, 255, 0.8);
+  --shadow-sm: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 40px 100px rgba(0, 0, 0, 0.7);
+  --shadow-glow-volt: 0 0 0 1px rgba(212, 255, 58, 0.5), 0 12px 40px rgba(212, 255, 58, 0.3);
+  --shadow-toast: 0 20px 50px rgba(0, 0, 0, 0.55);
+  --shadow-float: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-header: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --inner-glass: inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* Light paper theme (the :root form outranks :root defaults) */
+:root[data-theme="light"],
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-page: var(--paper-100);
+  --bg-deep: var(--paper-200);
+  --surface-card: var(--paper-50);
+  --surface-raised: var(--paper-0);
+  --surface-tile: var(--paper-200);
+  --surface-tile-hover: var(--paper-300);
+  --surface-well: var(--paper-50);
+  --surface-well-hover: var(--paper-0);
+  --surface-selected: var(--olive-100);
+  --surface-code: var(--paper-200);
+  --surface-glass: rgba(36, 39, 33, 0.05);
+  --surface-glass-strong: rgba(36, 39, 33, 0.12);
+  --surface-overlay: rgba(36, 39, 33, 0.08);
+  --surface-hover: rgba(36, 39, 33, 0.06);
+  --surface-track: rgba(36, 39, 33, 0.06);
+  --surface-header: rgba(244, 243, 237, 0.82);
+  --surface-float: rgba(250, 250, 246, 0.9);
+  --surface-chip: rgba(250, 250, 246, 0.86);
+  --surface-accent: var(--orange-500);
+  --surface-accent-2: var(--lime-400);
+  --surface-inverse: var(--paper-900);
+  --scrim: rgba(23, 32, 16, 0.6);
+  --line-1: var(--paper-300);
+  --line-2: var(--paper-400);
+  --line-strong: var(--paper-500);
+  --line-glass: var(--paper-300);
+  --text-1: var(--paper-900);
+  --text-2: var(--paper-700);
+  --text-3: var(--paper-600);
+  --text-label: var(--paper-900);
+  --text-outline: var(--paper-500);
+  --text-inverse: var(--paper-100);
+  --text-code: var(--paper-900);
+  --text-accent: var(--orange-700);
+  --surface-contrast: var(--paper-900);
+  --surface-contrast-hover: var(--forest-700);
+  --text-on-contrast: var(--paper-100);
+  --line-contrast: transparent;
+  --text-accent-soft: var(--orange-700);
+  --live: var(--olive-700);
+  --wordmark-dot: var(--orange-500);
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-600);
+  --accent-press: var(--orange-600);
+  --accent-2: var(--lime-400);
+  --accent-2-hover: var(--lime-500);
+  --accent-2-soft: rgba(85, 117, 34, 0.12);
+  --accent-2-line: rgba(85, 117, 34, 0.45);
+  --accent-2-text: var(--olive-800);
+  --accent-2-hatch: rgba(85, 117, 34, 0.18);
+  --accent-2-hatch-faint: rgba(85, 117, 34, 0.05);
+  --focus-ring: var(--olive-700);
+  --success: var(--olive-700);
+  --warning: var(--amber-700);
+  --danger: var(--crimson-700);
+  --info: var(--azure-700);
+  --warning-soft: rgba(122, 95, 0, 0.1);
+  --warning-line: rgba(122, 95, 0, 0.4);
+  --danger-soft: rgba(196, 18, 47, 0.08);
+  --danger-line: rgba(196, 18, 47, 0.45);
+  --rec: var(--rec-400);
+  --playhead: var(--paper-900);
+  --playhead-glow: rgba(36, 39, 33, 0.35);
+  --shadow-sm: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 2px 8px rgba(36, 39, 33, 0.08);
+  --shadow-md: 0 16px 40px rgba(36, 39, 33, 0.12);
+  --shadow-lg: 0 40px 100px rgba(36, 39, 33, 0.18);
+  --shadow-glow-volt: 0 0 0 1px rgba(85, 117, 34, 0.4), 0 12px 40px rgba(85, 117, 34, 0.2);
+  --shadow-toast: 0 20px 50px rgba(36, 39, 33, 0.25);
+  --shadow-float: 0 24px 60px rgba(36, 39, 33, 0.16);
+  --shadow-header: 0 20px 50px rgba(36, 39, 33, 0.12);
+  --inner-glass: inset 0 1px 0 rgba(255, 255, 255, 0.7), inset 0 0 0 1px rgba(36, 39, 33, 0.04);
+}
+
+/* Compatibility aliases from the original export */
+:root {
+  --success-400: var(--volt-400);
+  --warning-400: var(--sun-400);
+  --danger-400: var(--rec-400);
+  --info-400: var(--sky-400);
+  --gold-400: var(--sun-400);
+  --ember-300: var(--orange-300);
+  --ember-500: var(--orange-500);
+  --ember-100: var(--orange-100);
+}

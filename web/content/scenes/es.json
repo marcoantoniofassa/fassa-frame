@@ -1,0 +1,612 @@
+{
+  "categories": {
+    "General": "Generales",
+    "Real estate": "Inmobiliaria",
+    "Health": "Salud",
+    "Nutrition": "Nutrición",
+    "Legal": "Legal",
+    "Creators": "Creadores de contenido",
+    "Legal panels": "Paneles · Legal",
+    "Creator panels": "Paneles · Creadores",
+    "Health panels": "Paneles · Salud",
+    "Nutrition panels": "Paneles · Nutrición",
+    "Real estate panels": "Paneles · Inmobiliaria",
+    "Transitions": "Transiciones",
+    "Pointers": "Señaladores",
+    "Video effects": "Efectos de video",
+    "Comedy": "Comedia",
+    "Neon": "Neón",
+    "Scene objects": "Objetos en escena",
+    "Interfaces": "Interfaces",
+    "Proof cards": "Tarjetas de prueba",
+    "Dental demonstrations": "Demostraciones · Odontología",
+    "Fitness demonstrations": "Demostraciones · Fitness",
+    "Legal demonstrations": "Demostraciones · Legal",
+    "Nutrition demonstrations": "Demostraciones · Nutrición",
+    "Architecture demonstrations": "Demostraciones · Arquitectura",
+    "Captions and titles": "Subtítulos y títulos",
+    "Image entrances": "Entradas de imagen"
+  },
+  "scenes": {
+    "revenue-counter": {
+      "name": "Dinero subiendo",
+      "whenToUse": "Cuando el discurso menciona facturación, ganancias o un resultado en dinero."
+    },
+    "three-steps": {
+      "name": "Tres pasos apilados",
+      "whenToUse": "Cuando el discurso resume un método en tres pasos."
+    },
+    "before-after": {
+      "name": "Antes y después",
+      "whenToUse": "Cuando se compara un resultado anterior con uno nuevo usando dos números."
+    },
+    "call-to-action": {
+      "name": "Llamado final con botón",
+      "whenToUse": "Al final del video, cuando se pide al público que toque un botón."
+    },
+    "question-answer": {
+      "name": "Pregunta y respuesta",
+      "whenToUse": "Cuando el discurso responde una duda frecuente."
+    },
+    "step-by-step": {
+      "name": "Paso a paso, uno a la vez",
+      "whenToUse": "Cuando el discurso explica cuatro pasos en secuencia."
+    },
+    "numbered-list": {
+      "name": "Lista numerada",
+      "whenToUse": "Cuando el discurso enumera errores, consejos o motivos."
+    },
+    "comparison": {
+      "name": "Comparación lado a lado",
+      "whenToUse": "Cuando el discurso compara dos opciones lado a lado."
+    },
+    "phone-tutorial": {
+      "name": "Celular con tutorial de pantalla",
+      "whenToUse": "Cuando el discurso muestra una secuencia de acciones dentro de una app."
+    },
+    "phone-chat": {
+      "name": "Celular con conversación",
+      "whenToUse": "Cuando el discurso cuenta una conversación con un cliente que terminó en venta."
+    },
+    "laptop-dashboard": {
+      "name": "Laptop con panel de números",
+      "whenToUse": "Cuando el discurso presenta los resultados del mes."
+    },
+    "notifications": {
+      "name": "Notificaciones cayendo",
+      "whenToUse": "Cuando el discurso describe ventas que llegan una tras otra."
+    },
+    "mortgage-calculator": {
+      "name": "Simulación de hipoteca",
+      "whenToUse": "Cuando el discurso explica la cuota estimada de una hipoteca."
+    },
+    "property-card": {
+      "name": "Ficha del inmueble",
+      "whenToUse": "Cuando el discurso presenta un inmueble con precio y medidas."
+    },
+    "medical-warning-signs": {
+      "name": "Señales de alerta",
+      "whenToUse": "Cuando el discurso enumera síntomas y posibles factores asociados. Reemplaza el contenido ilustrativo por información clínica verificada."
+    },
+    "body-diagram": {
+      "name": "Etiquetas en el cuerpo",
+      "whenToUse": "Cuando el discurso señala zonas del cuerpo y posibles causas de dolor. El contenido ilustrativo no reemplaza la orientación médica."
+    },
+    "balanced-plate": {
+      "name": "Plato por grupos",
+      "whenToUse": "Cuando el discurso enseña a dividir el plato por grupos de alimentos."
+    },
+    "food-swap": {
+      "name": "Cambio inteligente",
+      "whenToUse": "Cuando el discurso sugiere cambiar un alimento por otro."
+    },
+    "legal-deadline": {
+      "name": "Plazo en el calendario",
+      "whenToUse": "Cuando el discurso explica un plazo legal en curso. Verifica la jurisdicción y los hechos aplicables."
+    },
+    "legal-code": {
+      "name": "Fragmento de ley marcado",
+      "whenToUse": "Cuando el discurso cita una disposición legal. Reemplaza el texto jurídico ilustrativo por la fuente verificada aplicable."
+    },
+    "follower-counter": {
+      "name": "Contador de seguidores",
+      "whenToUse": "Cuando el discurso celebra o comenta una cifra de seguidores."
+    },
+    "creator-comment": {
+      "name": "Comentario destacado",
+      "whenToUse": "Cuando el discurso responde el comentario de alguien del público."
+    },
+    "legal-article-panel": {
+      "name": "Artículo de ley en la hoja",
+      "whenToUse": "Cuando el discurso muestra un artículo de ley en un documento. Verifica la jurisdicción y la norma citada."
+    },
+    "legal-deadline-panel": {
+      "name": "Plazo en la línea de tiempo",
+      "whenToUse": "Cuando el discurso explica un plazo legal en una línea de tiempo."
+    },
+    "refund-panel": {
+      "name": "Suma del reembolso",
+      "whenToUse": "Cuando el discurso suma las partes del dinero que se le devuelve al cliente."
+    },
+    "three-second-hook-panel": {
+      "name": "Los 3 primeros segundos",
+      "whenToUse": "Cuando el discurso explica la importancia de los tres primeros segundos."
+    },
+    "waveform-panel": {
+      "name": "Ondas de prueba del público",
+      "whenToUse": "Cuando el discurso explica las pruebas sucesivas de público de un video."
+    },
+    "engagement-panel": {
+      "name": "Las tres señales en barras",
+      "whenToUse": "Cuando el discurso enumera señales de interacción del público."
+    },
+    "heart-panel": {
+      "name": "Corazón y latidos",
+      "whenToUse": "Cuando el discurso introduce la frecuencia cardíaca y la salud cardiovascular."
+    },
+    "artery-panel": {
+      "name": "Arteria libre y estrecha",
+      "whenToUse": "Cuando el discurso explica la presión en una arteria libre o estrechada."
+    },
+    "health-chart-panel": {
+      "name": "Gráfico con la franja de riesgo",
+      "whenToUse": "Cuando el discurso ilustra una franja de riesgo o una condición sin diagnosticar. Verifica las cifras clínicas antes de usarlo."
+    },
+    "drink-carton-panel": {
+      "name": "Azúcar del envase",
+      "whenToUse": "Cuando el discurso revela cuánta azúcar tiene una bebida envasada."
+    },
+    "sugar-cubes-panel": {
+      "name": "Cubos de azúcar en el vaso",
+      "whenToUse": "Cuando el discurso traduce gramos de azúcar en cubitos."
+    },
+    "nutrition-limit-panel": {
+      "name": "Barra del límite diario",
+      "whenToUse": "Cuando el discurso compara el azúcar con un límite diario y sugiere la fruta entera. Verifica la recomendación prevista."
+    },
+    "building-panel": {
+      "name": "Edificio que sube piso por piso",
+      "whenToUse": "Cuando el discurso presenta un desarrollo inmobiliario. El edificio sube piso por piso mientras se anima la cantidad de pisos; usa cero pisos para ocultar el número."
+    },
+    "location-map-panel": {
+      "name": "Mapa con el trayecto a pie",
+      "whenToUse": "Cuando el discurso explica una ubicación y la distancia a pie. El conteo puede coincidir con una palabra dicha o con un tiempo definido en el panel; hasta dos lugares extra se iluminan cuando se mencionan."
+    },
+    "floor-plan-panel": {
+      "name": "Plano que nace en trazo y pasa a 3D",
+      "whenToUse": "Cuando el discurso muestra el interior de un inmueble: un plano en trazo se convierte en una vista 3D con el área y cuatro etiquetas de ambientes."
+    },
+    "property-price-panel": {
+      "name": "Etiqueta de precio sobre el plano",
+      "whenToUse": "Cuando el discurso presenta el precio de un inmueble sobre el plano. Cero oculta el valor numérico."
+    },
+    "transition-glow": {
+      "name": "Transición · Brillo cálido",
+      "whenToUse": "Para un cambio de escena estándar: una fuga de luz cálida llega a su pico en el corte."
+    },
+    "transition-flash": {
+      "name": "Transición · Destello blanco",
+      "whenToUse": "Para un corte seco y enfático: un destello blanco corto llega a su pico en el corte."
+    },
+    "transition-film-burn": {
+      "name": "Transición · Película quemada",
+      "whenToUse": "Para un cambio de tema o de tiempo: manchas de película quemada atraviesan la pantalla."
+    },
+    "transition-glitch": {
+      "name": "Transición · Glitch",
+      "whenToUse": "Para tecnología, errores o giros bruscos: canales de color separados, franjas desplazadas, líneas rasgadas y estática llegan a su pico en el corte."
+    },
+    "transition-tv": {
+      "name": "Transición · Apagar la tele",
+      "whenToUse": "Para el final de un bloque o un chiste: la imagen se cierra en una línea y vuelve a abrirse."
+    },
+    "transition-curtain": {
+      "name": "Transición · Cortina de color",
+      "whenToUse": "Para un nuevo elemento o tema: una franja del color de acento barre la pantalla."
+    },
+    "transition-zoom": {
+      "name": "Transición · Zoom con rayos",
+      "whenToUse": "Para acercarse a un detalle importante: rayos de velocidad y desenfoque refuerzan el corte."
+    },
+    "transition-blinds": {
+      "name": "Transición · Persiana",
+      "whenToUse": "Para un cambio de escenario o de día: siete franjas se cierran y abren en secuencia."
+    },
+    "transition-iris": {
+      "name": "Transición · Iris",
+      "whenToUse": "Para cerrar una historia o enfocar un detalle: un círculo se cierra en el centro y vuelve a abrirse."
+    },
+    "transition-fade": {
+      "name": "Transición · Fundido a negro",
+      "whenToUse": "Para una pausa dramática o el paso del tiempo: la imagen se funde brevemente a negro."
+    },
+    "pointer-down-arrow": {
+      "name": "Señalador · Flecha hacia abajo",
+      "whenToUse": "Para señalar un botón, número, producto o enlace."
+    },
+    "pointer-curved-arrow": {
+      "name": "Señalador · Flecha curva dibujada",
+      "whenToUse": "Para llamar la atención sobre un detalle con una flecha curva dibujada a mano."
+    },
+    "pointer-side-arrow": {
+      "name": "Señalador · Flecha lateral",
+      "whenToUse": "Para señalar un texto, botón o elemento cercano en pantalla."
+    },
+    "pointer-red-cross": {
+      "name": "Señalador · X roja",
+      "whenToUse": "Para descartar una opción o marcar algo como incorrecto."
+    },
+    "pointer-green-check": {
+      "name": "Señalador · Check verde",
+      "whenToUse": "Para confirmar, aprobar o marcar un elemento como hecho."
+    },
+    "pointer-circle": {
+      "name": "Señalador · Círculo a mano",
+      "whenToUse": "Para rodear un número, rostro, botón u otro detalle."
+    },
+    "pointer-underline": {
+      "name": "Señalador · Subrayado a mano",
+      "whenToUse": "Para subrayar una palabra, número o frase importante."
+    },
+    "pointer-box": {
+      "name": "Señalador · Recuadro de énfasis",
+      "whenToUse": "Para enmarcar una zona, un detalle de captura, un botón o un objeto."
+    },
+    "pointer-highlighter": {
+      "name": "Señalador · Resaltador",
+      "whenToUse": "Para resaltar una frase escrita, un valor o una línea de una captura."
+    },
+    "pointer-spotlight": {
+      "name": "Señalador · Foco",
+      "whenToUse": "Para aislar un rostro, producto o detalle de una captura oscureciendo el resto."
+    },
+    "pointer-banner": {
+      "name": "Señalador · Franja de censura",
+      "whenToUse": "Para ocultar una zona, como un rostro, nombre, número o detalle de una captura."
+    },
+    "pointer-toggle": {
+      "name": "Señalador · Interruptor",
+      "whenToUse": "Cuando el discurso pide activar o desactivar una función o modo."
+    },
+    "pointer-tap": {
+      "name": "Señalador · Toque en pantalla",
+      "whenToUse": "Cuando el discurso pide tocar o hacer clic en un punto específico."
+    },
+    "pointer-number": {
+      "name": "Señalador · Círculo numerado",
+      "whenToUse": "Cuando el discurso numera pasos o elementos sobre el video."
+    },
+    "pointer-rays": {
+      "name": "Señalador · Rayos de impacto",
+      "whenToUse": "Para rodear un objeto, rostro o número importante con rayos de énfasis."
+    },
+    "pointer-question": {
+      "name": "Señalador · Signo de pregunta",
+      "whenToUse": "Cuando el discurso hace una pregunta o muestra duda, cerca de la cabeza de quien habla."
+    },
+    "pointer-exclamation": {
+      "name": "Señalador · Alerta",
+      "whenToUse": "Cuando el discurso advierte sobre un error, un riesgo o un cuidado importante."
+    },
+    "effect-vignette": {
+      "name": "Efecto · Viñeta",
+      "whenToUse": "Para crear un clima más oscuro y cinematográfico o llevar la mirada al rostro de quien habla."
+    },
+    "effect-blur": {
+      "name": "Efecto · Desenfocar el fondo",
+      "whenToUse": "Para desenfocar el fondo y mantener nítido el rostro, como el modo retrato."
+    },
+    "effect-glow": {
+      "name": "Efecto · Brillo de ensueño",
+      "whenToUse": "Para sueños, recuerdos, lujo o un momento bonito: las zonas claras ganan un halo suave."
+    },
+    "effect-chromatic-blur": {
+      "name": "Efecto · Desenfoque cromático",
+      "whenToUse": "Para un aire de lente antigua, sueño o mareo: aparecen franjas rojas y azules en los bordes."
+    },
+    "effect-shake": {
+      "name": "Efecto · Temblor de cámara",
+      "whenToUse": "Para reforzar una cifra contundente, un giro, una sorpresa o un impacto con temblor de cámara."
+    },
+    "effect-money-rain": {
+      "name": "Efecto · Lluvia de dinero",
+      "whenToUse": "Cuando el discurso habla de ventas, ganancias, facturación o dinero que entra."
+    },
+    "effect-confetti": {
+      "name": "Efecto · Confeti",
+      "whenToUse": "Para celebrar una meta, una venta, un logro o un cumpleaños con confeti."
+    },
+    "effect-cinema": {
+      "name": "Efecto · Barras de cine",
+      "whenToUse": "Para relatos, revelaciones o momentos épicos con aspecto de tráiler de película."
+    },
+    "effect-noir": {
+      "name": "Efecto · Blanco y negro de cine",
+      "whenToUse": "Para una escena seria, un recuerdo, un drama o un secreto con aspecto monocromático."
+    },
+    "effect-tv-lines": {
+      "name": "Efecto · Líneas de TV",
+      "whenToUse": "Para un televisor de tubo, una cámara de seguridad, una grabación de archivo o un recuerdo."
+    },
+    "effect-static": {
+      "name": "Efecto · Estática",
+      "whenToUse": "Para señal débil, interferencia, un recuerdo que falla o suspenso."
+    },
+    "effect-vhs": {
+      "name": "Efecto · Cinta VHS",
+      "whenToUse": "Para una grabación nostálgica, video casero de los años 90 o aspecto de archivo en VHS."
+    },
+    "effect-prism": {
+      "name": "Efecto · Pantalla prismática",
+      "whenToUse": "Para sueños, vértigo, asombro o confusión: copias de la imagen se separan como en un prisma."
+    },
+    "stone-text": {
+      "name": "Comedia · Frase de piedra que se desploma",
+      "whenToUse": "Para dar peso físico a una frase: letras de piedra quedan colgadas un instante, caen y rompen el suelo."
+    },
+    "cracked-screen": {
+      "name": "Comedia · Pantalla rajada",
+      "whenToUse": "Para el chiste del golpe a la pantalla: el vidrio se raja en el punto elegido, la imagen tiembla y las grietas quedan."
+    },
+    "stage-spotlight": {
+      "name": "Comedia · Foco de escenario",
+      "whenToUse": "Para pedir atención o luz: la sala se oscurece y un foco de escenario ilumina a la persona mientras haces laterales barren la escena."
+    },
+    "concert-strobe": {
+      "name": "Comedia · Se volvió concierto",
+      "whenToUse": "Para el chiste de concierto o discoteca: la sala se oscurece, un estroboscopio blanco late al ritmo, haces de colores se cruzan y sube niebla."
+    },
+    "explosion": {
+      "name": "Comedia · Explosión de verdad",
+      "whenToUse": "Para el chiste de la explosión: fuego realista, humo oscuro y chispas estallan en x/y, con un destello blanco y un temblor corto."
+    },
+    "fire": {
+      "name": "Comedia · Fuego que sube",
+      "whenToUse": "Para el chiste del calor o el fuego: llamas realistas suben desde el borde inferior y un brillo cálido parpadea sobre el video."
+    },
+    "smoke": {
+      "name": "Comedia · Humo que cubre la pantalla",
+      "whenToUse": "Para una desaparición, un percance o un cambio oculto: humo gris sube, cubre la pantalla y se disipa."
+    },
+    "shattered-glass": {
+      "name": "Comedia · Vidrio que estalla",
+      "whenToUse": "Para el chiste de la pantalla rota: el vidrio se raja en x/y y los fragmentos vuelan y caen, con un destello y un temblor cortos."
+    },
+    "neon-quote": {
+      "name": "Neón · Título neón en bloques",
+      "whenToUse": "Para una frase contundente: los bloques de texto alternan pesos y la palabra clave marcada brilla con el color de la luz de la esquina."
+    },
+    "neon-good-bad": {
+      "name": "Neón · Tarjeta verde partida",
+      "whenToUse": "Para desmentir un consejo que parecía bueno: una tarjeta verde recibe un rayo de luz, se parte, se vuelve roja y revela el veredicto."
+    },
+    "glass-chart": {
+      "name": "Neón · Gráfico de vidrio con curva luminosa",
+      "whenToUse": "Cuando una métrica sube o baja: una curva blanca se dibuja mientras el marcador y el contador avanzan hasta el valor final."
+    },
+    "stuck-progress-bar": {
+      "name": "Neón · Barra que se traba en 99%",
+      "whenToUse": "Para mostrar algo que nunca termina: la barra de progreso se detiene cerca del final, se bloquea y revela una frase de impacto."
+    },
+    "attempt-counter": {
+      "name": "Neón · Intentos: falla, falla, acierta",
+      "whenToUse": "Cuando el acierto llega tras varios intentos: los fallidos reciben una X roja y una tachadura; el correcto se ilumina en verde."
+    },
+    "glass-list": {
+      "name": "Neón · Lista de vidrio que se enciende",
+      "whenToUse": "Cuando el discurso enumera trabajos hechos o beneficios: elementos apagados se encienden uno a uno con un check verde en una tarjeta de vidrio."
+    },
+    "object-card": {
+      "name": "Objeto · Objeto 3D con ficha técnica",
+      "whenToUse": "Cuando el discurso presenta un objeto con datos numéricos: aparece un objeto 3D girando con una ficha de 2×2. Cambia el src del video por un archivo de objeto incluido; el renderizador lee ese recurso directamente del HTML."
+    },
+    "house-construction": {
+      "name": "Objeto · Casa 3D que se construye por etapas",
+      "whenToUse": "Cuando el discurso explica una obra o un proceso por etapas: una casa 3D se arma mientras se encienden las etiquetas de cada etapa. La animación se reproduce una vez a 1,2× y termina en 2,4 segundos; deja al menos 3,5 segundos para que entre el sello."
+    },
+    "brazil-map": {
+      "name": "Objeto · Mapa de Brasil 3D",
+      "whenToUse": "Cuando el discurso trata del alcance o de lugares en Brasil: un mapa inclinado ilumina estados uno a uno, por región o en un grupo elegido, con un contador encima."
+    },
+    "solar-system": {
+      "name": "Objeto · Sistema solar en 3D",
+      "whenToUse": "Para presentar el universo, una idea central o relaciones en órbita: cuatro planetas giran alrededor de un Sol 3D, pasando por detrás y por delante."
+    },
+    "video-gallery": {
+      "name": "Objeto · Galería de videos en 3D",
+      "whenToUse": "Para mostrar trabajos en video: seis tarjetas verticales se abren en abanico 3D y una pasa al frente. Reemplaza los degradados de ejemplo por elementos de video sin sonido; define data-start, data-duration y el src correcto. Conteo de visualizaciones opcional debajo."
+    },
+    "notes-interface": {
+      "name": "Interfaz · Notas con checklist",
+      "whenToUse": "Cuando el discurso enumera requisitos, pasos o tareas: se escribe un título y cada elemento recibe un check en secuencia."
+    },
+    "ai-chat-interface": {
+      "name": "Interfaz · Chat con IA y video listo",
+      "whenToUse": "Cuando el discurso muestra un pedido a la IA: el pedido se escribe, se envía, espera y recibe una respuesta con un video terminado."
+    },
+    "search-interface": {
+      "name": "Interfaz · Búsqueda con resultado destacado",
+      "whenToUse": "Para invitar a una búsqueda o presentar un producto: se escribe la consulta y aparece un resultado destacado."
+    },
+    "camera-interface": {
+      "name": "Interfaz · Cámara del celular grabando",
+      "whenToUse": "Cuando el discurso trata de grabar o salir en cámara: el video se convierte en el visor de la cámara y una frase aparece palabra por palabra."
+    },
+    "command-bar": {
+      "name": "Interfaz · Barra de comandos con etapas",
+      "whenToUse": "Cuando el discurso muestra un comando para la computadora o la IA: se escribe el comando, Enter lo envía y las etapas reciben un check una a una."
+    },
+    "receipt": {
+      "name": "Prueba · Recibo de costo y tiempo",
+      "whenToUse": "Cuando el discurso explica costo y tiempo empleado: la tarjeta del valor cuenta, se desliza a un lado y da paso a la tarjeta del tiempo."
+    },
+    "completed-checklist": {
+      "name": "Prueba · Lista tachada",
+      "whenToUse": "Cuando el discurso enumera tareas que ya no hacen falta: cada elemento aparece y se tacha."
+    },
+    "crossed-out-quote": {
+      "name": "Prueba · Presupuesto tachado y el valor nuevo",
+      "whenToUse": "Cuando el discurso compara un costo recurrente anterior con un precio nuevo."
+    },
+    "progress-meter": {
+      "name": "Prueba · Medidor con aguja",
+      "whenToUse": "Cuando el discurso describe un costo, esfuerzo o riesgo bajo o alto: un medidor indica el nivel."
+    },
+    "time-counter": {
+      "name": "Prueba · Cronómetro",
+      "whenToUse": "Cuando el discurso dice cuánto tarda una tarea: un contador llega al tiempo y la unidad elegidos."
+    },
+    "editing-behind-scenes": {
+      "name": "Prueba · Detrás de escena del editor",
+      "whenToUse": "Cuando el discurso muestra la edición en curso: un panel de editor muestra video, onda de audio, subtítulos, el cabezal avanzando y cortes sucesivos."
+    },
+    "waveform-cuts": {
+      "name": "Prueba · Pausas cortadas en la onda de audio",
+      "whenToUse": "Cuando el discurso explica las pausas eliminadas: los tramos rojos de la onda desaparecen uno a uno, la onda se une y la duración disminuye."
+    },
+    "dentist-brushing": {
+      "name": "Dentista: cepillado correcto",
+      "whenToUse": "Cuando el discurso corrige la técnica de cepillado: cepillar con fuerza marca el diente en rojo, el título incorrecto se tacha y un cepillo suave limpia con delicadeza el diente protegido."
+    },
+    "muscle-recovery": {
+      "name": "Entrenador: crece después",
+      "whenToUse": "Cuando el discurso explica la recuperación muscular: el entrenamiento contrae el músculo; luego el sueño, la proteína y el descanso le envían energía y crece."
+    },
+    "consumer-rights": {
+      "name": "Abogado: derechos que quedan y se van",
+      "whenToUse": "Cuando el discurso explica derechos que se conservan y se pierden: los que se conservan reciben un check y los excluidos se tachan y se alejan. Verifica la jurisdicción y los hechos aplicables."
+    },
+    "nutrition-oranges": {
+      "name": "Nutrición: naranjas que se vuelven jugo",
+      "whenToUse": "Cuando el discurso compara la fruta entera con el jugo: las naranjas se exprimen en un vaso, el azúcar queda en el jugo y la fibra sale, con etiquetas."
+    },
+    "architect-room": {
+      "name": "Arquitecto: sala pequeña",
+      "whenToUse": "Cuando el discurso explica el diseño de una sala pequeña: la luz de la ventana se refleja en un espejo y luego una cortina de piso a techo muestra la altura."
+    },
+    "year-hook": {
+      "name": "Gancho con año gigante",
+      "whenToUse": "Para un gancho de apertura con un año o un número: dígitos grandes giran sobre un panel oscuro con gráfico y una insignia en píldora refuerza el mensaje."
+    },
+    "profession-cards": {
+      "name": "Tarjetas de profesiones en abanico",
+      "whenToUse": "Cuando el discurso presenta varias profesiones o nichos: tarjetas apiladas se abren en abanico, cada una con el ícono del oficio."
+    },
+    "comment-call-to-action": {
+      "name": "Comenta: palabra escrita",
+      "whenToUse": "En el llamado final: aparece una caja de comentario, se escribe una palabra clave y un dedo toca Enviar."
+    },
+    "text-karaoke": {
+      "name": "Subtítulo · Palabra por palabra en amarillo",
+      "whenToUse": "Para el subtítulo estándar de video corto: las palabras blancas siguen visibles mientras la palabra dicha se vuelve amarilla y da un saltito."
+    },
+    "text-pop": {
+      "name": "Subtítulo · Palabra que estalla",
+      "whenToUse": "Para un gancho o un giro enfático: una o dos palabras grandes estallan al ritmo del discurso; la última queda destacada."
+    },
+    "text-chromatic": {
+      "name": "Subtítulo · Letras con colores desplazados",
+      "whenToUse": "Para subtítulos enérgicos de tecnología, IA o edición, con aspecto de glitch cromático."
+    },
+    "text-rising-glow": {
+      "name": "Subtítulo · Palabra que sube con brillo",
+      "whenToUse": "Para subtítulos de habla continua: la palabra dicha sube desde detrás de una línea con brillo amarillo y luego se vuelve blanca."
+    },
+    "text-red-word": {
+      "name": "Subtítulo · Palabra que se enciende en rojo",
+      "whenToUse": "Para una advertencia, una promesa o una afirmación contundente: palabras apagadas se encienden en rojo al decirse y siguen encendidas hasta el siguiente grupo."
+    },
+    "text-italic": {
+      "name": "Subtítulo · Mayúsculas en cursiva",
+      "whenToUse": "Para deporte, acción, desafíos o resultados: subtítulos en cursiva destacan la palabra más larga de cada grupo."
+    },
+    "text-translucent-box": {
+      "name": "Subtítulo · Fondo redondeado translúcido",
+      "whenToUse": "Para tutoriales o fondos recargados: una píldora oscura, translúcida y discreta contiene la frase, con la palabra dicha más clara."
+    },
+    "text-glowing-outline": {
+      "name": "Subtítulo · Contorno luminoso",
+      "whenToUse": "Para consejos en tono de conversación, rutinas o detrás de escena, con un contorno delicado y luminoso."
+    },
+    "text-typewriter": {
+      "name": "Subtítulo · Máquina de escribir con cursor",
+      "whenToUse": "Para comandos, código o tutoriales de IA: las letras se escriben en una franja oscura con un cursor de bloque que parpadea en las pausas."
+    },
+    "text-bold-title": {
+      "name": "Título · Título negro contundente",
+      "whenToUse": "Para un titular de apertura: texto corto en negro sobre franjas de color, una franja por línea, en la parte superior."
+    },
+    "text-two-line-title": {
+      "name": "Título · Título en dos líneas",
+      "whenToUse": "Para un gancho clásico de video corto: una línea pequeña blanca sobre una segunda línea grande del color de acento."
+    },
+    "text-impact": {
+      "name": "Título · Proyección de impacto",
+      "whenToUse": "Para un número, precio o promesa enfático: el texto salta, se vuelve nítido y deja un gran eco translúcido. La entrada dura 0,5 segundos y luego queda fija hasta el corte."
+    },
+    "text-spring": {
+      "name": "Título · Entrada con resorte",
+      "whenToUse": "Para un llamado corto y enérgico: el texto nace desde cero, se pasa de tamaño y se asienta. Luego queda fijo hasta el corte."
+    },
+    "text-doodle": {
+      "name": "Título · Letras dibujadas a mano que tiemblan",
+      "whenToUse": "Para un llamado que se mantiene varios segundos: las letras aparecen una a una y tiemblan como letras dibujadas a mano, en cuatro poses."
+    },
+    "text-twist": {
+      "name": "Título · Torsión",
+      "whenToUse": "Para un llamado a la acción prolongado: las letras se desplazan y los contornos se tuercen sobre una línea base ondulada, en cuatro poses por ciclo, más rápido y fuerte que el Doodle."
+    },
+    "text-color-glitch": {
+      "name": "Título · Falla de colores",
+      "whenToUse": "Para un título de tecnología o un aviso de lanzamiento: el texto entra con un sacudón cromático, queda fijo y, por instantes, separa canales rojo y cian en franjas desplazadas."
+    },
+    "text-spotlight-off": {
+      "name": "Título · Foco que se apaga",
+      "whenToUse": "Para una salida enfática: el texto se enciende bajo un foco en movimiento; el foco se cierra hacia el centro y desaparece en 0,3 segundos."
+    },
+    "text-exhale": {
+      "name": "Título · El texto se evapora",
+      "whenToUse": "Para una oferta o un plazo que vence: el texto se escribe, queda fijo y luego ondula, se aplana, se desenfoca en horizontal y se evapora en una salida de 0,5 segundos."
+    },
+    "text-number-badge": {
+      "name": "Título · Insignia numerada arriba",
+      "whenToUse": "Para listas numeradas: una píldora arriba muestra el número y el nombre del elemento actual. Usa una copia por elemento, con copias contiguas que se tocan en sus límites. Los subtítulos del editor siguen visibles debajo; no los ocultes."
+    },
+    "entrance-drop-left": {
+      "name": "Entrada · Caer hacia la izquierda",
+      "whenToUse": "Para presentar una imagen, captura o clip con impacto: la tarjeta cae desde arriba, queda fija y sale por la izquierda en los últimos 0,3 segundos. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-drop-right": {
+      "name": "Entrada · Caer hacia la derecha",
+      "whenToUse": "Para presentar una imagen, captura o clip con impacto: la tarjeta cae desde arriba, queda fija y sale por la derecha en los últimos 0,3 segundos. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-drop-bottom-left": {
+      "name": "Entrada · Caer hacia abajo y a la izquierda",
+      "whenToUse": "Para presentar una imagen o un resultado: la tarjeta entra deslizándose desde la derecha, queda fija y cae hacia abajo en los últimos 0,3 segundos. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-drop-bottom-right": {
+      "name": "Entrada · Caer hacia abajo y a la derecha",
+      "whenToUse": "Para presentar una imagen o un resultado: la tarjeta entra deslizándose desde la izquierda, queda fija y cae hacia abajo en los últimos 0,3 segundos. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-zoom-one": {
+      "name": "Entrada · Zoom 1 (llega grande)",
+      "whenToUse": "Cuando una imagen necesita una revelación contundente: entra a escala 2×, se encoge de golpe con desenfoque radial, queda fija y crece rápido al final. La entrada y la salida duran unos 0,2 segundos cada una. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-zoom-two": {
+      "name": "Entrada · Zoom 2 (se abre por dentro)",
+      "whenToUse": "Cuando una imagen se despliega en pantalla: empieza a 0,5× dentro de una tarjeta rodeada de copias espejadas, crece de golpe a tamaño completo con desenfoque radial, queda fija y vuelve a encogerse. La entrada dura unos 0,2 segundos y la salida unos 0,15 segundos. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-side-zoom": {
+      "name": "Entrada · Zoom lateral",
+      "whenToUse": "Cuando una imagen entra de costado y se aleja: un borde espejado acompaña un deslizamiento desenfocado de media pantalla, seguido de un encogimiento gradual y uno final más rápido hasta cerca de 0,8×. El parámetro side elige la dirección. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-click-open": {
+      "name": "Entrada · Clic para abrir",
+      "whenToUse": "Al abrir un panel, enlace o resultado: una imagen sube a escala 44%, un cursor hace clic y se expande con un temblor elástico y un desenfoque breve. Luego queda fija hasta el corte. La entrada de 1,3 segundos se comprime por debajo de 2,4 segundos para ocupar el 55% de la escena; el tiempo del sonido debe comprimirse igual. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    },
+    "entrance-before-after-curtain": {
+      "name": "Entrada · Antes y después con cortina",
+      "whenToUse": "Para la prueba del antes y después: el video original cubre la pantalla con una etiqueta de grabación; luego una cortina brillante con asa barre la pantalla, retrocede un poco y revela el video editado debajo. El barrido empieza después de 1 segundo (antes, si la escena dura menos de 2,5 segundos) y tarda unos 1,8 segundos. Usa el tramo original que coincide con el discurso; quita su filtro CSS para conservar el color original. Define image con un archivo de la carpeta de imágenes. Para usar video, reemplaza el elemento de imagen por un video con el mismo ID y la misma clase y agrega src, data-start=\"0\", data-duration, data-track-index=\"2\", muted y playsinline. Mantén las tarjetas verticales al lado o debajo del rostro; la tarjeta 16:9 predeterminada va encima."
+    }
+  }
+}
