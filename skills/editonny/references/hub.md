@@ -2,7 +2,7 @@
 
 A skill é portável. Bibliotecas e kits de marca, modelos internos e projetos da equipe não acompanham esta distribuição. A narração sintética usa `gen_voice.py` com a chave de quem edita.
 
-Quando houver um workspace com recursos próprios, localize as instruções desse projeto e confirme os arquivos atuais. Use somente o contexto necessário. Não suponha acesso a pastas, contas, marcas ou serviços de outra pessoa. Ausência de uma integração opcional não impede o uso das ferramentas portáveis.
+Quando houver um workspace com recursos próprios, localize as instruções desse projeto e confirme os arquivos atuais. Se ele tiver uma skill própria de edição de vídeo, leia-a antes de escolher assets, identidade, voz ou modelos: ela é a integração local, e o pacote continua sem os arquivos dela. Use somente o contexto necessário. Não suponha acesso a pastas, contas, marcas ou serviços de outra pessoa. Ausência de uma integração opcional não impede o uso das ferramentas portáveis.
 
 Identidade visual, voz, ritmo, máscaras e mixagem são escolhas de cada projeto. Não transforme os valores de uma edição em padrão universal. Uma revisão de texto deve preservar as demais escolhas aprovadas, a menos que o usuário peça outra coisa.
 
