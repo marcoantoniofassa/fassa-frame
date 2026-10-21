@@ -1,6 +1,6 @@
 # Integração opcional com o ambiente da equipe
 
-A skill é portável. Bibliotecas de marca, modelos internos, ferramentas de narração e projetos da equipe não acompanham esta distribuição.
+A skill é portável. Bibliotecas e kits de marca, modelos internos e projetos da equipe não acompanham esta distribuição. A narração sintética usa `gen_voice.py` com a chave de quem edita.
 
 Quando houver um workspace com recursos próprios, localize as instruções desse projeto e confirme os arquivos atuais. Use somente o contexto necessário. Não suponha acesso a pastas, contas, marcas ou serviços de outra pessoa. Ausência de uma integração opcional não impede o uso das ferramentas portáveis.
 

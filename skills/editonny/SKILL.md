@@ -1,7 +1,7 @@
 ---
 name: fassa-frame
 description: >-
-  Editar e revisar vídeos locais conforme material e intenção editorial: documental e câmeras, Reels, VSL, aulas, memes, legendas, áudio e motion. Use ao produzir um vídeo ou alterar uma edição existente; preserve escolhas aprovadas e selecione FFmpeg/ASS, Remotion, HyperFrames ou fluxo híbrido conforme o projeto. Publicação e geração externa dependem do pedido.
+  Editar e revisar vídeos locais conforme material e intenção editorial: documental e câmeras, cases e lançamentos, Reels, VSL, aulas, memes, legendas, áudio e motion. Use ao produzir um vídeo ou alterar uma edição existente; preserve escolhas aprovadas e selecione FFmpeg/ASS, Remotion, HyperFrames ou fluxo híbrido conforme o projeto. Publicação e geração externa dependem do pedido.
 ---
 
 # Fassa Frame
@@ -51,7 +51,7 @@ A escolha é por necessidade, não por ranking. Mantenha a stack de um projeto r
 - Fala: transcreva e confira os trechos incertos. Use `align_words.py` para âncoras medidas, `precise_edges.py` para bordas e `verify_cut.py` para auditoria. Leia o relatório de `verify_cut` mesmo quando o exit code for zero.
 - Câmeras: meça offsets no relógio/fonte comum. Proteja coordenadas e identificadores; valide máscara em frames isolados e ao longo da sequência. `track_faces.py` ajuda enquadramento, não anonimização. Detector sem rosto não prova ausência de rosto. Impactos, oclusões e quadros repetidos precisam de inspeção visual.
 - OCR (`audit_data.py`) é complemento local. Informe cobertura e falhas de leitura; nunca trate OCR sem achados como garantia de privacidade.
-- Áudio: escolha voz, interpretação, ambiente, trilha, ducking, alvo LUFS e true peak conforme briefing. Meça o arquivo final. Reutilize voz e áudio aprovados; uma revisão visual não autoriza regenerar narração.
+- Áudio: escolha voz, interpretação, ambiente, trilha, ducking, alvo LUFS e true peak conforme briefing. Meça o arquivo final. Reutilize voz e áudio aprovados; uma revisão visual não autoriza regenerar narração. Narração sintética só com pedido: `gen_voice.py` (Gemini TTS), uma tomada por passagem contínua, conferida com `transcribe.py` e escuta.
 - Visuais: busque o catálogo por uso e significado. Adapte a cópia da cena no projeto, preserve templates. Mantenha legibilidade, contraste e safe zones adequadas ao destino. Preserve todas as capacidades do motor, mesmo quando não usadas neste trabalho.
 - Prepare amostra representativa que inclua os pontos de risco. O motor sugere 8–15 s; a duração deve cobrir o que precisa ser avaliado. Continue autonomamente se autorizado; aguarde somente aprovação solicitada pelo usuário.
 - No preview local, associe aprovação ao arquivo/versão atual. Mudança de corte invalida evidência e timing dependentes; preview antigo não aprova render novo.

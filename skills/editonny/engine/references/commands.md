@@ -25,6 +25,7 @@ uv run --directory '<ENGINE>' python helpers/<helper>.py --help
 - `gen_image.py`
 - `gen_music.py`
 - `gen_sfx.py`
+- `gen_voice.py`
 - `generate_effects.py`
 - `grade.py`
 - `icloud.py`
