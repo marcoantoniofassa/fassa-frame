@@ -8,7 +8,7 @@ Conserve o significado e o áudio que comprova o evento. Meça sincronismo de ca
 
 ## Case, produto e lançamento
 
-Proponha o roteiro com timecodes antes de cortar e peça aprovação: gancho, problema, solução, resultado e chamada, com a função de cada bloco. Case não é gravação organizada nem tutorial com a tela aberta: alterne prova (câmera, tela real do produto) com comunicação visual (título, número, destaque). Nos pontos-chave proponha cenas do catálogo e registre a escolha; sem motion é decisão registrada, não omissão. Sincronize por ação: frase, ação, resultado na tela e tempo de leitura; retimar a cena inteira não alinha as ações internas. Antes da versão final, enxugue explicação óbvia ou repetida, preservando fatos e orientações. Feche com a tela final do kit de marca. Amostra de 20–30 s com abertura e primeira prova antes do render completo.
+Em projeto novo sem roteiro aprovado, proponha um com timecodes antes de cortar: gancho, problema, solução, resultado e chamada, cada bloco com sua função. Roteiro e autorizações existentes seguem valendo. O risco do gênero é virar gravação organizada ou tutorial com a tela aberta: alterne prova (câmera, tela real do produto) e comunicação visual (título, número, destaque) onde ajudar. Nos pontos-chave proponha cenas do catálogo e registre a escolha, inclusive a de não usar motion. Sincronize por ação: frase, ação, resultado na tela e tempo de leitura; retimar a cena inteira não alinha as ações internas. Antes da versão final, enxugue explicação óbvia ou repetida, preservando fatos e orientações. Encerramento: [kit de marca](editorial.md#kit-de-marca).
 
 ## Reels
 

@@ -10,7 +10,7 @@ Para cada camada relevante, registre decisão + motivo + evidência: montagem/co
 
 ## Kit de marca
 
-Identidade recorrente fica num kit da marca, fora do pacote (pasta do time): logo e variações, fontes, cores, tela final pronta (arquivo e duração), CTA, assinatura e restrições. Leia o kit indicado no briefing antes de desenhar textos e motion. Havendo tela final no kit, feche o vídeo com ela salvo briefing que a desligue; reutilize o arquivo em vez de recriá-lo. Sem kit, pergunte pela identidade em vez de inventar uma.
+Identidade recorrente fica num kit da marca, fora do pacote (pasta do time): logo e variações, fontes, cores, tela final pronta (arquivo e duração), CTA, assinatura e restrições. Leia o kit indicado no briefing antes de desenhar textos e motion. Em vídeo novo, a tela final do kit é o encerramento proposto, salvo decisão contrária no briefing; reutilize o arquivo em vez de recriá-lo. Revisão pontual preserva o encerramento aprovado, com ou sem tela final. Sem kit, pergunte pela identidade em vez de inventar uma.
 
 ## Revisão de material aprovado
 

@@ -5,16 +5,18 @@ header, never in the URL. Without a key the helper exits 2. Generate only when t
 synthetic voice; a recorded human voice needs no helper.
 
 One request is one take. Send each continuous passage whole: separate generations of the same voice
-change interpretation, and spliced takes sound patched. Style goes as a short inline tag (`--style calm`
-becomes "[calm] text"); long instructions or a "Say ...:" prefix are often read aloud. After generating,
-run transcribe.py on the file and compare the first words and the end against the script: a leaked tag
-or an invented opening means a new take, not a trim.
+change interpretation, and spliced takes sound patched. Sustained delivery goes in `--style`, sent as
+speech metadata and not as text: directions written into the text ("Say calmly: ...") can be read aloud.
+Point events such as <breath> or <short pause> may stay inline. After generating, run transcribe.py on
+the file and compare the first words and the end against the script; an invented or cut passage means a
+new take, not a trim.
 
-The WAV (16-bit mono PCM at the rate the service returns) goes to <edit>/assets/ with an entry in
-<edit>/assets/credits.json. `--dry-run` prints the request without touching the network.
+The take goes to <edit>/assets/ as a 16-bit mono WAV, with an entry in <edit>/assets/credits.json. The
+name is reserved before the paid request, so an existing take is never replaced. `--dry-run` prints the
+request without touching the network.
 
 Usage:
-    uv run python helpers/gen_voice.py "<text>" --edit-dir DIR [--voice Charon] [--style calm]
+    uv run python helpers/gen_voice.py "<text>" --edit-dir DIR [--voice Charon] [--style "calm, warm"]
         [-o name.wav] [--model ID] [--dry-run]
     uv run python helpers/gen_voice.py --text-file script.txt --edit-dir DIR ...
 """
@@ -25,6 +27,7 @@ import argparse
 import base64
 import binascii
 import hashlib
+import io
 import json
 import re
 import sys
@@ -48,33 +51,47 @@ class VoiceError(Exception):
 
 
 def build_request(text: str, voice: str, style: str | None) -> dict:
-    return {"contents": [{"parts": [{"text": f"[{style.strip()}] {text}" if style and style.strip() else text}]}],
+    part = {"text": text}
+    if style and style.strip():
+        part["speech_metadata"] = {"style": style.strip()}
+    return {"contents": [{"parts": [part]}],
             "generationConfig": {"responseModalities": ["AUDIO"],
                                  "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}}}}
 
 
 def request_speech(payload: dict, key: str, model: str = MODEL, timeout: float = 300) -> tuple[bytes, int]:
-    """Return (16-bit PCM, sample rate). Errors never echo the response body, which may contain the key."""
+    """Return (16-bit mono PCM, sample rate). Errors never echo the response body, which may contain the key."""
     try:
         r = requests.post(URL.format(model=model), headers={"x-goog-api-key": key, "Content-Type": "application/json"},
-                          data=json.dumps(payload), timeout=timeout)
+                          data=json.dumps(payload), timeout=timeout, allow_redirects=False)
     except requests.RequestException as e:
         raise VoiceError(f'could not reach the Gemini API ({e.__class__.__name__}). Check the connection.')
     if r.status_code in (401, 403):
         raise VoiceError('The Gemini API rejected GEMINI_API_KEY. Check the configured key and its access to TTS models.', 2)
     if r.status_code == 429:
         raise VoiceError('Gemini API quota or rate limit reached. Try again later or check the plan.')
-    if r.status_code >= 400:
-        raise VoiceError(f'The Gemini API returned error {r.status_code} for model {model}. Check the model ID and the service.')
+    if r.status_code >= 300:  # a redirect would carry the key header to another host
+        raise VoiceError(f'The Gemini API returned status {r.status_code} for model {model}. Check the model ID and the service.')
     try:
-        part = r.json()["candidates"][0]["content"]["parts"][0]["inlineData"]
-        pcm = base64.b64decode(part["data"], validate=True)
+        candidate = r.json()["candidates"][0]
+        part = candidate["content"]["parts"][0]["inlineData"]
+        audio = base64.b64decode(part["data"], validate=True)
     except (ValueError, KeyError, IndexError, TypeError, binascii.Error):
         raise VoiceError('Unexpected Gemini API response without audio. Nothing saved; retry.')
+    if candidate.get("finishReason") == "MAX_TOKENS":
+        raise VoiceError('The take hit the output limit and was cut. Nothing saved; split the passage at a natural pause.')
+    if audio[:4] == b'RIFF':  # Gemini 3.8 TTS answers WAV by default; earlier TTS models answer raw L16
+        try:
+            with wave.open(io.BytesIO(audio)) as w:
+                if (w.getnchannels(), w.getsampwidth()) != (1, 2):
+                    raise VoiceError('The Gemini API returned a WAV that is not 16-bit mono. Nothing saved.')
+                return w.readframes(w.getnframes()), w.getframerate()
+        except (wave.Error, EOFError):
+            raise VoiceError('The Gemini API returned an unreadable WAV. Nothing saved; retry.')
     rate = re.search(r'rate=(\d+)', str(part.get("mimeType", "")))
-    if not pcm or len(pcm) % 2:
+    if not audio or len(audio) % 2:
         raise VoiceError('The Gemini API returned incomplete audio. Nothing saved; retry.')
-    return pcm, int(rate.group(1)) if rate else 24000
+    return audio, int(rate.group(1)) if rate else 24000
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -83,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument('--text-file', type=Path, help='UTF-8 file with the narration text')
     ap.add_argument('--edit-dir', required=True, help='session edit folder')
     ap.add_argument('--voice', default='Charon', help='prebuilt voice name (default Charon; Puck is livelier)')
-    ap.add_argument('--style', help='short style tag, e.g. "calm" or "upbeat"')
+    ap.add_argument('--style', help='sustained delivery, e.g. "calm, warm Brazilian narrator"')
     ap.add_argument('-o', '--output', help='filename in assets/ (default: derived from the text)')
     ap.add_argument('--model', default=MODEL, help=f'TTS model (default {MODEL})')
     ap.add_argument('--dry-run', action='store_true', help='show the request without generating')
@@ -111,18 +128,28 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if not key:
             raise VoiceError('GEMINI_API_KEY is not configured. Narration is optional; configure the key in the environment or the skill .env file after authorization.', 2)
-        if out.exists():
-            raise VoiceError(f'{out.name} already exists; choose another -o so an approved take is never replaced', 2)
-        print(f'generating with {args.model} ({args.voice})...')
-        pcm, rate = request_speech(payload, key, args.model)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        tmp = out.with_name('.tmp-' + out.name)
-        with wave.open(str(tmp), 'wb') as w:
-            w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(pcm)
-        tmp.replace(out)
         credits_path = edit / "assets" / "credits.json"
-        credits = load_json(credits_path, default=[])
-        credits = credits if isinstance(credits, list) else []
+        try:
+            credits = load_json(credits_path, default=[])
+        except ValueError:
+            credits = None
+        if not isinstance(credits, list):
+            raise VoiceError(f'{credits_path} is not a JSON list; fix it before a paid take so no credit is lost', 2)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            reserved = out.open('xb')  # reserve the name before paying, so a parallel run cannot replace this take
+        except FileExistsError:
+            raise VoiceError(f'{out.name} already exists; choose another -o so an approved take is never replaced', 2)
+        try:
+            print(f'generating with {args.model} ({args.voice})...')
+            pcm, rate = request_speech(payload, key, args.model)
+            with reserved, wave.open(reserved, 'wb') as w:
+                w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate); w.writeframes(pcm)
+        except BaseException as e:
+            reserved.close(); out.unlink(missing_ok=True)
+            if isinstance(e, OSError):
+                raise VoiceError(f'could not write {out.name}: {e.strerror or e}')
+            raise
         credits.append({"file": f'assets/{name}', "source": "gemini-tts", "model": args.model, "voice": args.voice,
                         "style": args.style, "text": text, "author": f'synthetic voice ({args.model}, {args.voice})',
                         "license": "AI-generated", "added_at": now_iso()})

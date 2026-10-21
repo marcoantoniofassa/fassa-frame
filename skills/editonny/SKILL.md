@@ -64,6 +64,6 @@ Mantenha medidas brutas e exceções justificadas; não remova checks para fazer
 
 Entregue arquivo local, projeto/script reproduzível, mudanças realizadas, checks executados e limitações. Registro de direitos e envio externo: [rights](references/rights.md). Editar não implica publicar. Não envie material, gere mídia paga, instale outra stack ou faça atualização global apenas porque uma ferramenta existe; use a autorização e o escopo da tarefa.
 
-## Distribuição de código 0.1.0
+## Distribuição de código
 
 Os vídeos e parte da biblioteca opcional não acompanham esta distribuição. `media status` reporta ausências intencionais. Não prometa o catálogo inteiro pronto para renderizar nem tente restaurá-lo sem licença e autorização. Use mídia fornecida pelo usuário e cenas independentes desses recursos.

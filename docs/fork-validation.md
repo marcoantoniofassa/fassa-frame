@@ -41,3 +41,9 @@ Esses casos validam a orientação escrita; não provam obediência de todo mode
 Nenhum vídeo de produção foi reeditado; nenhum serviço gerativo pago ou mídia privada foi enviado a terceiros. Não foram baixados modelos de transcrição/OCR. Descoberta nativa em uma nova conversa Claude/Codex ainda depende de reabrir o cliente. Não houve commit, push, publicação, registro de marca nem revisão jurídica. As pendências de licenças e dependências estão em `commercial-readiness.md`.
 
 Logs e artefatos locais de QA ficam em `.work/validation/`, fora do pacote distribuível. Os testes não certificam privacidade; a entrega de cada vídeo exige revisão audiovisual.
+
+## 0.1.1 em preparação (21/10/2026)
+
+`npm run check` e `npm run test:engine` passaram (41 testes de integração). Os ports do upstream têm teste de seletores montados em runtime em todo o catálogo e de hold no último quadro. `gen_voice.py` foi testado com respostas simuladas: WAV do Gemini 3.8 lido sem tratar o cabeçalho como amostra, estilo em `speech_metadata`, redirect recusado, take truncada descartada e take existente preservada. Formato de resposta e estilo conferidos na [página do modelo](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts) em 21/10. Revisão adversarial do Atlas: 10 achados, 9 corrigidos; o teste do prompt vazio não voltou por cobrir uma linha.
+
+Limites: nenhuma chamada real ao Gemini (sem gasto), nenhum render novo e nenhuma escuta. A primeira narração real precisa de transcrição e escuta antes de ir para um vídeo.
