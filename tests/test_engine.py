@@ -1,11 +1,16 @@
 """Regression checks for the bundled engine and visual resources."""
+import contextlib
+import io
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
+import warnings
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = ROOT / 'skills/editonny/engine'
@@ -103,6 +108,49 @@ class EngineTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             cfg = json.loads((project / 'project.json').read_text())
             self.assertEqual(len(cfg['scenes']), 1)
+
+    def test_project_config_points_at_hyperframes_hosts(self):
+        config = json.loads((ENGINE / 'project-template/hyperframes.json').read_text())
+        self.assertEqual(config['$schema'], 'https://hyperframes.heygen.com/schema/hyperframes.json')
+        self.assertEqual(config['registry'], 'https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry')
+
+    def test_scene_copies_keep_runtime_built_selectors(self):
+        sys.path.insert(0, str(VISUALS))
+        import apply
+        outside = lambda html: set(re.findall(r'(?<![\w-])id="([^"]+)"', re.sub(r'<script\b.*?</script>', '', html, flags=re.S))) - {'root'}
+        for scene in apply.catalog():
+            source = (VISUALS / 'scenes' / (scene + '.html')).read_text()
+            copies = []
+            for new in (scene + '-01', scene + '-02'):
+                copies.append(apply.replace_id(source, scene, new))
+                with self.subTest(copy=new):
+                    self.assertEqual(apply.check_ids(copies[-1], new, '_' + re.sub(r'[^a-z0-9]', '', new)), [])
+            self.assertFalse(outside(copies[0]) & outside(copies[1]), scene)
+        copy = apply.replace_id((VISUALS / 'scenes/three-steps.html').read_text(), 'three-steps', 'three-steps-01')
+        self.assertIn('id="c3_threesteps01-p1"', copy)
+        self.assertIn('T.fromTo("#c3_threesteps01-p" + n,', copy)
+        # A family renamed at the end of the ID no longer matches "#c3-p" + n.
+        broken = '<div id="c3-p1_threesteps01"></div><script>T.fromTo("#c3-p" + n, {}, {});</script>'
+        self.assertEqual(apply.check_ids(broken, 'three-steps-01', '_threesteps01'), ['c3-p...'])
+
+    def test_fixed_scene_holds_through_the_final_frame(self):
+        sys.path.insert(0, str(VISUALS))
+        import apply
+        with tempfile.TemporaryDirectory() as tmp:
+            project, edit = Path(tmp) / 'project', Path(tmp) / 'edit'
+            project.mkdir(); edit.mkdir()
+            (project / 'project.json').write_text('{}')
+            (edit / 'cut_timeline.json').write_text('{"duration": 8.733}')
+            with mock.patch.object(apply, 'copy_assets', return_value=0), contextlib.redirect_stdout(io.StringIO()), warnings.catch_warnings():
+                warnings.simplefilter('ignore', ResourceWarning)
+                apply.use_scene(str(project), 'three-steps', 3.5, 8.733)
+                apply.use_scene(str(project), 'three-steps', 0, 6)
+            held, plain = ((project / f'compositions/scenes/three-steps-{n}.html').read_text() for n in ('01', '02'))
+        # The exit fades start 0.36 s before the 6 s source end (0.46 s in step-by-step); the hold drops them only while the scene reaches the end.
+        self.assertIn('if (typeof C.end === "number" && C.end >= 8.733 - .3) tl.getChildren(false, true, false).forEach(function (t) { if (t.startTime() >= 5.5 && t.vars.opacity === 0) t.kill(); });', held)
+        self.assertIn('tl.tweenFromTo(0, 6.0, { duration: 5.233,', held)
+        self.assertNotIn('t.kill()', plain)
+        self.assertIn('window.__timelines["three-steps-02"] = tl;', plain)
 
 
 if __name__ == '__main__':

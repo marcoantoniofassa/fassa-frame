@@ -132,6 +132,33 @@ test('2D scene templates mount, animate, and seek without missing targets or dup
       assert.equal(checked.visible,true,`${scene.id}: background visible after entrance`);
       assert.equal(checked.deterministic,true,`${scene.id}: backward seek`);
     }
+    // Fixed layouts as scene --use writes them: renamed copies keep runtime-built selectors, and a final-frame hold skips the exit.
+    const fixedCopies=JSON.parse((await exec('python3',['-B','-c',`import json, apply
+out = []
+for c in apply.catalog().values():
+    if c['layout'] in ('fullscreen', 'frame') and not c.get('adaptation'):
+        new, d = c['id'] + '-01', float(c['duration']); copy = apply.replace_id(open('scenes/%s.html' % c['id']).read(), c['id'], new)
+        fit = lambda html: (apply.wait_for_frame if c['layout'] == 'frame' else apply.shorten)(apply.hold_exit(html, new, 20, d - .5), new, d, round(d * .9, 3))
+        out.append({'id': new, 'copy': copy, 'hold': fit(copy)})
+        if c['id'] == 'location-map-panel': out[-1]['late'] = fit(apply.set_parameter(copy, 'others', 'SCHOOL'))
+print(json.dumps(out))`],{cwd:fileURLToPath(new URL('../skills/editonny/visuals/',import.meta.url)),maxBuffer:2**27})).stdout);
+    assert.ok(fixedCopies.length>=38,'fixed-layout scenes');
+    for(const scene of fixedCopies){
+      await evaluate(`window.mount(${JSON.stringify(scene.copy)})`);
+      await browser('wait','--fn',`Boolean(window.__timelines[${JSON.stringify(scene.id)}])`);
+      assert.deepEqual(await evaluate(`(()=>{const tl=window.__timelines[${JSON.stringify(scene.id)}];for(let t=0;t<=tl.duration();t+=.25)tl.seek(t,false);return failures;})()`),[],`${scene.id}: copied selectors`);
+      // The held copy was written for a cut ending at 20 s: ending there keeps it visible, moving it earlier restores the exit.
+      const ending=async(source,context)=>{await evaluate(`window.mount(${JSON.stringify(source)},${JSON.stringify(context)})`);
+        await browser('wait','--fn',`Boolean(window.__timelines[${JSON.stringify(scene.id)}])`);
+        return evaluate(`(()=>{const tl=window.__timelines[${JSON.stringify(scene.id)}],opacity=()=>[...document.querySelectorAll('[id]')].map(e=>Number(getComputedStyle(e).opacity));
+          tl.seek(tl.duration()-.6,false);const before=opacity();tl.seek(tl.duration(),false);const after=opacity();
+          return {failures,root:Number(getComputedStyle(document.querySelector('[data-composition-id] > [id]')).opacity),faded:after.filter((o,i)=>before[i]>.5&&o<.1).length,
+            late:[...document.querySelectorAll('[id]')].filter(e=>e.textContent==='SCHOOL').map(e=>Number(getComputedStyle(e).opacity))};})()`);};
+      const held=await ending(scene.hold,{end:20});
+      assert.deepEqual(held.failures,[],`${scene.id}: hold`);assert.ok(held.root>.99,`${scene.id}: visible on the final frame`);assert.equal(held.faded,0,`${scene.id}: no exit on the final frame`);
+      assert.ok((await ending(scene.hold,{end:10})).root<.01,`${scene.id}: exit restored when the scene moves earlier`);
+      if(scene.late){const late=await ending(scene.late,{end:20,words:[{text:'SCHOOL',t:4.9,end:5.1}]});assert.ok(late.late.length&&late.late.every(o=>o>.99),`${scene.id}: late word entrance on the final frame`);}
+    }
     const recovery=await readFile(new URL('../skills/editonny/visuals/scenes/muscle-recovery.html',import.meta.url),'utf8');
     await evaluate(`window.mount(${JSON.stringify(recovery)})`);
     assert.deepEqual(await evaluate(`[...document.querySelectorAll('svg [fill]')].map(e=>e.getAttribute('fill')).filter(fill=>!CSS.supports('fill',fill))`),[],'recovery icons use valid configured colors');

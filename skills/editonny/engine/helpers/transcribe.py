@@ -517,12 +517,9 @@ def transcript_path(edit_dir: Path | str, video: Path | str) -> Path:
 
 
 def build_prompt(extra: str | None, use_default: bool) -> str | None:
-    parts = []
-    if use_default:
-        parts.append(DEFAULT_PROMPT)
-    if extra and extra.strip():
-        parts.append(extra.strip())
-    return " ".join(parts) if parts else None
+    # An empty prompt is not "no prompt": Whisper encodes it as one space token and decodes with NaN log-probabilities.
+    parts = [x.strip() for x in ((DEFAULT_PROMPT if use_default else None), extra) if x and x.strip()]
+    return " ".join(parts) or None
 
 
 def is_cached(out_path: Path, video: Path, engine: str, model: str, language: str | None, prompt: str | None) -> bool:
@@ -542,6 +539,7 @@ def transcribe_one(video: Path | str, edit_dir: Path | str | None = None, langua
                    model: str = DEFAULT_MODEL, force: bool = False, prompt: str | None = DEFAULT_PROMPT,
                    engine: str | None = None, verbose: bool = True) -> Path:
     """Transcribe one video. Returns the transcript path (cached when the source did not change)."""
+    prompt = (prompt or "").strip() or None
     video = Path(video).absolute()
     if not video.exists():
         raise FileNotFoundError(f'video not found: {video}')
