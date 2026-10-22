@@ -5,7 +5,7 @@ Copie para o registro do projeto e preencha só o pertinente. Campos não preenc
 - Material e fonte:
 - Objetivo / público / intenção:
 - Destino / formato / duração desejada:
-- Identidade e referência:
+- Identidade, kit de marca e tela final:
 - Projeto, stack e versão existentes:
 - Escopo desta revisão:
 - Arquivo/versão aprovada a preservar:

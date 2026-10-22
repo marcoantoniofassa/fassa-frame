@@ -124,4 +124,5 @@ None is required for local cutting, captions, or composition. External media tra
 - Pexels receives search text and PEXELS_API_KEY when selected. Its terms are at https://www.pexels.com/license/.
 - OpenRouter receives an image-generation prompt and OPENROUTER_API_KEY only when explicitly used. Provider and model terms apply: https://openrouter.ai/terms. Generation can incur charges.
 - ElevenLabs receives sound or music prompts and the user's configured credentials when explicitly used. Account plan, commercial-use rules, and generated-media restrictions apply; keep the returned provenance and usage records.
+- Google Gemini API receives narration text, voice and style, and GEMINI_API_KEY only when gen_voice.py is explicitly used. Google's API terms and generative AI use policy apply: https://ai.google.dev/gemini-api/terms. Generation can incur charges; credits.json records the model and voice.
 - Hugging Face receives model-download requests for local inference. Repository model licenses and service terms apply.

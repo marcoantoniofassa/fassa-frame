@@ -8,6 +8,10 @@ Material e fontes; objetivo e público; destino/proporção/duração desejada; 
 
 Para cada camada relevante, registre decisão + motivo + evidência: montagem/cortes, ritmo/pausas/respirações, ambiente, voz, trilha/efeitos, gráficos/dados, animação, legendas, enquadramento, privacidade e critérios de conferência. Camadas desnecessárias podem ficar ausentes. Uma entrevista, VSL, meme e peça de luto não precisam da mesma gramática.
 
+## Kit de marca
+
+Identidade recorrente fica num kit da marca, fora do pacote (pasta do time): logo e variações, fontes, cores, tela final pronta (arquivo e duração), CTA, assinatura e restrições. Leia o kit indicado no briefing antes de desenhar textos e motion. Em vídeo novo, a tela final do kit é o encerramento proposto, salvo decisão contrária no briefing; reutilize o arquivo em vez de recriá-lo. Revisão pontual preserva o encerramento aprovado, com ou sem tela final. Sem kit, pergunte pela identidade em vez de inventar uma.
+
 ## Revisão de material aprovado
 
 1. Identifique versão, hash ou arquivo exato aprovado e pedido novo.

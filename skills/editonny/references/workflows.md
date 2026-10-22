@@ -6,6 +6,10 @@ Use esta página como roteamento. As ferramentas não ganham capacidades novas p
 
 Conserve o significado e o áudio que comprova o evento. Meça sincronismo de canais usando OSD/fonte comum, registre offsets e sentido do ajuste. Zoom e câmera lenta são escolhas narrativas; registre o tratamento do áudio. Máscaras devem cobrir rostos ao longo do movimento, com tratamento conservador em impacto/oclusão. Tarjas de dados sensíveis precisam de opacidade suficiente verificada no export. Associe cada gráfico ao dado real e à unidade. Não atribua causa, culpa ou identificação por inferência de vídeo. Verificação de detector é parcial; marque o que foi inspecionado visualmente.
 
+## Case, produto e lançamento
+
+Em projeto novo sem roteiro aprovado, proponha um com timecodes antes de cortar: gancho, problema, solução, resultado e chamada, cada bloco com sua função. Roteiro e autorizações existentes seguem valendo. O risco do gênero é virar gravação organizada ou tutorial com a tela aberta: alterne prova (câmera, tela real do produto) e comunicação visual (título, número, destaque) onde ajudar. Nos pontos-chave proponha cenas do catálogo e registre a escolha, inclusive a de não usar motion. Sincronize por ação: frase, ação, resultado na tela e tempo de leitura; retimar a cena inteira não alinha as ações internas. Antes da versão final, enxugue explicação óbvia ou repetida, preservando fatos e orientações. Encerramento: [kit de marca](editorial.md#kit-de-marca).
+
 ## Reels
 
 Escolha gancho, duração, ritmo, enquadramento, legenda e loop conforme objetivo. Faceless é uma decisão da conta/briefing, não sinônimo de Reel. Faça roteiro com fonte por fato, beats e áudio medido. Trilha, animação e voz energética são opcionais. Use a identidade solicitada; marca do editor não é marca do vídeo. Publicação/agendamento exigem pedido que os inclua.

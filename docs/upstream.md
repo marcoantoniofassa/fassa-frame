@@ -3,6 +3,7 @@
 - Fassa Frame: adaptações e manutenção de Marco Fassa.
 - Base: [Editonny, de Matheus Gomes](https://github.com/soumatheusgomes/editonny).
 - Revisão de origem: [`05d3dedcddcf6717001b0a3ef91411ec08f614d4`](https://github.com/soumatheusgomes/editonny/commit/05d3dedcddcf6717001b0a3ef91411ec08f614d4).
+- Correções portadas depois da origem: [`08e86fe`](https://github.com/soumatheusgomes/editonny/commit/08e86fe) e [`4d87901`](https://github.com/soumatheusgomes/editonny/commit/4d87901) (0.1.1).
 - Repositório da distribuição: `https://github.com/marcoantoniofassa/fassa-frame`.
 - Versão inicial: `0.1.0`. Fonte da versão: `skills/editonny/VERSION` e manifests dos plugins.
 

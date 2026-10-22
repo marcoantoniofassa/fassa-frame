@@ -143,13 +143,16 @@ def breaths_of_cut(out: str, edit: Path, video: Path) -> tuple[list[str], int]:
     if not count_value:
         lines_value.append(f'breaths: no silence of {mn:.2f} s or more (below {th:.0f} dB)')
     else:
-        lines_value.append(f'respiros: {len(count_value)} silences of {mn:.2f} s or more (below {th:.0f} dB):')
+        lines_value.append(f'breaths: {len(count_value)} silences of {mn:.2f} s or more (below {th:.0f} dB):')
         for r, _ in count_value:
             lines_value.append(f"  {fmt_time(r['start'])} a {fmt_time(r['end'])}  ({r['dur']:.2f} s)")
         lines_value.append('  review each detected pause against the intended pacing; adjust only authorized intervals and preserve complete words')
     for r, s in fica:
         lines_value.append(f'''  retain: {fmt_time(r['start'])} a {fmt_time(r['end'])} ({r['dur']:.2f} s) inside interval {s.get('id')} with "dry": false ("{(s.get('quote') or '')[:40]}")''')
     return lines_value, len(count_value)
+
+
+BREATHS = 'Remaining audible breaths or pauses'
 
 
 def main() -> int:
@@ -168,9 +171,8 @@ def main() -> int:
             return 2
 
     h = lambda name: str(HELPERS / name)  # noqa: E731
-    tr = [h("transcribe.py"), str(video), "--edit-dir", str(edit)]
-    if args.prompt:
-        tr += ["--prompt", args.prompt]
+    # State the prompt regime: this run rewrites transcripts/<cut>.json, which compose reads for captions.
+    tr = [h("transcribe.py"), str(video), "--edit-dir", str(edit)] + (["--prompt", args.prompt] if args.prompt else ["--no-prompt"])
     vf = [h("verify_cut.py"), str(edl), str(video), "--without-approval"]
     if args.min_silence is not None:
         vf += ["--min-silence", str(args.min_silence)]
@@ -178,13 +180,13 @@ def main() -> int:
     t0 = time.monotonic()
     with ThreadPoolExecutor(max_workers=4) as pool:
         jobs = {'Cut transcription': pool.submit(run, tr),
-                'Remaining audible breaths or pauses': pool.submit(run, [h("breaths.py"), str(video), "--json"]),
+                BREATHS: pool.submit(run, [h("breaths.py"), str(video), "--json"]),
                 'Boundaries, loudness, and silence: verify_cut': pool.submit(run, vf),
                 'Join contact sheet': pool.submit(run, [h("contact_sheet.py"), str(video), "--junctions"])}
         failed, breaths = False, 0
         for title, fut in jobs.items():
             code, out, dt = fut.result()
-            if title.startswith("Respiros") and code in (0, 1):
+            if title == BREATHS and code in (0, 1):
                 lines_value, breaths = breaths_of_cut(out, edit, video)
                 failed |= breaths < 0
                 breaths = max(0, breaths)

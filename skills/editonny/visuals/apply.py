@@ -70,6 +70,11 @@ def pointer(p, name, count, kind='pointer', pre=None):
 
 def origin_dir(): return HERE
 def catalog(): return {c['id']: c for c in json.load(open(os.path.join(origin_dir(), 'catalog.json')))['scenes']}
+BUILT_ID = r'(["\'])#?([A-Za-z][\w-]*)\1\s*\+'   # "#c3-p" + n: an ID prefix completed at runtime
+def made_at_runtime(scr, prefix):
+    """The script creates IDs with this prefix itself (e.id = "n-c" + j), so no page element carries it."""
+    import re
+    return bool(re.search(r'(\.id\s*=\s*|setAttribute\(\s*["\']id["\']\s*,\s*)["\']%s' % re.escape(prefix), scr))
 def replace_id(content, old, new):
     """Rename registration and DOM IDs independently for each copy. Ignore SVG IDs embedded in script strings when discovering page IDs; dynamic ID prefixes must be renamed together."""
     import re
@@ -82,10 +87,20 @@ def replace_id(content, old, new):
 
         p0 = next(iter(pre)); p1 = p0[:-1] + ('_' if p0[-2].isdigit() else '') + suf[1:] + '-'
         return content.replace(p0, p1)
+    # A runtime-built selector ("#c3-p" + n) cannot take a trailing suffix, so its family takes it after the root token.
+    scr = ''.join(re.findall(r'<script\b.*?</script>', content, flags=re.S))
+    ren = {}
+    for p in sorted({m.group(2) for m in re.finditer(BUILT_ID, scr)}, key=len, reverse=True):
+        members = [i for i in ids if i.startswith(p) and i not in ren]
+        if '-' not in p or not members or made_at_runtime(scr, p): continue
+        q = p.replace('-', suf + '-', 1)
+        ren.update({i: q + i[len(p):] for i in members})
+        content = re.sub(r'(["\'])(#?)%s(?=\1\s*\+)' % re.escape(p), lambda m, q=q: m.group(1) + m.group(2) + q, content)
     for i in sorted(ids, key=len, reverse=True):
-        content = re.sub(r'(?<![\w-])id="%s"' % re.escape(i), 'id="%s%s"' % (i, suf), content)
-        content = re.sub(r'#%s(?![\w-])' % re.escape(i), '#%s%s' % (i, suf), content)
-        content = re.sub(r'getElementById\((["\'])%s\1\)' % re.escape(i), 'getElementById("%s%s")' % (i, suf), content)
+        j = ren.get(i, i + suf)
+        content = re.sub(r'(?<![\w-])id="%s"' % re.escape(i), 'id="%s"' % j, content)
+        content = re.sub(r'#%s(?![\w-])' % re.escape(i), '#%s' % j, content)
+        content = re.sub(r'getElementById\((["\'])%s\1\)' % re.escape(i), 'getElementById("%s")' % j, content)
     return content
 def check_ids(content, name, suf=''):
     """Return missing literal DOM targets and invalid dynamic prefixes before publishing a copied scene."""
@@ -104,6 +119,10 @@ def check_ids(content, name, suf=''):
             missing.append(target)
     for m in re.finditer(r'querySelector(?:All)?\(\s*(["\'])#([\w-]+)\1\s*\)', scr):
         if m.group(2) not in ids: missing.append('#' + m.group(2))
+    for p in {m.group(2) for m in re.finditer(BUILT_ID, scr)}:
+        cand = [i for i in ids if i.startswith(p) and i != p]
+        # Only renamed copies of the family remain, so the runtime-built selector reaches nothing.
+        if cand and suf and all(suf in i[len(p):] for i in cand) and not made_at_runtime(scr, p) and ('"%s"' % suf) not in scr: missing.append(p + '...')
     return sorted(set(missing))
 def shorten(content, id_, old_duration, new_duration):
     """Run an entire fixed-duration animation faster so it fits the shorter scene interval."""
@@ -121,6 +140,12 @@ def hold_at_end(content, id_, end):
     row = m.group(0).replace('const C', 'var C', 1)
     return content.replace(m.group(0), row + ('\n  /* Keep the exit beyond the final video frame. */'
                                            '\n  if (C && C.duration && typeof C.end === "number" && C.end >= %s - .3) C = Object.assign({}, C, { duration: C.duration + .8 });' % round(end, 3)), 1)
+def hold_exit(content, id_, end, exit_at):
+    """Drop the fade-outs that start from exit_at (source seconds) when a fixed-duration scene reaches the final frame. These scenes time their exit from a hard-coded D, not C.duration. Moving the scene earlier restores the exit."""
+    target = 'window.__timelines["%s"] = tl;' % id_
+    if target not in content: sys.exit('Error: timeline registration not found while holding scene %s' % id_)
+    return content.replace(target, ('/* Keep the final video frame visible: skip the exit fades. Late entrances still play. */\n'
+        '  if (typeof C.end === "number" && C.end >= %s - .3) tl.getChildren(false, true, false).forEach(function (t) { if (t.startTime() >= %s && t.vars.opacity === 0) t.kill(); });\n  ') % (round(end, 3), exit_at) + target, 1)
 def set_timing(content, old_duration, new_duration, frame):
     """Expose original and fitted durations and the frame-wait flag to word-synchronized panels."""
     target = 'const tl = gsap.timeline({ paused: true });'
@@ -284,6 +309,7 @@ def update_captions(p, proj=None, cat=None, speak=True):
             print(f'  Captions {os.path.basename(f)}: hidden in {len(own)} intervals' + (': ' + ', '.join(f'{a:.2f}-{z:.2f}' for a, z in own[:8]) + (' ...' if len(own) > 8 else '') if own else ''))
     for v in warnings: print(f'  Warning: word "{v}" was not found in the cut transcript; its caption exclusion was skipped')
 def use_scene(p, id_, start, end=None, cut=None):
+    import re
     p = os.path.abspath(os.path.expanduser(p)); pj = os.path.join(p, 'project.json')
     if not os.path.exists(pj): sys.exit(f'Error: {p} is not an editonny project (project.json is missing)')
     cat = catalog()
@@ -300,18 +326,18 @@ def use_scene(p, id_, start, end=None, cut=None):
     while os.path.lexists(os.path.join(folder, f'{id_}-{i:02d}.html')): i += 1
     new = f'{id_}-{i:02d}'
     content = replace_id(open(os.path.join(origin_dir(), 'scenes', id_ + '.html')).read(), id_, new)
+    proj0 = json.load(open(pj)); vdur = cut_duration(p, proj0)
+    in_frame = False
+    stays = vdur is not None and c.get('category') != 'Transitions' and c.get('type') != 'captions' and end >= vdur - 0.25
     fixed = c['layout'] in ('fullscreen', 'frame') and not c.get('adaptation')
     floor = float(c.get('minDuration', 0.55))
+    # Fixed layouts fade out from 0.46 to 0.2 s before their hard-coded D.
+    if fixed and stays: content = hold_exit(content, new, vdur, round(d - 0.5, 3))
     if fixed and abs(dur - d) > 0.05:
         if dur < d * floor - 1e-6: sys.exit(f'Error: {id_} lasts {d:g} seconds and can shorten to {d * floor:.1f} seconds (requested: {dur:g}). Choose another scene or a longer interval.')
         if dur > d: sys.exit(f'Error: {id_} lasts at most {d:g} seconds')
         if c['layout'] != 'frame': content = shorten(content, new, d, dur)
     if c['layout'] == 'frame': content = wait_for_frame(content, new, d, dur if abs(dur - d) > 0.05 else d)
-    proj0 = json.load(open(pj)); vdur = cut_duration(p, proj0)
-    in_frame = False
-
-
-    stays = vdur is not None and c.get('category') != 'Transitions' and c.get('type') != 'captions' and end >= vdur - 0.25
     if stays: content = hold_at_end(content, new, vdur)
 
 
@@ -324,7 +350,7 @@ def use_scene(p, id_, start, end=None, cut=None):
             size = min(size, 72.0); ym = int(round(float(box[1]) - 22 - size * 0.55))
             content = set_parameter(set_parameter(content, 'size', int(size)), 'y', ym); in_frame = True
             print('  Frame captions: y=%d, font size=%d, above the lower frame' % (ym, size))
-    missing = check_ids(content, new, '_' + new)
+    missing = check_ids(content, new, '_' + re.sub(r'[^a-z0-9]', '', new))
     if missing: sys.exit(f'Error: copied scene {new}.html references missing IDs: {", ".join(missing)}')
     nb = copy_assets(Path(origin_dir()), Path(p), content)
     if nb: print(f'  Copied {nb} visual assets to assets/visuals')

@@ -16,6 +16,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'skills/editonny/en
 import elevenlabs_api as audio
 import fetch_images
 import gen_image
+import gen_voice
+import wave
 
 KEY = 'synthetic-test-secret-123456789'  # gitleaks:allow (synthetic redaction fixture)
 
@@ -61,6 +63,7 @@ class HttpClientTests(unittest.TestCase):
             ('get', lambda: fetch_images.download(self.item, self.directory, 'foto'), fetch_images.FetchError),
             ('post', lambda: gen_image.request_image({}, KEY), gen_image.GenError),
             ('post', lambda: audio.post_audio('https://example.invalid/audio', {}, KEY, 'Music', 5), audio.ElevenError),
+            ('post', lambda: gen_voice.request_speech({}, KEY), gen_voice.VoiceError),
         ]
         for method, invoke, error_type in consumers:
             for failure in [response(('upstream reflected ' + KEY).encode(), 500), requests.Timeout(KEY)]:
@@ -71,6 +74,31 @@ class HttpClientTests(unittest.TestCase):
                     self.assertNotIn(KEY, str(caught.exception))
                     self.assertGreater(len(str(caught.exception)), 20)
         self.assertEqual(list(self.directory.iterdir()), [])
+
+    def test_generated_voice_is_a_wav_and_keeps_the_key_out_of_the_url(self):
+        pcm = b'\x01\x00\xff\xff' * 600
+        riff = io.BytesIO()
+        with wave.open(riff, 'wb') as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes(pcm)
+        reply = lambda audio, **extra: response(json.dumps({'candidates': [{**extra, 'content': {'parts': [{'inlineData': {
+            'mimeType': 'audio/wav', 'data': base64.b64encode(audio).decode()}}]}}]}).encode())
+        args = ['Olá, time.', '--edit-dir', str(self.directory), '--style', 'calm', '-o', 'take']
+        with patch.dict('os.environ', {'GEMINI_API_KEY': KEY}), patch.object(gen_voice.requests, 'post', return_value=reply(riff.getvalue())) as post:
+            self.assertEqual(gen_voice.main(args), 0)
+            self.assertEqual(gen_voice.main(args), 2)  # an existing take is never replaced
+        self.assertNotIn(KEY, post.call_args.args[0])
+        self.assertEqual(post.call_args.kwargs['headers']['x-goog-api-key'], KEY)
+        self.assertFalse(post.call_args.kwargs['allow_redirects'])
+        part = json.loads(post.call_args.kwargs['data'])['contents'][0]['parts'][0]
+        self.assertEqual(part, {'text': 'Olá, time.', 'speech_metadata': {'style': 'calm'}})
+        with wave.open(str(self.directory / 'assets/take.wav')) as w:  # the RIFF header is not read as samples
+            self.assertEqual((w.getframerate(), w.getnchannels(), w.readframes(w.getnframes())), (24000, 1, pcm))
+        self.assertEqual(json.loads((self.directory / 'assets/credits.json').read_text())[0]['source'], 'gemini-tts')
+        for failure in (reply(pcm, finishReason='MAX_TOKENS'), response(b'', 302)):
+            with self.subTest(status=failure.status_code), patch.dict('os.environ', {'GEMINI_API_KEY': KEY}), \
+                    patch.object(gen_voice.requests, 'post', return_value=failure):
+                self.assertEqual(gen_voice.main(args[:-1] + ['cut']), 1)
+                self.assertFalse((self.directory / 'assets/cut.wav').exists())
 
     def test_requests_reads_chunked_response_over_loopback(self):
         class Handler(BaseHTTPRequestHandler):
