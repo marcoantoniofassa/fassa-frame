@@ -153,5 +153,36 @@ class EngineTests(unittest.TestCase):
         self.assertIn('window.__timelines["three-steps-02"] = tl;', plain)
 
 
+class CaptionPlacementTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('template_build', ENGINE / 'project-template/build.py')
+        cls.build = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.build)
+
+    def place(self, face, captions=None):
+        from types import SimpleNamespace
+        M = SimpleNamespace(F=self.build.FORMATS['9:16'], W=1080, H=1920, rectangles=[],
+                            P=SimpleNamespace(cfg={'captions': captions or {}}),
+                            face_screen=lambda t: face, block=lambda t: {'scene': 'fullscreen'})
+        with contextlib.redirect_stderr(io.StringIO()), contextlib.redirect_stdout(io.StringIO()):
+            return self.build.top_caption(M, 1.0, 2.0, 80)
+
+    def test_low_face_moves_captions_off_the_face(self):
+        # A bust with the chin at 1450 px covers the whole 1100-1400 band; above the head is free.
+        face = dict(x0=300, x1=780, y0=880, y1=1450, top=680)
+        y = self.place(face)
+        self.assertFalse(y < face['y1'] and face['y0'] < y + 80, y)
+        self.assertGreaterEqual(y, self.build.FORMATS['9:16']['safeArea'][1])
+
+    def test_project_can_pin_caption_height(self):
+        face = dict(x0=300, x1=780, y0=500, y1=900, top=360)
+        self.assertEqual(self.place(face, {'y': 1450}), 1450)
+        for bad in (True, 'low', -5, 1900):
+            with self.subTest(bad=bad), self.assertRaises(self.build.BuildError):
+                self.place(face, {'y': bad})
+
+
 if __name__ == '__main__':
     unittest.main()

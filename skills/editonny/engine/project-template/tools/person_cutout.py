@@ -27,6 +27,15 @@ def count_frames(path):
     except ValueError:
         return -1
 
+def video_size(path):
+    """Even width and height of the first video stream, as matte.py uses them, or None."""
+    r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', path], capture_output=True, text=True)
+    try:
+        (w, h) = (int(v) for v in r.stdout.strip().split(',')[:2])
+    except ValueError:
+        return None
+    return (w - w % 2, h - h % 2)
+
 def default_engine():
     """Default engine."""
     candidates = [os.environ.get('EDITONNY_ENGINE_DIR') or '', os.path.join('~', '.claude', 'skills', 'editonny', 'engine'), os.path.join('~', '.codex', 'skills', 'editonny', 'engine')]
@@ -79,7 +88,8 @@ def main():
         error(f'Engine not found at {skill} (use --skill or project.json skill)')
     with open(tl_p, encoding='utf-8') as f:
         tl = json.load(f)
-    (fps, W, H) = (tl['fps'], tl['width'], tl['height'])
+    # The cutout is merged with cut.mp4 itself; a timeline written for another size must not set it.
+    (fps, W, H) = (tl['fps'], *(video_size(cut) or (tl['width'], tl['height'])))
     print('Extracting the person (first run takes about 3 minutes per minute of video)...', flush=True)
     proc = subprocess.Popen(['uv', 'run', '--directory', skill, 'python', 'helpers/matte.py', '--edit-dir', edit, '--json'], stdout=subprocess.PIPE, text=True, bufsize=1, env=dict(os.environ, PYTHONUNBUFFERED='1'))
     body = []
