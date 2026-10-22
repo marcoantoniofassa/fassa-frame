@@ -19,7 +19,7 @@ Use the pinned HyperFrames version in `package.json`; do not upgrade it while ed
 
 ## Project contract
 
-Top-level fields include `title`, `skill`, `edit`, `format`, `style`, `corrections`, `blocks`, `captions`, `animations`, `scenes`, `sounds`, `endHold`, and `endCard`. Styles are `paper`, `night`, and `amber`; formats are `9:16`, `16:9`, `4:5`, and `1:1`. Caption styles are `standard` and `subtle`.
+Top-level fields include `title`, `skill`, `edit`, `format`, `style`, `corrections`, `blocks`, `captions`, `animations`, `scenes`, `sounds`, `endHold`, and `endCard`. Styles are `paper`, `night`, and `amber`; formats are `9:16`, `16:9`, `4:5`, and `1:1`. Caption styles are `standard` and `subtle`. Captions avoid the face inside the format's band; when a low face fills that band they move under the chin or above the head. `captions.y` pins the caption top in pixels for every block except `frame`.
 
 Blocks use `scene`, `start`, and optional `end`. Scene modes are `fullscreen`, `evidence`, `frame`, `greenScreen`, `contain`, and `compare`. Times may be seconds or spoken-word anchors; `after` disambiguates repeated words. `captions.enabled` controls captions globally; a block's `captions: false` disables them locally. `corrections` applies only explicitly requested transcript corrections.
 

@@ -58,6 +58,7 @@ from common import (ASSETS_DIR, OUTPUT_FORMATS, file_signature, fmt_time, load_j
                     output_fps_for, probe_video, require_binary, save_json)
 from common import has_ffmpeg_filter as _has_ffmpeg_filter
 from grade import check_filter, graded_chain, hdr_to_sdr_chain, resolve_grade
+from speech_regions import AudioError, load_or_compute_regions
 
 SR = 48000
 FADE_SAMPLES = 1440            # 30 ms
@@ -636,6 +637,14 @@ def plan_cut(edl: dict, edit_dir: Path, fps: int, jcut: dict, probes: dict, jobs
             gap_out = (p.edl_end - w0) if last is None else max(0.0, p.edl_end - last)
         return gap_in, gap_out, how
 
+    # Edge gaps read edit/regions/<stem>.json for the measured noise floor. Without it they fall back to a
+    # fixed -35 dB and the same EDL plans different J-cuts in another edit folder: measure it once here.
+    if jcut["enabled"] and n > 1:
+        for src in dict.fromkeys(p.src for p in plans if p.info.get("has_audio")):
+            try:
+                load_or_compute_regions(src, edit_dir)
+            except AudioError as exc:
+                warn(f'{Path(src).name}: speech regions unavailable ({exc}); join gaps use {SILENCE_NOISE_DB} dB')
     with ThreadPoolExecutor(max_workers=max(2, jobs * 2)) as pool:
         gaps = list(pool.map(edge_gaps, plans))
 

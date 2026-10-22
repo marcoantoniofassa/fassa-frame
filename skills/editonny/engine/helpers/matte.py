@@ -1198,6 +1198,19 @@ def _base_facts(base: Path) -> tuple[float, tuple[int, int], int]:
     return fps, size, frames
 
 
+def matte_size(timeline: dict | None, base_size: tuple[int, int], name: str) -> tuple[int, int]:
+    """The matte is composited on the video itself, so its size wins over a timeline made for another size."""
+    w, h = int(base_size[0]), int(base_size[1])
+    try:
+        stated = (int((timeline or {}).get("width") or w), int((timeline or {}).get("height") or h))
+    except (TypeError, ValueError):
+        stated = (w, h)
+    if stated != (w, h):
+        print(f'note: cut_timeline.json describes {stated[0]}x{stated[1]} but {name} is {w}x{h}; '
+              f'the matte follows the video and is extracted from it', flush=True)
+    return (w - w % 2, h - h % 2)
+
+
 def run_edit(edit_dir: Path, video: Path | None, force: bool) -> tuple[MatteSet, dict]:
     edit_dir = edit_dir.resolve()
     base = (video or edit_dir / "cut.mp4").resolve()
@@ -1207,8 +1220,7 @@ def run_edit(edit_dir: Path, video: Path | None, force: bool) -> tuple[MatteSet,
     base_fps, base_size, nf = _base_facts(base)
     from common import output_fps_for  # noqa: PLC0415
     fps = int(round(float((timeline or {}).get("fps") or output_fps_for(base_fps))))
-    size = (int((timeline or {}).get("width") or base_size[0]), int((timeline or {}).get("height") or base_size[1]))
-    size = (size[0] - size[0] % 2, size[1] - size[1] % 2)
+    size = matte_size(timeline, base_size, base.name)
     if abs(base_fps - fps) > 0.01:
         nf = int(round(nf / base_fps * fps))
     bounds = _segments_bounds(timeline, nf, fps)

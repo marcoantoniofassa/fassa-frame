@@ -2767,7 +2767,13 @@ def top_caption(M, a, b, hcap, last=None, box=None, width=None):
         (cx0, cx1) = (max(cx0, M.W / 2 - width / 2), min(cx1, M.W / 2 + width / 2))
     base = F['defaultCaptionY'] if not r else int(clamp(r['y1'] + F['captionPadding'], lo, hi))
     alternatives = list(F['alternateCaptions'])
-    if M.block(a)['scene'] == 'frame':
+    framed = M.block(a)['scene'] == 'frame'
+    fixed = M.P.cfg.get('captions', {}).get('y')
+    if fixed is not None and not framed:
+        if isinstance(fixed, bool) or not isinstance(fixed, (int, float)) or not 0 <= fixed <= M.H - hcap:
+            raise BuildError(f'captions.y must be a pixel top between 0 and {M.H - hcap:.0f}')
+        base = int(fixed)
+    if framed:
         (mx, my, mw, mh) = M.FRAME
         (ax0, ay0, ax1, ay1) = F['frameArea']
         if box:
@@ -2789,6 +2795,12 @@ def top_caption(M, a, b, hcap, last=None, box=None, width=None):
     for y in prefer + [base] + alternatives:
         if not hit(y):
             return int(y)
+    if r is not None and not framed:
+        # A low face leaves the format's caption band on the face: try just under the chin, then above the head.
+        (sy0, sy1) = (F['safeArea'][1], F['safeArea'][3])
+        for y in (int(r['y1'] + 24), int(r['top'] - hcap - 24)):
+            if sy0 <= y and y + hcap <= sy1 and (not hit(y)):
+                return y
     where = 'inside an animation' if 'inside an animation' in reason else 'on the face'
     warn(f'captions at_time {a:.2f} s encosta {where}; moved to {base}px')
     return base

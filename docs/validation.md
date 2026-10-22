@@ -116,3 +116,14 @@ Observed locally on macOS:
 - The static exporter generated the three-language site with the existing `/fassa-frame` base and prelaunch noindex. The export checks localized HTML and base-path assets; deployment still needs authorization and a check at the final URL.
 
 The repository remains private. Existing release v0.1.0 and its checksum were not replaced. No client media, private project, external media generation or production deployment was part of this website revision. The original working copy under `tools/fassa-frame` was preserved.
+
+## Engine fixes from a real Reel edit: 2026-10-22
+
+Scope: four defects met while editing a 48 s personal-brand Reel from a horizontal 720p phone recording (cutout composited on a studio background, 12 overlays, sound plan, music, `quality_gate` PASS). Each fix has a regression test that fails on `main` and passes on the branch.
+
+- Sound names: `build.py` suggested `counting`, `ding` and `risk`, which `sound_plan.py` rejected. A test now parses every `M.sound` literal in `build.py` and resolves it.
+- Captions: a 9:16 face whose chin sits below 1400 px used to keep captions at 1400 px on the face. The fallback now tries under the chin, then above the head, inside the safe area; `captions.y` pins the top. Unit tests cover both and the input validation.
+- Cut timing: `render_cut.py` measured join silence with a fixed -35 dB when `<EDIT>/regions/<stem>.json` was absent, so one EDL rendered 48.07 s in one folder and 48.43 s in another. It now measures and caches the regions first. Integration test with two folders; the real EDL re-rendered in a fresh folder gave 48.07 s, 1442 frames, matching the original folder.
+- Cutout size: `matte.py` and `tools/person_cutout.py` took width and height from `cut_timeline.json`; a 1080x1920 plate with a 1280x720 timeline failed in `alphamerge`. Both now follow the video. Unit test for the size rule; a 3 s real reproduction exported 1080x1920, 90 frames.
+
+Observed on macOS in a clean worktree of the branch (no optional media): `npm run check` passed (61 Python, 15 Node, 128 Vitest tests, lint, types, icons) and `npm run test:engine` passed (44 tests). The checkout used for the edit restores upstream media locally, which makes `test_source_edition_reports_withheld_media_without_external_configuration` fail there by design; that media is excluded from Git and from distribution.

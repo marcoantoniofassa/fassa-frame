@@ -1,4 +1,5 @@
 """Project sound plans must complete with copied licenses and explicit limits."""
+import ast
 import importlib.util
 import json
 from pathlib import Path
@@ -9,6 +10,33 @@ import tempfile
 import unittest
 
 HELPER = Path(__file__).resolve().parents[2] / 'skills/editonny/engine/helpers/sound_plan.py'
+BUILD = HELPER.parents[1] / 'project-template/build.py'
+
+
+def load_sound_plan():
+    spec = importlib.util.spec_from_file_location('sound_plan_processor', HELPER)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class SoundNameTests(unittest.TestCase):
+    def test_every_sound_the_composer_suggests_is_a_plan_type(self):
+        # build.py writes these names into suggested_sounds.json; sound_plan.py must accept every one.
+        def literals(node):
+            if isinstance(node, ast.Constant) and isinstance(node.value, str):
+                return {node.value}
+            if isinstance(node, ast.IfExp):
+                return literals(node.body) | literals(node.orelse)
+            return set()
+        names = set()
+        for node in ast.walk(ast.parse(BUILD.read_text(encoding='utf-8'))):
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.func.attr == 'sound' and node.args:
+                names |= literals(node.args[0])
+        self.assertIn('counting', names)
+        module = load_sound_plan()
+        unknown = sorted(n for n in names if module.normal_value(n) not in module.TYPE_NAMES)
+        self.assertEqual(unknown, [])
 
 
 @unittest.skipUnless(shutil.which('ffmpeg') and shutil.which('ffprobe'), 'FFmpeg is required')
@@ -39,9 +67,7 @@ class SoundPlanTests(unittest.TestCase):
                 self.assertIn('CC0', (project / 'assets/sfx/LICENSES.txt').read_text())
 
     def test_library_prefix_resolves_current_category_schema(self):
-        spec = importlib.util.spec_from_file_location('sound_plan_processor', HELPER)
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+        module = load_sound_plan()
         with tempfile.TemporaryDirectory(prefix='editonny effects ') as temporary:
             library = Path(temporary)
             (library / 'effect.wav').write_bytes(b'Fixture only; resolution does not decode audio')
